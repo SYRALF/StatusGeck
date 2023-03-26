@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Entity
 {
-    internal class Factura
+    public class Factura
     {
     }
 }
