@@ -6,9 +6,12 @@ using System.Threading.Tasks;
 
 namespace Entity
 {
-    public class Cliente:Persona
+    public class Contabilidad
     {
-        public string Usuario { get; set; }
-        public string Contraseña { get; set; }
+        public Gastos gastos { get; set; }
+        public Factura factura { get; set; }
+
+
+
     }
 }
