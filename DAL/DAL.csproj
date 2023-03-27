@@ -42,7 +42,9 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="AdministradorRepository.cs" />
+    <Compile Include="ClienteRepository.cs" />
     <Compile Include="ConnectionManager.cs" />
+    <Compile Include="EmpleadoRepository.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

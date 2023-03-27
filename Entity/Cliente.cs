@@ -8,7 +8,5 @@ namespace Entity
 {
     public class Cliente:Persona
     {
-        public string Usuario { get; set; }
-        public string Contraseña { get; set; }
     }
 }
