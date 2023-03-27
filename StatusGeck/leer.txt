@@ -1,12 +1,7 @@
-﻿<?xml version="1.0" encoding="utf-8" ?>
-<configuration>
-    <startup> 
-        <supportedRuntime version="v4.0" sku=".NETFramework,Version=v4.7.2" />
-    </startup>
- <connectionStrings>
+<connectionStrings>
     <add name="DefaultConnection" connectionString="Server=CHINOMASACRE\SQLEXPRESS;Database=BDStatusGeck;Trusted_Connection = True; MultipleActiveResultSets = true" />
     <add name="LonHan.Properties.Settings.BDStatusGeckConnectionString"
       connectionString="Data Source=CHINOMASACRE\SQLEXPRESS;Initial Catalog=BDStatusGeck;Integrated Security=True"
       providerName="System.Data.SqlClient" />
   </connectionStrings>
-</configuration>
+//mi cadena de conexion a base de datos-en el app.config
