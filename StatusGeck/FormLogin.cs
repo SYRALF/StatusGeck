@@ -76,8 +76,7 @@ namespace StatusGeck
 
         private void txtUsuario_Leave(object sender, EventArgs e)
         {
-            [Required(ErrorMessage = "Title is required")]
-
+            
         }
     }
 }
