@@ -18,6 +18,7 @@ namespace StatusGeck
     public partial class FormLogin : Form
     {
         AdministradorService administradorService;
+        ErrorProvider errorProvider = new ErrorProvider();
         public FormLogin()
         {
             InitializeComponent();
@@ -39,6 +40,8 @@ namespace StatusGeck
 
             if(Password == "" && Usuario== "")
             {
+                errorProvider.SetError(txtUsuario, "Fala ingresar Usuario");
+                errorProvider.SetError(txtContraseña, "Fala ingresar Contraseña");
                 MessageBox.Show("¡Campos Vacios!", "Mensaje de Ingreso", MessageBoxButtons.OKCancel, MessageBoxIcon.Exclamation);
             }
             else 
@@ -76,7 +79,10 @@ namespace StatusGeck
 
         private void txtUsuario_Leave(object sender, EventArgs e)
         {
-            
+            if (this.txtUsuario.Text.Equals(""))
+            {
+                errorProvider.SetError(txtUsuario, "Fala ingresar Usuario");
+            }
         }
     }
 }
