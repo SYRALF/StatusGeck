@@ -18,12 +18,14 @@ namespace StatusGeck
     public partial class FormLogin : Form
     {
         AdministradorService administradorService;
+        EmpleadoService empleadoService;
         ErrorProvider errorProvider = new ErrorProvider();
         public FormLogin()
         {
             InitializeComponent();
             var connectionString = ConfigurationManager.ConnectionStrings["DefaultConnection"].ConnectionString;
             administradorService = new AdministradorService(connectionString);
+            empleadoService = new EmpleadoService(connectionString);
             txtContraseña.UseSystemPasswordChar = true;
         }
 
@@ -33,8 +35,6 @@ namespace StatusGeck
         }
         public void Ingresar()
         {
-            BusquedaAdministradorRespuesta busquedaAdministrador = new BusquedaAdministradorRespuesta();
-
             string Password = txtContraseña.Text;
             string Usuario = txtUsuario.Text;
 
@@ -46,9 +46,25 @@ namespace StatusGeck
             }
             else 
             {
+                BusquedaAdministradorRespuesta busquedaAdministrador = new BusquedaAdministradorRespuesta();
                 busquedaAdministrador = administradorService.validarLogin(Usuario, Password);
 
-                MessageBox.Show(busquedaAdministrador.Mensaje, "Mensaje de Ingreso", MessageBoxButtons.OKCancel, MessageBoxIcon.Information);
+                BusquedaEmpleadoRespuesta busquedaEmpleado = new BusquedaEmpleadoRespuesta();
+                busquedaEmpleado = empleadoService.validarLogin(Usuario, Password);
+
+                if( busquedaAdministrador.Administrador != null )
+                {
+                    MessageBox.Show(busquedaAdministrador.Mensaje, "Mensaje de Ingreso", MessageBoxButtons.OKCancel, MessageBoxIcon.Information);
+                }else if(busquedaEmpleado.empleado != null)
+                {
+
+                }
+                else
+                {
+
+                }
+
+               
 
                 /*if (!busquedaAdministrador.Error && busquedaAdministrador.Encontro)
                 {
