@@ -35,9 +35,12 @@ namespace StatusGeck
         private extern static void SendMessage(System.IntPtr hwnd, int wmsg, int wparam, int lparam);
         private void btnIngresar_Click(object sender, EventArgs e)
         {
-            Ingresar();
-            //Principal frmPrincipal = new Principal();
-            //frmPrincipal.Show();
+            //Ingresar();
+            FormLogin login = new FormLogin();
+            login.Close();
+            Principal frmPrincipal = new Principal();
+            frmPrincipal.Show();
+            
         }
         public void Ingresar()
         {

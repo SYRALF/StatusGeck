@@ -8,6 +8,9 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using FontAwesome.Sharp;
+using System.Runtime.InteropServices;
+using StatusGeck.Factura;
+using StatusGeck.Cliente;
 
 namespace StatusGeck
 {
@@ -16,6 +19,7 @@ namespace StatusGeck
         //campos
         private IconButton botonActual;
         private Panel leftBordenBtn;
+        private Form formularioActual;
 
         public Principal()
         {
@@ -23,7 +27,12 @@ namespace StatusGeck
             leftBordenBtn = new Panel();
             leftBordenBtn.Size = new Size(7,60);
             panelMenu.Controls.Add(leftBordenBtn);
+            
         }
+        [DllImport("user32.DLL", EntryPoint = "ReleaseCapture")]
+        private extern static void ReleaseCapture();
+        [DllImport("user32.DLL", EntryPoint = "SendMessage")]
+        private extern static void SendMessage(System.IntPtr hwnd, int wmsg, int wparam, int lparam);
         //metodos
         private void ActivarBoton(object senderBtn, Color color)
         {
@@ -44,6 +53,11 @@ namespace StatusGeck
                 leftBordenBtn.Location = new Point(0, botonActual.Location.Y);
                 leftBordenBtn.Visible = true;
                 leftBordenBtn.BringToFront();
+
+                //boton titulo
+                iconoFormulario.IconChar = botonActual.IconChar;
+                iconoFormulario.IconColor = color;
+                titulo.Text = botonActual.Text;
             }
         }
         //colores
@@ -59,18 +73,37 @@ namespace StatusGeck
         {
             if(botonActual != null)
             {
-                botonActual.BackColor = Color.Orchid;
-                botonActual.ForeColor = Color.LightGray;
+                botonActual.BackColor = Color.FromArgb(0, 0, 64);
+                botonActual.ForeColor = Color.Gainsboro;
                 botonActual.TextAlign = ContentAlignment.MiddleLeft;
-                botonActual.IconColor = Color.LightGray;
+                botonActual.IconColor = Color.Gainsboro;
                 botonActual.TextImageRelation = TextImageRelation.ImageBeforeText;
                 botonActual.ImageAlign = ContentAlignment.MiddleLeft;
             }
         }
 
+        //abrir formulario hijo
+
+        private void AbrirFormularioHijo(Form childForm)
+        {
+            if(formularioActual != null)
+            {
+                formularioActual.Close();
+            }
+            formularioActual = childForm;
+            childForm.TopLevel = false;
+            childForm.FormBorderStyle = FormBorderStyle.None;
+            pFormularios.Controls.Add(childForm);
+            pFormularios.Tag = childForm;
+            childForm.BringToFront();
+            childForm.Show();
+        }
+
+        //metodos del formulario
         private void btnCliente_Click(object sender, EventArgs e)
         {
             ActivarBoton(sender, Colour.color1);
+            AbrirFormularioHijo(new FormCliente());
         }
 
         private void btnEmpleado_Click(object sender, EventArgs e)
@@ -81,6 +114,7 @@ namespace StatusGeck
         private void btnFactura_Click(object sender, EventArgs e)
         {
             ActivarBoton(sender, Colour.color3);
+            AbrirFormularioHijo(new FormFactura());
         }
 
         private void btnContabilidad_Click(object sender, EventArgs e)
@@ -91,6 +125,45 @@ namespace StatusGeck
         private void btnGastos_Click(object sender, EventArgs e)
         {
             ActivarBoton(sender, Colour.color5);
+        }
+
+        private void btnInicio_Click(object sender, EventArgs e)
+        {
+            formularioActual.Close();
+            Reset();
+        }
+
+        private void Reset()
+        {
+            DesactivarBoton();
+            leftBordenBtn.Visible = false;
+            iconoFormulario.IconChar = IconChar.House;
+            iconoFormulario.IconColor = Color.DeepPink;
+            titulo.Text = "Home";
+        }
+
+        private void panelTitulo_MouseDown(object sender, MouseEventArgs e)
+        {
+            ReleaseCapture();
+            SendMessage(this.Handle, 0x112, 0xf012, 0);
+        }
+
+        private void btnCerrar_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
+        }
+
+        private void btnMaximizar_Click(object sender, EventArgs e)
+        {
+            if (WindowState == FormWindowState.Normal)
+                WindowState = FormWindowState.Maximized;
+            else
+                WindowState = FormWindowState.Normal;
+        }
+
+        private void btnMinimizar_Click(object sender, EventArgs e)
+        {
+            WindowState = FormWindowState.Minimized;
         }
     }
 }
