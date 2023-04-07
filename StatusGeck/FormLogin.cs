@@ -8,7 +8,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using Entity;
+//using Entity;
 using BLL;
 using System.Configuration;
 using static BLL.AdministradorService;
@@ -36,6 +36,8 @@ namespace StatusGeck
         private void btnIngresar_Click(object sender, EventArgs e)
         {
             Ingresar();
+            //Principal frmPrincipal = new Principal();
+            //frmPrincipal.Show();
         }
         public void Ingresar()
         {
