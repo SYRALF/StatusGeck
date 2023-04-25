@@ -214,9 +214,9 @@
         private System.Windows.Forms.TextBox txtContraseña;
         private System.Windows.Forms.TextBox txtUsuario;
         private System.Windows.Forms.Panel panel1;
-        private Microsoft.VisualBasic.PowerPacks.ShapeContainer shapeContainer1;
-        private Microsoft.VisualBasic.PowerPacks.LineShape lineShape2;
-        private Microsoft.VisualBasic.PowerPacks.LineShape lineShape1;
+        //private Microsoft.VisualBasic.PowerPacks.ShapeContainer shapeContainer1;
+        //private Microsoft.VisualBasic.PowerPacks.LineShape lineShape2;
+        //private Microsoft.VisualBasic.PowerPacks.LineShape lineShape1;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.LinkLabel linkPass;
         private System.Windows.Forms.PictureBox btnCerrar;
