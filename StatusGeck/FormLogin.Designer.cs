@@ -54,10 +54,10 @@
             this.btnIngresar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.btnIngresar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnIngresar.ForeColor = System.Drawing.Color.LightGray;
-            this.btnIngresar.Location = new System.Drawing.Point(310, 229);
-            this.btnIngresar.Margin = new System.Windows.Forms.Padding(2);
+            this.btnIngresar.Location = new System.Drawing.Point(413, 282);
+            this.btnIngresar.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnIngresar.Name = "btnIngresar";
-            this.btnIngresar.Size = new System.Drawing.Size(408, 40);
+            this.btnIngresar.Size = new System.Drawing.Size(544, 49);
             this.btnIngresar.TabIndex = 3;
             this.btnIngresar.Text = "ACCEDER";
             this.btnIngresar.UseVisualStyleBackColor = false;
@@ -69,10 +69,10 @@
             this.txtContraseña.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtContraseña.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtContraseña.ForeColor = System.Drawing.Color.DimGray;
-            this.txtContraseña.Location = new System.Drawing.Point(310, 127);
-            this.txtContraseña.Margin = new System.Windows.Forms.Padding(2);
+            this.txtContraseña.Location = new System.Drawing.Point(413, 156);
+            this.txtContraseña.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtContraseña.Name = "txtContraseña";
-            this.txtContraseña.Size = new System.Drawing.Size(408, 20);
+            this.txtContraseña.Size = new System.Drawing.Size(544, 25);
             this.txtContraseña.TabIndex = 2;
             this.txtContraseña.Text = "PASSWORD";
             this.txtContraseña.Enter += new System.EventHandler(this.txtContraseña_Enter);
@@ -85,10 +85,10 @@
             this.txtUsuario.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtUsuario.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtUsuario.ForeColor = System.Drawing.Color.DimGray;
-            this.txtUsuario.Location = new System.Drawing.Point(310, 82);
-            this.txtUsuario.Margin = new System.Windows.Forms.Padding(2);
+            this.txtUsuario.Location = new System.Drawing.Point(413, 101);
+            this.txtUsuario.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtUsuario.Name = "txtUsuario";
-            this.txtUsuario.Size = new System.Drawing.Size(408, 20);
+            this.txtUsuario.Size = new System.Drawing.Size(544, 25);
             this.txtUsuario.TabIndex = 1;
             this.txtUsuario.Text = "USER";
             this.txtUsuario.Enter += new System.EventHandler(this.txtUsuario_Enter);
@@ -101,16 +101,18 @@
             this.panel1.Controls.Add(this.pictureBox2);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Left;
             this.panel1.Location = new System.Drawing.Point(0, 0);
+            this.panel1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(250, 330);
+            this.panel1.Size = new System.Drawing.Size(333, 406);
             this.panel1.TabIndex = 6;
             // 
             // pictureBox2
             // 
             this.pictureBox2.Image = global::StatusGeck.Properties.Resources.logo_1;
-            this.pictureBox2.Location = new System.Drawing.Point(33, 47);
+            this.pictureBox2.Location = new System.Drawing.Point(44, 58);
+            this.pictureBox2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(167, 208);
+            this.pictureBox2.Size = new System.Drawing.Size(223, 256);
             this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox2.TabIndex = 11;
             this.pictureBox2.TabStop = false;
@@ -123,7 +125,7 @@
             this.shapeContainer1.Shapes.AddRange(new Microsoft.VisualBasic.PowerPacks.Shape[] {
             this.lineShape2,
             this.lineShape1});
-            this.shapeContainer1.Size = new System.Drawing.Size(780, 330);
+            this.shapeContainer1.Size = new System.Drawing.Size(1040, 406);
             this.shapeContainer1.TabIndex = 7;
             this.shapeContainer1.TabStop = false;
             // 
@@ -152,9 +154,10 @@
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.DimGray;
-            this.label1.Location = new System.Drawing.Point(451, 33);
+            this.label1.Location = new System.Drawing.Point(601, 41);
+            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(106, 33);
+            this.label1.Size = new System.Drawing.Size(133, 42);
             this.label1.TabIndex = 8;
             this.label1.Text = "LOGIN";
             // 
@@ -163,9 +166,10 @@
             this.linkPass.ActiveLinkColor = System.Drawing.Color.MidnightBlue;
             this.linkPass.AutoSize = true;
             this.linkPass.LinkColor = System.Drawing.Color.DimGray;
-            this.linkPass.Location = new System.Drawing.Point(442, 286);
+            this.linkPass.Location = new System.Drawing.Point(589, 352);
+            this.linkPass.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.linkPass.Name = "linkPass";
-            this.linkPass.Size = new System.Drawing.Size(143, 13);
+            this.linkPass.Size = new System.Drawing.Size(179, 16);
             this.linkPass.TabIndex = 0;
             this.linkPass.TabStop = true;
             this.linkPass.Text = "¿Ha olvidado la contraseña?";
@@ -173,9 +177,10 @@
             // btnCerrar
             // 
             this.btnCerrar.Image = global::StatusGeck.Properties.Resources.x_button;
-            this.btnCerrar.Location = new System.Drawing.Point(759, 7);
+            this.btnCerrar.Location = new System.Drawing.Point(1012, 9);
+            this.btnCerrar.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnCerrar.Name = "btnCerrar";
-            this.btnCerrar.Size = new System.Drawing.Size(15, 15);
+            this.btnCerrar.Size = new System.Drawing.Size(20, 18);
             this.btnCerrar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.btnCerrar.TabIndex = 10;
             this.btnCerrar.TabStop = false;
@@ -188,21 +193,22 @@
             this.lblError.ForeColor = System.Drawing.Color.DarkGray;
             this.lblError.Image = ((System.Drawing.Image)(resources.GetObject("lblError.Image")));
             this.lblError.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.lblError.Location = new System.Drawing.Point(328, 177);
+            this.lblError.Location = new System.Drawing.Point(437, 218);
+            this.lblError.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblError.Name = "lblError";
             this.lblError.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.lblError.Size = new System.Drawing.Size(106, 18);
+            this.lblError.Size = new System.Drawing.Size(304, 23);
             this.lblError.TabIndex = 11;
-            this.lblError.Text = "Error Mensaje";
-            this.lblError.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.lblError.Text = "      Error Mensaje                      ";
+            this.lblError.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.lblError.Visible = false;
             // 
             // FormLogin
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(15)))), ((int)(((byte)(15)))));
-            this.ClientSize = new System.Drawing.Size(780, 330);
+            this.ClientSize = new System.Drawing.Size(1040, 406);
             this.Controls.Add(this.lblError);
             this.Controls.Add(this.btnCerrar);
             this.Controls.Add(this.linkPass);
@@ -213,7 +219,7 @@
             this.Controls.Add(this.btnIngresar);
             this.Controls.Add(this.shapeContainer1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Margin = new System.Windows.Forms.Padding(2);
+            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "FormLogin";
             this.Opacity = 0.9D;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;

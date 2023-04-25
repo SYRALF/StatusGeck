@@ -51,12 +51,12 @@ namespace StatusGeck
                 }
                 else
                 {
-                    msgError("Por favor digite la contraseña");
+                    msgError("   Por favor digite la contraseña    ");
                 }
             }
             else
             {
-                msgError("Por favor digite un usuario");
+                msgError("   Por favor digite un usuario    ");
             }
         }
         public void Ingresar()
