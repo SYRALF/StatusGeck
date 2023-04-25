@@ -36,11 +36,28 @@ namespace StatusGeck
         private void btnIngresar_Click(object sender, EventArgs e)
         {
             //Ingresar();
-            FormLogin login = new FormLogin();
-            login.Close();
-            Principal frmPrincipal = new Principal();
-            frmPrincipal.Show();
-            
+            //this.Visible = false;
+            Acceder();
+        }
+
+        private void Acceder()
+        {
+            if (txtUsuario.Text != "USER")
+            {
+                if (txtContraseña.Text != "PASSWORD")
+                {
+                    Principal frmPrincipal = new Principal();
+                    frmPrincipal.Show();
+                }
+                else
+                {
+                    msgError("Por favor digite la contraseña");
+                }
+            }
+            else
+            {
+                msgError("Por favor digite un usuario");
+            }
         }
         public void Ingresar()
         {
@@ -86,6 +103,11 @@ namespace StatusGeck
 
         }
 
+        private void msgError(string msg)
+        {
+            lblError.Text = "     " + msg;
+            lblError.Visible = true;
+        }
         private void txtContraseña_KeyPress(object sender, KeyPressEventArgs e)
         {
             if (e.KeyChar == Convert.ToChar(Keys.Enter))

@@ -28,20 +28,22 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormLogin));
             this.btnIngresar = new System.Windows.Forms.Button();
             this.txtContraseña = new System.Windows.Forms.TextBox();
             this.txtUsuario = new System.Windows.Forms.TextBox();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.shapeContainer1 = new Microsoft.VisualBasic.PowerPacks.ShapeContainer();
             this.lineShape2 = new Microsoft.VisualBasic.PowerPacks.LineShape();
             this.lineShape1 = new Microsoft.VisualBasic.PowerPacks.LineShape();
             this.label1 = new System.Windows.Forms.Label();
             this.linkPass = new System.Windows.Forms.LinkLabel();
             this.btnCerrar = new System.Windows.Forms.PictureBox();
-            this.pictureBox2 = new System.Windows.Forms.PictureBox();
+            this.lblError = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.btnCerrar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btnCerrar)).BeginInit();
             this.SuspendLayout();
             // 
             // btnIngresar
@@ -67,7 +69,7 @@
             this.txtContraseña.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtContraseña.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtContraseña.ForeColor = System.Drawing.Color.DimGray;
-            this.txtContraseña.Location = new System.Drawing.Point(310, 158);
+            this.txtContraseña.Location = new System.Drawing.Point(310, 127);
             this.txtContraseña.Margin = new System.Windows.Forms.Padding(2);
             this.txtContraseña.Name = "txtContraseña";
             this.txtContraseña.Size = new System.Drawing.Size(408, 20);
@@ -83,7 +85,7 @@
             this.txtUsuario.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtUsuario.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtUsuario.ForeColor = System.Drawing.Color.DimGray;
-            this.txtUsuario.Location = new System.Drawing.Point(310, 107);
+            this.txtUsuario.Location = new System.Drawing.Point(310, 82);
             this.txtUsuario.Margin = new System.Windows.Forms.Padding(2);
             this.txtUsuario.Name = "txtUsuario";
             this.txtUsuario.Size = new System.Drawing.Size(408, 20);
@@ -102,6 +104,16 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(250, 330);
             this.panel1.TabIndex = 6;
+            // 
+            // pictureBox2
+            // 
+            this.pictureBox2.Image = global::StatusGeck.Properties.Resources.logo_1;
+            this.pictureBox2.Location = new System.Drawing.Point(33, 47);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(167, 208);
+            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox2.TabIndex = 11;
+            this.pictureBox2.TabStop = false;
             // 
             // shapeContainer1
             // 
@@ -122,8 +134,8 @@
             this.lineShape2.Name = "lineShape2";
             this.lineShape2.X1 = 310;
             this.lineShape2.X2 = 717;
-            this.lineShape2.Y1 = 179;
-            this.lineShape2.Y2 = 179;
+            this.lineShape2.Y1 = 147;
+            this.lineShape2.Y2 = 147;
             // 
             // lineShape1
             // 
@@ -132,8 +144,8 @@
             this.lineShape1.Name = "lineShape1";
             this.lineShape1.X1 = 310;
             this.lineShape1.X2 = 717;
-            this.lineShape1.Y1 = 129;
-            this.lineShape1.Y2 = 129;
+            this.lineShape1.Y1 = 102;
+            this.lineShape1.Y2 = 102;
             // 
             // label1
             // 
@@ -169,15 +181,21 @@
             this.btnCerrar.TabStop = false;
             this.btnCerrar.Click += new System.EventHandler(this.btnCerrar_Click);
             // 
-            // pictureBox2
+            // lblError
             // 
-            this.pictureBox2.Image = global::StatusGeck.Properties.Resources.logo_1;
-            this.pictureBox2.Location = new System.Drawing.Point(33, 47);
-            this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(167, 208);
-            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox2.TabIndex = 11;
-            this.pictureBox2.TabStop = false;
+            this.lblError.AutoSize = true;
+            this.lblError.Font = new System.Drawing.Font("MS Reference Sans Serif", 10.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblError.ForeColor = System.Drawing.Color.DarkGray;
+            this.lblError.Image = ((System.Drawing.Image)(resources.GetObject("lblError.Image")));
+            this.lblError.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.lblError.Location = new System.Drawing.Point(328, 177);
+            this.lblError.Name = "lblError";
+            this.lblError.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.lblError.Size = new System.Drawing.Size(106, 18);
+            this.lblError.TabIndex = 11;
+            this.lblError.Text = "Error Mensaje";
+            this.lblError.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.lblError.Visible = false;
             // 
             // FormLogin
             // 
@@ -185,6 +203,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(15)))), ((int)(((byte)(15)))), ((int)(((byte)(15)))));
             this.ClientSize = new System.Drawing.Size(780, 330);
+            this.Controls.Add(this.lblError);
             this.Controls.Add(this.btnCerrar);
             this.Controls.Add(this.linkPass);
             this.Controls.Add(this.label1);
@@ -201,8 +220,8 @@
             this.Text = "FormLogin";
             this.MouseDown += new System.Windows.Forms.MouseEventHandler(this.FormLogin_MouseDown);
             this.panel1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.btnCerrar)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btnCerrar)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -214,12 +233,13 @@
         private System.Windows.Forms.TextBox txtContraseña;
         private System.Windows.Forms.TextBox txtUsuario;
         private System.Windows.Forms.Panel panel1;
-        //private Microsoft.VisualBasic.PowerPacks.ShapeContainer shapeContainer1;
-        //private Microsoft.VisualBasic.PowerPacks.LineShape lineShape2;
-        //private Microsoft.VisualBasic.PowerPacks.LineShape lineShape1;
+        private Microsoft.VisualBasic.PowerPacks.ShapeContainer shapeContainer1;
+        private Microsoft.VisualBasic.PowerPacks.LineShape lineShape2;
+        private Microsoft.VisualBasic.PowerPacks.LineShape lineShape1;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.LinkLabel linkPass;
         private System.Windows.Forms.PictureBox btnCerrar;
         private System.Windows.Forms.PictureBox pictureBox2;
+        private System.Windows.Forms.Label lblError;
     }
 }

@@ -63,16 +63,16 @@
     <Compile Include="Cliente\FormCliente.Designer.cs">
       <DependentUpon>FormCliente.cs</DependentUpon>
     </Compile>
-    <Compile Include="Form1.cs">
+    <Compile Include="Empleado\FormularioEmpleado.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form1.Designer.cs">
-      <DependentUpon>Form1.cs</DependentUpon>
+    <Compile Include="Empleado\FormularioEmpleado.Designer.cs">
+      <DependentUpon>FormularioEmpleado.cs</DependentUpon>
     </Compile>
-    <Compile Include="FormFactura.cs">
+    <Compile Include="Factura\FormFactura.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FormFactura.Designer.cs">
+    <Compile Include="Factura\FormFactura.Designer.cs">
       <DependentUpon>FormFactura.cs</DependentUpon>
     </Compile>
     <Compile Include="FormLogin.cs">
@@ -92,10 +92,10 @@
     <EmbeddedResource Include="Cliente\FormCliente.resx">
       <DependentUpon>FormCliente.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Form1.resx">
-      <DependentUpon>Form1.cs</DependentUpon>
+    <EmbeddedResource Include="Empleado\FormularioEmpleado.resx">
+      <DependentUpon>FormularioEmpleado.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FormFactura.resx">
+    <EmbeddedResource Include="Factura\FormFactura.resx">
       <DependentUpon>FormFactura.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormLogin.resx">
@@ -143,7 +143,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Contabilidad\" />
-    <Folder Include="Empleado\" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\x-button.png" />
@@ -153,9 +152,6 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\logo.PNG" />
-  </ItemGroup>
-  <ItemGroup>
-    <WCFMetadata Include="Connected Services\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

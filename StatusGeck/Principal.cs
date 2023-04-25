@@ -11,6 +11,7 @@ using FontAwesome.Sharp;
 using System.Runtime.InteropServices;
 using StatusGeck.Factura;
 using StatusGeck.Cliente;
+using StatusGeck.Empleado;
 
 namespace StatusGeck
 {
@@ -109,6 +110,7 @@ namespace StatusGeck
         private void btnEmpleado_Click(object sender, EventArgs e)
         {
             ActivarBoton(sender, Colour.color2);
+            AbrirFormularioHijo(new FormularioEmpleado());
         }
 
         private void btnFactura_Click(object sender, EventArgs e)
@@ -150,15 +152,7 @@ namespace StatusGeck
 
         private void btnCerrar_Click(object sender, EventArgs e)
         {
-            Application.Exit();
-        }
-
-        private void btnMaximizar_Click(object sender, EventArgs e)
-        {
-            if (WindowState == FormWindowState.Normal)
-                WindowState = FormWindowState.Maximized;
-            else
-                WindowState = FormWindowState.Normal;
+            this.Close();
         }
 
         private void btnMinimizar_Click(object sender, EventArgs e)
