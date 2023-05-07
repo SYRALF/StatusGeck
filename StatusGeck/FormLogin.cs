@@ -35,19 +35,18 @@ namespace StatusGeck
         private extern static void SendMessage(System.IntPtr hwnd, int wmsg, int wparam, int lparam);
         private void btnIngresar_Click(object sender, EventArgs e)
         {
-            //Ingresar();
+            Ingresar();
             //this.Visible = false;
-            Acceder();
+            //Acceder();
         }
 
-        private void Acceder()
+        public bool Acceder()
         {
             if (txtUsuario.Text != "USER")
             {
                 if (txtContraseña.Text != "PASSWORD")
                 {
-                    Principal frmPrincipal = new Principal();
-                    frmPrincipal.Show();
+                    return true;
                 }
                 else
                 {
@@ -58,46 +57,44 @@ namespace StatusGeck
             {
                 msgError("   Por favor digite un usuario    ");
             }
+            return false;
         }
         public void Ingresar()
         {
             string Password = txtContraseña.Text;
             string Usuario = txtUsuario.Text;
 
-            if(Password == "" && Usuario== "")
+            if(Acceder()==false)
             {
-                errorProvider.SetError(txtUsuario, "Fala ingresar Usuario");
-                errorProvider.SetError(txtContraseña, "Fala ingresar Contraseña");
-                MessageBox.Show("¡Campos Vacios!", "Mensaje de Ingreso", MessageBoxButtons.OKCancel, MessageBoxIcon.Exclamation);
+                //errorProvider.SetError(txtUsuario, "Fala ingresar Usuario");
+                //errorProvider.SetError(txtContraseña, "Fala ingresar Contraseña");
+                //MessageBox.Show("¡Campos Vacios!", "Mensaje de Ingreso", MessageBoxButtons.OKCancel, MessageBoxIcon.Exclamation);
             }
             else 
             {
-                BusquedaAdministradorRespuesta busquedaAdministrador = new BusquedaAdministradorRespuesta();
-                busquedaAdministrador = administradorService.validarLogin(Usuario, Password);
+                lblError.Visible = false;
+                var login = administradorService.validarLogin(txtUsuario.Text, txtContraseña.Text);
 
-                BusquedaEmpleadoRespuesta busquedaEmpleado = new BusquedaEmpleadoRespuesta();
-                busquedaEmpleado = empleadoService.validarLogin(Usuario, Password);
-
-                if( busquedaAdministrador.Administrador != null )
+                if (login.Administrador == null)
                 {
-                    MessageBox.Show(busquedaAdministrador.Mensaje, "Mensaje de Ingreso", MessageBoxButtons.OKCancel, MessageBoxIcon.Information);
-                }else if(busquedaEmpleado.empleado != null)
-                {
+                    var login2 = empleadoService.validarLogin(txtUsuario.Text, txtContraseña.Text);
+                    if (login2.empleado == null)
+                    {
 
+                        MessageBox.Show(login2.Mensaje, "Mensaje de Ingreso", MessageBoxButtons.OKCancel, MessageBoxIcon.Information);
+                    }
+                    else
+                    {
+                        MessageBox.Show(login2.Mensaje, "Mensaje de Ingreso", MessageBoxButtons.OKCancel, MessageBoxIcon.Information);
+                        Principal frmPrincipal = new Principal(login.Administrador,login2.empleado);
+                        frmPrincipal.Show();
+                    }
                 }
                 else
                 {
-
-                }
-
-               
-
-                /*if (!busquedaAdministrador.Error && busquedaAdministrador.Encontro)
-                {
-                    FormularioPrincipal frmPrincipal = new FormularioPrincipal(busquedaAdministrador.Administrador);
+                    Principal frmPrincipal = new Principal(login.Administrador,null);
                     frmPrincipal.Show();
-                    Hide();
-                }*/
+                }
             }
 
 
@@ -131,7 +128,11 @@ namespace StatusGeck
                 errorProvider.SetError(txtUsuario, "Falta ingresar Usuario");
                 txtUsuario.Text = "USER";
                 txtUsuario.ForeColor = Color.DimGray;
-                
+
+            }
+            else
+            {
+                errorProvider.SetError(txtUsuario, null);
             }
         }
 
@@ -158,9 +159,14 @@ namespace StatusGeck
         {
             if (this.txtContraseña.Text.Equals(""))
             {
+                errorProvider.SetError(txtContraseña, "Falta Ingresar Contraseña");
                 txtContraseña.Text = "PASSWORD";
                 txtContraseña.ForeColor = Color.DimGray;
                 txtContraseña.UseSystemPasswordChar = false;
+            }
+            else
+            {
+                errorProvider.SetError(txtContraseña, null);
             }
         }
 

@@ -9,9 +9,11 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using FontAwesome.Sharp;
 using System.Runtime.InteropServices;
+using Entity;
 using StatusGeck.Factura;
 using StatusGeck.Cliente;
 using StatusGeck.Empleado;
+using System.Runtime.CompilerServices;
 
 namespace StatusGeck
 {
@@ -21,8 +23,9 @@ namespace StatusGeck
         private IconButton botonActual;
         private Panel leftBordenBtn;
         private Form formularioActual;
+        
 
-        public Principal()
+        public Principal(Administrador administrador,Entity.Empleado empleado)
         {
             InitializeComponent();
             leftBordenBtn = new Panel();
