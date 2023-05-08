@@ -57,16 +57,16 @@
     <Reference Include="WindowsBase" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Cliente\FormCliente.cs">
+    <Compile Include="ClienteForm\FormCliente.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Cliente\FormCliente.Designer.cs">
+    <Compile Include="ClienteForm\FormCliente.Designer.cs">
       <DependentUpon>FormCliente.cs</DependentUpon>
     </Compile>
-    <Compile Include="Contabilidad\FormGasto.cs">
+    <Compile Include="ContabilidadForm\FormGasto.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Contabilidad\FormGasto.Designer.cs">
+    <Compile Include="ContabilidadForm\FormGasto.Designer.cs">
       <DependentUpon>FormGasto.cs</DependentUpon>
     </Compile>
     <Compile Include="Empleado\FormularioEmpleado.cs">
@@ -95,7 +95,7 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="Cliente\FormCliente.resx">
+    <EmbeddedResource Include="ClienteForm\FormCliente.resx">
       <DependentUpon>FormCliente.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Empleado\FormularioEmpleado.resx">

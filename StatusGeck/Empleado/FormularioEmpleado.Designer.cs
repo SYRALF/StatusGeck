@@ -29,9 +29,9 @@ namespace StatusGeck.Empleado
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.textBoxCedula = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
             this.textBoxNombre = new System.Windows.Forms.TextBox();
@@ -68,9 +68,10 @@ namespace StatusGeck.Empleado
             this.textBoxCedula.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.textBoxCedula.Font = new System.Drawing.Font("Century Gothic", 12F);
             this.textBoxCedula.ForeColor = System.Drawing.Color.Black;
-            this.textBoxCedula.Location = new System.Drawing.Point(140, 21);
+            this.textBoxCedula.Location = new System.Drawing.Point(187, 26);
+            this.textBoxCedula.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.textBoxCedula.Name = "textBoxCedula";
-            this.textBoxCedula.Size = new System.Drawing.Size(179, 20);
+            this.textBoxCedula.Size = new System.Drawing.Size(239, 25);
             this.textBoxCedula.TabIndex = 110;
             this.textBoxCedula.Text = "Escribir...";
             // 
@@ -79,9 +80,10 @@ namespace StatusGeck.Empleado
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label7.ForeColor = System.Drawing.Color.Black;
-            this.label7.Location = new System.Drawing.Point(45, 22);
+            this.label7.Location = new System.Drawing.Point(60, 27);
+            this.label7.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(78, 22);
+            this.label7.Size = new System.Drawing.Size(102, 30);
             this.label7.TabIndex = 109;
             this.label7.Text = "Cedula";
             // 
@@ -91,9 +93,10 @@ namespace StatusGeck.Empleado
             this.textBoxNombre.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.textBoxNombre.Font = new System.Drawing.Font("Century Gothic", 12F);
             this.textBoxNombre.ForeColor = System.Drawing.Color.Black;
-            this.textBoxNombre.Location = new System.Drawing.Point(140, 65);
+            this.textBoxNombre.Location = new System.Drawing.Point(187, 80);
+            this.textBoxNombre.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.textBoxNombre.Name = "textBoxNombre";
-            this.textBoxNombre.Size = new System.Drawing.Size(179, 20);
+            this.textBoxNombre.Size = new System.Drawing.Size(239, 25);
             this.textBoxNombre.TabIndex = 108;
             this.textBoxNombre.Text = "Escribir...";
             // 
@@ -102,9 +105,10 @@ namespace StatusGeck.Empleado
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label6.ForeColor = System.Drawing.Color.Black;
-            this.label6.Location = new System.Drawing.Point(364, 65);
+            this.label6.Location = new System.Drawing.Point(485, 80);
+            this.label6.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(96, 22);
+            this.label6.Size = new System.Drawing.Size(129, 30);
             this.label6.TabIndex = 107;
             this.label6.Text = "Direccion";
             // 
@@ -114,9 +118,10 @@ namespace StatusGeck.Empleado
             this.textBoxTelefono.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.textBoxTelefono.Font = new System.Drawing.Font("Century Gothic", 12F);
             this.textBoxTelefono.ForeColor = System.Drawing.Color.Black;
-            this.textBoxTelefono.Location = new System.Drawing.Point(472, 24);
+            this.textBoxTelefono.Location = new System.Drawing.Point(629, 30);
+            this.textBoxTelefono.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.textBoxTelefono.Name = "textBoxTelefono";
-            this.textBoxTelefono.Size = new System.Drawing.Size(179, 20);
+            this.textBoxTelefono.Size = new System.Drawing.Size(239, 25);
             this.textBoxTelefono.TabIndex = 106;
             this.textBoxTelefono.Text = "Escribir...";
             // 
@@ -125,9 +130,10 @@ namespace StatusGeck.Empleado
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label5.ForeColor = System.Drawing.Color.Black;
-            this.label5.Location = new System.Drawing.Point(364, 22);
+            this.label5.Location = new System.Drawing.Point(485, 27);
+            this.label5.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(87, 22);
+            this.label5.Size = new System.Drawing.Size(117, 30);
             this.label5.TabIndex = 105;
             this.label5.Text = "Telefono";
             // 
@@ -137,9 +143,10 @@ namespace StatusGeck.Empleado
             this.textBoxCorreo.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.textBoxCorreo.Font = new System.Drawing.Font("Century Gothic", 12F);
             this.textBoxCorreo.ForeColor = System.Drawing.Color.Black;
-            this.textBoxCorreo.Location = new System.Drawing.Point(142, 103);
+            this.textBoxCorreo.Location = new System.Drawing.Point(189, 127);
+            this.textBoxCorreo.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.textBoxCorreo.Name = "textBoxCorreo";
-            this.textBoxCorreo.Size = new System.Drawing.Size(179, 20);
+            this.textBoxCorreo.Size = new System.Drawing.Size(239, 25);
             this.textBoxCorreo.TabIndex = 104;
             this.textBoxCorreo.Text = "Escribir...";
             // 
@@ -148,9 +155,10 @@ namespace StatusGeck.Empleado
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.ForeColor = System.Drawing.Color.Black;
-            this.label4.Location = new System.Drawing.Point(45, 106);
+            this.label4.Location = new System.Drawing.Point(60, 130);
+            this.label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(73, 22);
+            this.label4.Size = new System.Drawing.Size(95, 30);
             this.label4.TabIndex = 103;
             this.label4.Text = "Correo";
             // 
@@ -160,9 +168,10 @@ namespace StatusGeck.Empleado
             this.textBoxDireccion.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.textBoxDireccion.Font = new System.Drawing.Font("Century Gothic", 12F);
             this.textBoxDireccion.ForeColor = System.Drawing.Color.Black;
-            this.textBoxDireccion.Location = new System.Drawing.Point(472, 63);
+            this.textBoxDireccion.Location = new System.Drawing.Point(629, 78);
+            this.textBoxDireccion.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.textBoxDireccion.Name = "textBoxDireccion";
-            this.textBoxDireccion.Size = new System.Drawing.Size(179, 20);
+            this.textBoxDireccion.Size = new System.Drawing.Size(239, 25);
             this.textBoxDireccion.TabIndex = 101;
             this.textBoxDireccion.Text = "Escribir...";
             // 
@@ -171,9 +180,10 @@ namespace StatusGeck.Empleado
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.Black;
-            this.label1.Location = new System.Drawing.Point(45, 65);
+            this.label1.Location = new System.Drawing.Point(60, 80);
+            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(84, 22);
+            this.label1.Size = new System.Drawing.Size(110, 30);
             this.label1.TabIndex = 100;
             this.label1.Text = "Nombre";
             // 
@@ -228,7 +238,7 @@ namespace StatusGeck.Empleado
             this.lineShape1,
             this.lineShape6,
             this.lineShape2});
-            this.shapeContainer1.Size = new System.Drawing.Size(769, 400);
+            this.shapeContainer1.Size = new System.Drawing.Size(1025, 492);
             this.shapeContainer1.TabIndex = 111;
             this.shapeContainer1.TabStop = false;
             // 
@@ -243,14 +253,14 @@ namespace StatusGeck.Empleado
             this.dataGridView1.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dataGridView1.CausesValidation = false;
             this.dataGridView1.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
-            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle7.BackColor = System.Drawing.Color.WhiteSmoke;
-            dataGridViewCellStyle7.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle7.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle7.SelectionBackColor = System.Drawing.SystemColors.ControlLight;
-            dataGridViewCellStyle7.SelectionForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle7.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle7;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.WhiteSmoke;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.ControlLight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.dataGridView1.ColumnHeadersHeight = 22;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
             this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
@@ -262,80 +272,88 @@ namespace StatusGeck.Empleado
             this.ColumnCargo});
             this.dataGridView1.EnableHeadersVisualStyles = false;
             this.dataGridView1.GridColor = System.Drawing.Color.WhiteSmoke;
-            this.dataGridView1.Location = new System.Drawing.Point(26, 164);
+            this.dataGridView1.Location = new System.Drawing.Point(35, 202);
+            this.dataGridView1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.ReadOnly = true;
             this.dataGridView1.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
-            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle8.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(66)))), ((int)(((byte)(91)))));
-            dataGridViewCellStyle8.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle8.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle8.SelectionBackColor = System.Drawing.Color.SteelBlue;
-            dataGridViewCellStyle8.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridView1.RowHeadersDefaultCellStyle = dataGridViewCellStyle8;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(45)))), ((int)(((byte)(66)))), ((int)(((byte)(91)))));
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.SteelBlue;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridView1.RowHeadersDefaultCellStyle = dataGridViewCellStyle2;
             this.dataGridView1.RowHeadersVisible = false;
-            dataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.TopCenter;
-            dataGridViewCellStyle9.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle9.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle9.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle9.SelectionBackColor = System.Drawing.SystemColors.ControlLight;
-            dataGridViewCellStyle9.SelectionForeColor = System.Drawing.Color.Black;
-            this.dataGridView1.RowsDefaultCellStyle = dataGridViewCellStyle9;
+            this.dataGridView1.RowHeadersWidth = 51;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.TopCenter;
+            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.ControlLight;
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.Black;
+            this.dataGridView1.RowsDefaultCellStyle = dataGridViewCellStyle3;
             this.dataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataGridView1.Size = new System.Drawing.Size(578, 204);
+            this.dataGridView1.Size = new System.Drawing.Size(771, 251);
             this.dataGridView1.TabIndex = 114;
             // 
             // ColumnIdentificacion
             // 
             this.ColumnIdentificacion.HeaderText = "Cedula";
+            this.ColumnIdentificacion.MinimumWidth = 6;
             this.ColumnIdentificacion.Name = "ColumnIdentificacion";
             this.ColumnIdentificacion.ReadOnly = true;
-            this.ColumnIdentificacion.Width = 80;
             // 
             // ColumnNombre
             // 
             this.ColumnNombre.HeaderText = "Nombre";
+            this.ColumnNombre.MinimumWidth = 6;
             this.ColumnNombre.Name = "ColumnNombre";
             this.ColumnNombre.ReadOnly = true;
-            this.ColumnNombre.Width = 85;
+            this.ColumnNombre.Width = 105;
             // 
             // ColumnApellido
             // 
             this.ColumnApellido.HeaderText = "Telefono";
+            this.ColumnApellido.MinimumWidth = 6;
             this.ColumnApellido.Name = "ColumnApellido";
             this.ColumnApellido.ReadOnly = true;
-            this.ColumnApellido.Width = 86;
+            this.ColumnApellido.Width = 108;
             // 
             // ColumnSalario
             // 
             this.ColumnSalario.HeaderText = "Direccion";
+            this.ColumnSalario.MinimumWidth = 6;
             this.ColumnSalario.Name = "ColumnSalario";
             this.ColumnSalario.ReadOnly = true;
-            this.ColumnSalario.Width = 93;
+            this.ColumnSalario.Width = 116;
             // 
             // ColumnAfiliacion
             // 
             this.ColumnAfiliacion.HeaderText = "Correo Electronico";
+            this.ColumnAfiliacion.MinimumWidth = 6;
             this.ColumnAfiliacion.Name = "ColumnAfiliacion";
             this.ColumnAfiliacion.ReadOnly = true;
-            this.ColumnAfiliacion.Width = 153;
+            this.ColumnAfiliacion.Width = 192;
             // 
             // ColumnCargo
             // 
             this.ColumnCargo.HeaderText = "Cargo";
+            this.ColumnCargo.MinimumWidth = 6;
             this.ColumnCargo.Name = "ColumnCargo";
             this.ColumnCargo.ReadOnly = true;
-            this.ColumnCargo.Width = 74;
+            this.ColumnCargo.Width = 91;
             // 
             // textBoxBuscar
             // 
             this.textBoxBuscar.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.textBoxBuscar.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBoxBuscar.Location = new System.Drawing.Point(50, 136);
+            this.textBoxBuscar.Location = new System.Drawing.Point(67, 167);
+            this.textBoxBuscar.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.textBoxBuscar.Name = "textBoxBuscar";
-            this.textBoxBuscar.Size = new System.Drawing.Size(244, 22);
+            this.textBoxBuscar.Size = new System.Drawing.Size(324, 26);
             this.textBoxBuscar.TabIndex = 113;
             this.textBoxBuscar.Text = "Escribir...";
             // 
@@ -345,14 +363,16 @@ namespace StatusGeck.Empleado
             this.btnAgregar.IconColor = System.Drawing.Color.Black;
             this.btnAgregar.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btnAgregar.IconSize = 32;
-            this.btnAgregar.Location = new System.Drawing.Point(617, 163);
+            this.btnAgregar.Location = new System.Drawing.Point(823, 201);
+            this.btnAgregar.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnAgregar.Name = "btnAgregar";
-            this.btnAgregar.Size = new System.Drawing.Size(137, 55);
+            this.btnAgregar.Size = new System.Drawing.Size(183, 68);
             this.btnAgregar.TabIndex = 135;
             this.btnAgregar.Text = "Agregar Empleado";
             this.btnAgregar.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnAgregar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnAgregar.UseVisualStyleBackColor = true;
+            this.btnAgregar.Click += new System.EventHandler(this.btnAgregar_Click);
             // 
             // btnEliminar
             // 
@@ -360,9 +380,10 @@ namespace StatusGeck.Empleado
             this.btnEliminar.IconColor = System.Drawing.Color.Black;
             this.btnEliminar.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btnEliminar.IconSize = 32;
-            this.btnEliminar.Location = new System.Drawing.Point(617, 285);
+            this.btnEliminar.Location = new System.Drawing.Point(823, 351);
+            this.btnEliminar.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnEliminar.Name = "btnEliminar";
-            this.btnEliminar.Size = new System.Drawing.Size(137, 55);
+            this.btnEliminar.Size = new System.Drawing.Size(183, 68);
             this.btnEliminar.TabIndex = 134;
             this.btnEliminar.Text = "Eliminar Empleado";
             this.btnEliminar.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -379,9 +400,10 @@ namespace StatusGeck.Empleado
             this.btnEditar.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btnEditar.IconSize = 32;
             this.btnEditar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnEditar.Location = new System.Drawing.Point(617, 224);
+            this.btnEditar.Location = new System.Drawing.Point(823, 276);
+            this.btnEditar.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnEditar.Name = "btnEditar";
-            this.btnEditar.Size = new System.Drawing.Size(137, 55);
+            this.btnEditar.Size = new System.Drawing.Size(183, 68);
             this.btnEditar.TabIndex = 133;
             this.btnEditar.Text = "Editar Empleado";
             this.btnEditar.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -390,10 +412,10 @@ namespace StatusGeck.Empleado
             // 
             // FormularioEmpleado
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Control;
-            this.ClientSize = new System.Drawing.Size(769, 400);
+            this.ClientSize = new System.Drawing.Size(1025, 492);
             this.Controls.Add(this.btnAgregar);
             this.Controls.Add(this.btnEliminar);
             this.Controls.Add(this.btnEditar);
@@ -411,6 +433,7 @@ namespace StatusGeck.Empleado
             this.Controls.Add(this.label1);
             this.Controls.Add(this.shapeContainer1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "FormularioEmpleado";
             this.Text = "FormularioEmpleado";
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();

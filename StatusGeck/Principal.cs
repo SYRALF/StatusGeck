@@ -28,6 +28,10 @@ namespace StatusGeck
         public Principal(Administrador administrador,Entity.Empleado empleado)
         {
             InitializeComponent();
+            if(empleado != null)
+            {
+                btnEmpleado.Visible = false;
+            }
             leftBordenBtn = new Panel();
             leftBordenBtn.Size = new Size(7,60);
             panelMenu.Controls.Add(leftBordenBtn);

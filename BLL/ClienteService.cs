@@ -31,10 +31,19 @@ namespace BLL
             try
             {
                 conexion.Open();
-                repositorio.Guardar(cliente);
-                //mensajeEmail = email.EnviarEmail(persona);
-                conexion.Close();
-                return $"Se guardaron los datos satisfactoriamente: {mensajeEmail}";
+                if (repositorio.BuscarPorIdentificacion(cliente.Identificacion)==null)
+                {
+                    repositorio.Guardar(cliente);
+                    //mensajeEmail = email.EnviarEmail(persona);
+                    conexion.Close();
+                    return $"Se guardaron los datos satisfactoriamente {mensajeEmail}";
+                }
+                else
+                {
+                    conexion.Close();
+                    return $"Esta Identificacion Ya existe {mensajeEmail}";
+                }
+               
             }
             catch (Exception e)
             {
