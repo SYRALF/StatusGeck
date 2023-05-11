@@ -51,6 +51,8 @@ namespace StatusGeck.Cliente
             this.shapeContainer1 = new Microsoft.VisualBasic.PowerPacks.ShapeContainer();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.btnConsultar = new FontAwesome.Sharp.IconButton();
+            this.label2 = new System.Windows.Forms.Label();
+            this.textBoxApellido = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -325,12 +327,39 @@ namespace StatusGeck.Cliente
             this.btnConsultar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnConsultar.UseVisualStyleBackColor = true;
             // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.ForeColor = System.Drawing.Color.Black;
+            this.label2.Location = new System.Drawing.Point(477, 133);
+            this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(112, 30);
+            this.label2.TabIndex = 137;
+            this.label2.Text = "Apellido";
+            // 
+            // textBoxApellido
+            // 
+            this.textBoxApellido.BackColor = System.Drawing.SystemColors.Control;
+            this.textBoxApellido.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.textBoxApellido.Font = new System.Drawing.Font("Century Gothic", 12F);
+            this.textBoxApellido.ForeColor = System.Drawing.Color.Black;
+            this.textBoxApellido.Location = new System.Drawing.Point(621, 131);
+            this.textBoxApellido.Margin = new System.Windows.Forms.Padding(4);
+            this.textBoxApellido.Name = "textBoxApellido";
+            this.textBoxApellido.Size = new System.Drawing.Size(239, 25);
+            this.textBoxApellido.TabIndex = 136;
+            this.textBoxApellido.Text = "Escribir...";
+            // 
             // FormCliente
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(1025, 492);
+            this.Controls.Add(this.label2);
+            this.Controls.Add(this.textBoxApellido);
             this.Controls.Add(this.btnConsultar);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.btnAgregar);
@@ -353,6 +382,7 @@ namespace StatusGeck.Cliente
             this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "FormCliente";
             this.Text = "FormCliente";
+            this.Load += new System.EventHandler(this.FormCliente_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -383,5 +413,7 @@ namespace StatusGeck.Cliente
         private Microsoft.VisualBasic.PowerPacks.ShapeContainer shapeContainer1;
         private System.Windows.Forms.DataGridView dataGridView1;
         private FontAwesome.Sharp.IconButton btnConsultar;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.TextBox textBoxApellido;
     }
 }

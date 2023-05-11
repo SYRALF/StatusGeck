@@ -29,7 +29,21 @@ namespace StatusGeck.Cliente
         }
         public void Agregar()
         {
-            
+            Entity.Cliente cliente = new Entity.Cliente();
+
+            cliente.Identificacion = textBoxCedula.Text;
+            cliente.Nombre = textBoxNombre  .Text;
+            cliente.Telefono = textBoxTelefono.Text;
+            cliente.Apellido = textBoxApellido.Text;
+            cliente.Direccion = textBoxDireccion.Text;
+            cliente.Correo = textBoxCorreo.Text;
+
+
+        }
+
+        private void FormCliente_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }
