@@ -51,7 +51,7 @@ namespace StatusGeck.Cliente
             textBoxApellido.Text = "Escribir...";
             textBoxDireccion.Text = "Escribir...";
             textBoxCorreo.Text = "Escribir...";
-            var aa = dataGridView1.DataSource;
+            
             
         }
         private void FormCliente_Load(object sender, EventArgs e)
@@ -215,6 +215,13 @@ namespace StatusGeck.Cliente
             MessageBox.Show(respuesta, "Mensaje de Eliminacion", MessageBoxButtons.OKCancel, MessageBoxIcon.Information);
             Consultar();
             limpiar();
+        }
+
+        private void dataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            var datos = dataGridView1.DataSource;
+            int posicion = dataGridView1.CurrentRow.Index;
+
         }
     }
 }
