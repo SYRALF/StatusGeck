@@ -32,7 +32,7 @@ namespace StatusGeck.Cliente
             this.btnAgregar = new FontAwesome.Sharp.IconButton();
             this.btnEliminar = new FontAwesome.Sharp.IconButton();
             this.btnEditar = new FontAwesome.Sharp.IconButton();
-            this.textBoxBuscar = new System.Windows.Forms.TextBox();
+            this.textBuscar = new System.Windows.Forms.TextBox();
             this.textBoxCedula = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
             this.textBoxNombre = new System.Windows.Forms.TextBox();
@@ -53,6 +53,7 @@ namespace StatusGeck.Cliente
             this.btnConsultar = new FontAwesome.Sharp.IconButton();
             this.label2 = new System.Windows.Forms.Label();
             this.textBoxApellido = new System.Windows.Forms.TextBox();
+            this.btnlimpiar = new FontAwesome.Sharp.IconButton();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -88,6 +89,7 @@ namespace StatusGeck.Cliente
             this.btnEliminar.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnEliminar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnEliminar.UseVisualStyleBackColor = true;
+            this.btnEliminar.Click += new System.EventHandler(this.btnEliminar_Click);
             // 
             // btnEditar
             // 
@@ -109,17 +111,20 @@ namespace StatusGeck.Cliente
             this.btnEditar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnEditar.UseVisualStyleBackColor = false;
             // 
-            // textBoxBuscar
+            // textBuscar
             // 
-            this.textBoxBuscar.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            this.textBuscar.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.textBoxBuscar.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBoxBuscar.Location = new System.Drawing.Point(57, 175);
-            this.textBoxBuscar.Margin = new System.Windows.Forms.Padding(4);
-            this.textBoxBuscar.Name = "textBoxBuscar";
-            this.textBoxBuscar.Size = new System.Drawing.Size(324, 26);
-            this.textBoxBuscar.TabIndex = 128;
-            this.textBoxBuscar.Text = "Escribir...";
+            this.textBuscar.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBuscar.Location = new System.Drawing.Point(57, 175);
+            this.textBuscar.Margin = new System.Windows.Forms.Padding(4);
+            this.textBuscar.Name = "textBuscar";
+            this.textBuscar.Size = new System.Drawing.Size(324, 26);
+            this.textBuscar.TabIndex = 128;
+            this.textBuscar.Text = "Escribir...";
+            this.textBuscar.Enter += new System.EventHandler(this.textBuscar_Enter);
+            this.textBuscar.KeyUp += new System.Windows.Forms.KeyEventHandler(this.textBoxBuscar_KeyUp);
+            this.textBuscar.Leave += new System.EventHandler(this.textBuscar_Leave);
             // 
             // textBoxCedula
             // 
@@ -133,6 +138,8 @@ namespace StatusGeck.Cliente
             this.textBoxCedula.Size = new System.Drawing.Size(239, 25);
             this.textBoxCedula.TabIndex = 127;
             this.textBoxCedula.Text = "Escribir...";
+            this.textBoxCedula.Enter += new System.EventHandler(this.textBoxCedula_Enter);
+            this.textBoxCedula.Leave += new System.EventHandler(this.textBoxCedula_Leave);
             // 
             // label7
             // 
@@ -158,6 +165,8 @@ namespace StatusGeck.Cliente
             this.textBoxNombre.Size = new System.Drawing.Size(239, 25);
             this.textBoxNombre.TabIndex = 125;
             this.textBoxNombre.Text = "Escribir...";
+            this.textBoxNombre.Enter += new System.EventHandler(this.textBoxNombre_Enter);
+            this.textBoxNombre.Leave += new System.EventHandler(this.textBoxNombre_Leave);
             // 
             // label6
             // 
@@ -183,6 +192,8 @@ namespace StatusGeck.Cliente
             this.textBoxTelefono.Size = new System.Drawing.Size(239, 25);
             this.textBoxTelefono.TabIndex = 123;
             this.textBoxTelefono.Text = "Escribir...";
+            this.textBoxTelefono.Enter += new System.EventHandler(this.textBoxTelefono_Enter);
+            this.textBoxTelefono.Leave += new System.EventHandler(this.textBoxTelefono_Leave);
             // 
             // label5
             // 
@@ -208,6 +219,8 @@ namespace StatusGeck.Cliente
             this.textBoxCorreo.Size = new System.Drawing.Size(239, 25);
             this.textBoxCorreo.TabIndex = 121;
             this.textBoxCorreo.Text = "Escribir...";
+            this.textBoxCorreo.Enter += new System.EventHandler(this.textBoxCorreo_Enter);
+            this.textBoxCorreo.Leave += new System.EventHandler(this.textBoxCorreo_Leave);
             // 
             // label4
             // 
@@ -233,6 +246,8 @@ namespace StatusGeck.Cliente
             this.textBoxDireccion.Size = new System.Drawing.Size(239, 25);
             this.textBoxDireccion.TabIndex = 119;
             this.textBoxDireccion.Text = "Escribir...";
+            this.textBoxDireccion.Enter += new System.EventHandler(this.textBoxDireccion_Enter);
+            this.textBoxDireccion.Leave += new System.EventHandler(this.textBoxDireccion_Leave);
             // 
             // label1
             // 
@@ -326,6 +341,7 @@ namespace StatusGeck.Cliente
             this.btnConsultar.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnConsultar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnConsultar.UseVisualStyleBackColor = true;
+            this.btnConsultar.Click += new System.EventHandler(this.btnConsultar_Click);
             // 
             // label2
             // 
@@ -351,6 +367,25 @@ namespace StatusGeck.Cliente
             this.textBoxApellido.Size = new System.Drawing.Size(239, 25);
             this.textBoxApellido.TabIndex = 136;
             this.textBoxApellido.Text = "Escribir...";
+            this.textBoxApellido.Enter += new System.EventHandler(this.textBoxApellido_Enter);
+            this.textBoxApellido.Leave += new System.EventHandler(this.textBoxApellido_Leave);
+            // 
+            // btnlimpiar
+            // 
+            this.btnlimpiar.IconChar = FontAwesome.Sharp.IconChar.UserPlus;
+            this.btnlimpiar.IconColor = System.Drawing.Color.Black;
+            this.btnlimpiar.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.btnlimpiar.IconSize = 32;
+            this.btnlimpiar.Location = new System.Drawing.Point(827, 94);
+            this.btnlimpiar.Margin = new System.Windows.Forms.Padding(4);
+            this.btnlimpiar.Name = "btnlimpiar";
+            this.btnlimpiar.Size = new System.Drawing.Size(171, 38);
+            this.btnlimpiar.TabIndex = 138;
+            this.btnlimpiar.Text = "Limpiar";
+            this.btnlimpiar.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnlimpiar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnlimpiar.UseVisualStyleBackColor = true;
+            this.btnlimpiar.Click += new System.EventHandler(this.btnlimpiar_Click);
             // 
             // FormCliente
             // 
@@ -358,6 +393,7 @@ namespace StatusGeck.Cliente
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(1025, 492);
+            this.Controls.Add(this.btnlimpiar);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.textBoxApellido);
             this.Controls.Add(this.btnConsultar);
@@ -365,7 +401,7 @@ namespace StatusGeck.Cliente
             this.Controls.Add(this.btnAgregar);
             this.Controls.Add(this.btnEliminar);
             this.Controls.Add(this.btnEditar);
-            this.Controls.Add(this.textBoxBuscar);
+            this.Controls.Add(this.textBuscar);
             this.Controls.Add(this.textBoxCedula);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.textBoxNombre);
@@ -394,7 +430,7 @@ namespace StatusGeck.Cliente
         private FontAwesome.Sharp.IconButton btnAgregar;
         private FontAwesome.Sharp.IconButton btnEliminar;
         private FontAwesome.Sharp.IconButton btnEditar;
-        private System.Windows.Forms.TextBox textBoxBuscar;
+        private System.Windows.Forms.TextBox textBuscar;
         private System.Windows.Forms.TextBox textBoxCedula;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.TextBox textBoxNombre;
@@ -415,5 +451,6 @@ namespace StatusGeck.Cliente
         private FontAwesome.Sharp.IconButton btnConsultar;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TextBox textBoxApellido;
+        private FontAwesome.Sharp.IconButton btnlimpiar;
     }
 }

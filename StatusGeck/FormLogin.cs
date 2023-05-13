@@ -27,7 +27,7 @@ namespace StatusGeck
             var connectionString = ConfigurationManager.ConnectionStrings["DefaultConnection"].ConnectionString;
             administradorService = new AdministradorService(connectionString);
             empleadoService = new EmpleadoService(connectionString);
-            txtContraseña.UseSystemPasswordChar = true;
+            //txtContraseña.UseSystemPasswordChar = true;
         }
         [DllImport("user32.DLL", EntryPoint = "ReleaseCapture")]
         private extern static void ReleaseCapture();

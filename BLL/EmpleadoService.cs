@@ -148,6 +148,7 @@ namespace BLL
             }
             finally { conexion.Close(); }
         }
+       
 
     }
     public class BusquedaEmpleadoRespuesta

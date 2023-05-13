@@ -134,7 +134,10 @@ namespace BLL
             }
             finally { conexion.Close(); }
         }
-
+        public List<Cliente> consultarCedula(string letra)
+        {
+            return repositorio.consultarCedula(letra);
+        }
     }
     public class BusquedaClienteRespuesta
     {

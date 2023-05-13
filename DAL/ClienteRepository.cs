@@ -11,7 +11,7 @@ namespace DAL
     public class ClienteRepository
     {
         private readonly SqlConnection _connection;
-        private readonly List<Cliente> clientes;
+        public List<Cliente> clientes;
         public ClienteRepository(ConnectionManager connection)
         {
             _connection = connection._conexion;
@@ -102,5 +102,13 @@ namespace DAL
                 var filas = command.ExecuteNonQuery();
             }
         }
+
+        public List<Cliente> consultarCedula(string letra)
+        {
+            List<Cliente> listacliente = clientes;
+            listacliente = clientes.Where(L => L.Identificacion.Contains(letra)).ToList();
+            return listacliente;
+        }
     }
 }
+
