@@ -222,6 +222,7 @@ namespace StatusGeck.Cliente
             var datos = dataGridView1.DataSource;
             int posicion = dataGridView1.CurrentRow.Index;
 
+
         }
     }
 }
