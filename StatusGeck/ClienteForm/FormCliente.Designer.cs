@@ -76,6 +76,7 @@ namespace StatusGeck.Cliente
             // 
             // btnEliminar
             // 
+            this.btnEliminar.Enabled = false;
             this.btnEliminar.IconChar = FontAwesome.Sharp.IconChar.UserXmark;
             this.btnEliminar.IconColor = System.Drawing.Color.Black;
             this.btnEliminar.IconFont = FontAwesome.Sharp.IconFont.Auto;
@@ -94,6 +95,7 @@ namespace StatusGeck.Cliente
             // btnEditar
             // 
             this.btnEditar.BackColor = System.Drawing.Color.Gainsboro;
+            this.btnEditar.Enabled = false;
             this.btnEditar.Font = new System.Drawing.Font("Mongolian Baiti", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnEditar.ForeColor = System.Drawing.Color.Black;
             this.btnEditar.IconChar = FontAwesome.Sharp.IconChar.UserEdit;
@@ -110,6 +112,7 @@ namespace StatusGeck.Cliente
             this.btnEditar.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnEditar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnEditar.UseVisualStyleBackColor = false;
+            this.btnEditar.Click += new System.EventHandler(this.btnEditar_Click);
             // 
             // textBuscar
             // 

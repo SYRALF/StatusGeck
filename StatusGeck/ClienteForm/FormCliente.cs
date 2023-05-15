@@ -51,8 +51,11 @@ namespace StatusGeck.Cliente
             textBoxApellido.Text = "Escribir...";
             textBoxDireccion.Text = "Escribir...";
             textBoxCorreo.Text = "Escribir...";
-            
-            
+            btnEditar.Enabled = false;
+            textBoxCedula.Enabled = true;
+
+            btnAgregar.Enabled = true;
+            btnEliminar.Enabled = false;
         }
         private void FormCliente_Load(object sender, EventArgs e)
         {
@@ -219,10 +222,46 @@ namespace StatusGeck.Cliente
 
         private void dataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            var datos = dataGridView1.DataSource;
-            int posicion = dataGridView1.CurrentRow.Index;
+            string indetinficacion = dataGridView1.CurrentRow.Cells[0].Value.ToString();
 
+            Entity.Cliente cliente = new Entity.Cliente();
 
+            var respuesta = clienteService.BuscarxIdentificacion(indetinficacion);
+
+            cliente = respuesta.cliente;
+
+            textBoxCedula.Text = cliente.Identificacion;
+            textBoxApellido.Text = cliente.Nombre;
+            textBoxNombre.Text = cliente.Nombre;
+            textBoxDireccion.Text = cliente.Direccion;
+            textBoxCorreo.Text = cliente.Correo;
+            textBoxTelefono.Text = cliente.Telefono;
+
+            btnEditar.Enabled = true;
+            textBoxCedula.Enabled = false;
+            btnAgregar.Enabled = false;
+            btnEliminar.Enabled = true;
+        }
+
+        private void btnEditar_Click(object sender, EventArgs e)
+        {
+            Editar();
+        }
+        public void Editar()
+        {
+            Entity.Cliente cliente = new Entity.Cliente();
+
+            cliente.Identificacion = textBoxCedula.Text;
+            cliente.Nombre = textBoxNombre.Text;
+            cliente.Telefono = textBoxTelefono.Text;
+            cliente.Apellido = textBoxApellido.Text;
+            cliente.Direccion = textBoxDireccion.Text;
+            cliente.Correo = textBoxCorreo.Text;
+
+            string respuesta = clienteService.Modificar(cliente);
+            MessageBox.Show(respuesta, "Mensaje de Editar", MessageBoxButtons.OKCancel, MessageBoxIcon.Information);
+            Consultar();
+            limpiar();
         }
     }
 }
