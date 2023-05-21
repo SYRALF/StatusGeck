@@ -100,6 +100,7 @@ namespace StatusGeck.Empleado
             this.textBoxNombre.Size = new System.Drawing.Size(239, 25);
             this.textBoxNombre.TabIndex = 108;
             this.textBoxNombre.Text = "Escribir...";
+            this.textBoxNombre.Enter += new System.EventHandler(this.textBoxNombre_Enter);
             this.textBoxNombre.Leave += new System.EventHandler(this.textBoxNombre_Leave);
             // 
             // label6
@@ -126,6 +127,8 @@ namespace StatusGeck.Empleado
             this.textBoxTelefono.Size = new System.Drawing.Size(239, 25);
             this.textBoxTelefono.TabIndex = 106;
             this.textBoxTelefono.Text = "Escribir...";
+            this.textBoxTelefono.Enter += new System.EventHandler(this.textBoxTelefono_Enter);
+            this.textBoxTelefono.Leave += new System.EventHandler(this.textBoxTelefono_Leave);
             // 
             // label5
             // 
@@ -152,6 +155,8 @@ namespace StatusGeck.Empleado
             this.textBoxCorreo.Size = new System.Drawing.Size(239, 25);
             this.textBoxCorreo.TabIndex = 104;
             this.textBoxCorreo.Text = "Escribir...";
+            this.textBoxCorreo.Enter += new System.EventHandler(this.textBoxCorreo_Enter);
+            this.textBoxCorreo.Leave += new System.EventHandler(this.textBoxCorreo_Leave);
             // 
             // label4
             // 
@@ -177,6 +182,8 @@ namespace StatusGeck.Empleado
             this.textBoxDireccion.Size = new System.Drawing.Size(239, 25);
             this.textBoxDireccion.TabIndex = 101;
             this.textBoxDireccion.Text = "Escribir...";
+            this.textBoxDireccion.Enter += new System.EventHandler(this.textBoxDireccion_Enter);
+            this.textBoxDireccion.Leave += new System.EventHandler(this.textBoxDireccion_Leave);
             // 
             // label1
             // 
@@ -347,6 +354,8 @@ namespace StatusGeck.Empleado
             this.textBoxApellido.TabIndex = 138;
             this.textBoxApellido.Text = "Escribir...";
             this.textBoxApellido.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
+            this.textBoxApellido.Enter += new System.EventHandler(this.textBoxApellido_Enter);
+            this.textBoxApellido.Leave += new System.EventHandler(this.textBoxApellido_Leave);
             // 
             // label3
             // 
@@ -384,6 +393,8 @@ namespace StatusGeck.Empleado
             this.textBoxUsuario.Size = new System.Drawing.Size(239, 25);
             this.textBoxUsuario.TabIndex = 141;
             this.textBoxUsuario.Text = "Escribir...";
+            this.textBoxUsuario.Enter += new System.EventHandler(this.textBoxUsuario_Enter);
+            this.textBoxUsuario.Leave += new System.EventHandler(this.textBoxUsuario_Leave);
             // 
             // textBoxContraseña
             // 
@@ -398,6 +409,8 @@ namespace StatusGeck.Empleado
             this.textBoxContraseña.TabIndex = 142;
             this.textBoxContraseña.Text = "Escribir...";
             this.textBoxContraseña.TextChanged += new System.EventHandler(this.textBoxContraseña_TextChanged);
+            this.textBoxContraseña.Enter += new System.EventHandler(this.textBoxContraseña_Enter);
+            this.textBoxContraseña.Leave += new System.EventHandler(this.textBoxContraseña_Leave);
             // 
             // label9
             // 
@@ -423,6 +436,8 @@ namespace StatusGeck.Empleado
             this.textBoxConfirmar.Size = new System.Drawing.Size(239, 25);
             this.textBoxConfirmar.TabIndex = 144;
             this.textBoxConfirmar.Text = "Escribir...";
+            this.textBoxConfirmar.Enter += new System.EventHandler(this.textBoxConfirmar_Enter);
+            this.textBoxConfirmar.Leave += new System.EventHandler(this.textBoxConfirmar_Leave);
             // 
             // FormularioEmpleado
             // 

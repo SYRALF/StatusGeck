@@ -30,7 +30,7 @@ namespace DAL
                 command.Parameters.AddWithValue("@Direccion", empleado.Direccion);
                 command.Parameters.AddWithValue("@Correo", empleado.Correo);
                 command.Parameters.AddWithValue("@Usuario", empleado.Usuario);
-                command.Parameters.AddWithValue("@Correo", empleado.Correo);
+                command.Parameters.AddWithValue("@Contraseña", empleado.Contraseña);
                 var filas = command.ExecuteNonQuery();
             }
         }

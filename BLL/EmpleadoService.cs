@@ -2,6 +2,7 @@
 using Entity;
 using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -71,13 +72,14 @@ namespace BLL
             try
             {
                 conexion.Open();
-                consulta.empleados = repositorio.ConsultarTodos();
+                consulta = new ConsultaRespuestaEmpleado(repositorio.ConsultarTodos());
                 consulta.Mensaje = "Se consultó correctamente";
                 return consulta;
             }
             catch (Exception e)
             {
                 consulta.Mensaje = $"Error de la Aplicacion: {e.Message}";
+                consulta.listempleados = null;
                 return consulta;
             }
             finally
@@ -160,6 +162,29 @@ namespace BLL
     public class ConsultaRespuestaEmpleado
     {
         public string Mensaje { get; set; }
-        public List<Empleado> empleados;
+        public List<Persona> listempleados;
+
+        public ConsultaRespuestaEmpleado(List<Empleado> empleados)
+        {
+            listempleados = new List<Persona>();
+            foreach (Empleado e in empleados)
+            {
+                Persona persona = new Persona();
+                persona.Identificacion = e.Identificacion;
+                persona.Nombre = e.Nombre;
+                persona.Telefono = e.Telefono;
+                persona.Apellido = e.Apellido;
+                persona.Direccion = e.Direccion;
+                persona.Correo = e.Correo;
+                listempleados.Add(persona);
+            }
+        }
+        public ConsultaRespuestaEmpleado()
+        {
+
+        }
     }
+    
+
+    
 }
