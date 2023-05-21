@@ -110,7 +110,7 @@ namespace StatusGeck.Cliente
         {
             if (this.textBoxCedula.Text.Equals(""))
             {
-                textBuscar.Text = "Escribir...";
+                textBoxCedula.Text = "Escribir...";
             }
         }
 
