@@ -254,5 +254,69 @@ namespace StatusGeck.Empleado
                 textBoxConfirmar.UseSystemPasswordChar = true;
             }
         }
+
+        private void btnEditar_Click(object sender, EventArgs e)
+        {
+            Editar();
+        }
+        public void Editar()
+        {
+            Entity.Empleado empleado = new Entity.Empleado();
+
+            empleado.Identificacion = textBoxCedula.Text;
+            empleado.Nombre = textBoxNombre.Text;
+            empleado.Telefono = textBoxTelefono.Text;
+            empleado.Apellido = textBoxApellido.Text;
+            empleado.Direccion = textBoxDireccion.Text;
+            empleado.Correo = textBoxCorreo.Text;
+            empleado.Usuario = textBoxUsuario.Text;
+            empleado.Contraseña = textBoxContraseña.Text;
+
+            string respuesta = empleadoService.Modificar(empleado);
+            MessageBox.Show(respuesta, "Mensaje de Editar", MessageBoxButtons.OKCancel, MessageBoxIcon.Information);
+            Consultar();
+            limpiar();
+
+        }
+
+        private void dataGridView2_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            string indetinficacion = dataGridView2.CurrentRow.Cells[0].Value.ToString();
+
+            Entity.Empleado empleado = new Entity.Empleado();
+
+            var respuesta = empleadoService.BuscarxIdentificacion(indetinficacion);
+
+            empleado = respuesta.empleado;
+
+            textBoxCedula.Text = empleado.Identificacion;
+            textBoxApellido.Text = empleado.Apellido;
+            textBoxNombre.Text = empleado.Nombre;
+            textBoxDireccion.Text = empleado    .Direccion;
+            textBoxCorreo.Text = empleado.Correo;
+            textBoxTelefono.Text = empleado.Telefono;
+            textBoxUsuario.Text = empleado.Usuario;
+            textBoxContraseña.Text = empleado.Contraseña;
+            textBoxConfirmar.Text = "Escribir...";
+
+            textBoxContraseña.UseSystemPasswordChar = true;
+
+            btnEditar.Enabled = true;
+            textBoxCedula.Enabled = false;
+            btnAgregar.Enabled = false;
+            btnEliminar.Enabled = true;
+        }
+
+        private void btnEliminar_Click(object sender, EventArgs e)
+        {
+            Eliminar();
+        }
+        public void Eliminar()
+        {
+            var respuesta = empleadoService.Eliminar(textBoxCedula.Text);
+            MessageBox.Show(respuesta, "Mensaje de Eliminacion", MessageBoxButtons.OKCancel, MessageBoxIcon.Information);
+            Consultar();
+            limpiar();
+        }
     }
 }

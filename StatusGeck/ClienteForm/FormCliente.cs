@@ -43,6 +43,7 @@ namespace StatusGeck.Cliente
             Consultar();
             limpiar();
         }
+
         public void limpiar()
         {
             textBoxCedula.Text = "Escribir...";
