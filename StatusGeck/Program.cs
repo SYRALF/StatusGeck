@@ -16,7 +16,9 @@ namespace StatusGeck
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new FormLogin());
+            Entity.Administrador administrador = new Entity.Administrador();
+            Entity.Empleado empleado = new Entity.Empleado();
+            Application.Run(new Principal(administrador,empleado));
         }
     }
 }
