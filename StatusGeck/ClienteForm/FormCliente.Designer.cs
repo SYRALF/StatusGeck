@@ -48,7 +48,6 @@ namespace StatusGeck.Cliente
             this.lineShape1 = new Microsoft.VisualBasic.PowerPacks.LineShape();
             this.lineShape2 = new Microsoft.VisualBasic.PowerPacks.LineShape();
             this.shapeContainer1 = new Microsoft.VisualBasic.PowerPacks.ShapeContainer();
-            this.lineShape3 = new Microsoft.VisualBasic.PowerPacks.LineShape();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.btnConsultar = new FontAwesome.Sharp.IconButton();
             this.label2 = new System.Windows.Forms.Label();
@@ -116,10 +115,8 @@ namespace StatusGeck.Cliente
             // 
             // textBuscar
             // 
-            this.textBuscar.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
             this.textBuscar.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBuscar.Location = new System.Drawing.Point(43, 142);
+            this.textBuscar.Location = new System.Drawing.Point(43, 151);
             this.textBuscar.Name = "textBuscar";
             this.textBuscar.Size = new System.Drawing.Size(244, 22);
             this.textBuscar.TabIndex = 128;
@@ -155,8 +152,6 @@ namespace StatusGeck.Cliente
             // 
             // textBoxNombre
             // 
-            this.textBoxNombre.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left)));
             this.textBoxNombre.BackColor = System.Drawing.SystemColors.Control;
             this.textBoxNombre.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.textBoxNombre.Font = new System.Drawing.Font("Century Gothic", 12F);
@@ -182,6 +177,7 @@ namespace StatusGeck.Cliente
             // 
             // textBoxTelefono
             // 
+            this.textBoxTelefono.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.textBoxTelefono.BackColor = System.Drawing.SystemColors.Control;
             this.textBoxTelefono.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.textBoxTelefono.Font = new System.Drawing.Font("Century Gothic", 12F);
@@ -196,7 +192,7 @@ namespace StatusGeck.Cliente
             // 
             // label5
             // 
-            this.label5.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.label5.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label5.ForeColor = System.Drawing.Color.Black;
@@ -266,6 +262,7 @@ namespace StatusGeck.Cliente
             // 
             // lineShape5
             // 
+            this.lineShape5.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.lineShape5.Name = "lineShape5";
             this.lineShape5.X1 = 130;
             this.lineShape5.X2 = 309;
@@ -294,7 +291,6 @@ namespace StatusGeck.Cliente
             this.shapeContainer1.Margin = new System.Windows.Forms.Padding(0);
             this.shapeContainer1.Name = "shapeContainer1";
             this.shapeContainer1.Shapes.AddRange(new Microsoft.VisualBasic.PowerPacks.Shape[] {
-            this.lineShape3,
             this.lineShape2,
             this.lineShape1,
             this.lineShape5,
@@ -302,14 +298,6 @@ namespace StatusGeck.Cliente
             this.shapeContainer1.Size = new System.Drawing.Size(769, 400);
             this.shapeContainer1.TabIndex = 133;
             this.shapeContainer1.TabStop = false;
-            // 
-            // lineShape3
-            // 
-            this.lineShape3.Name = "lineShape3";
-            this.lineShape3.X1 = 457;
-            this.lineShape3.X2 = 636;
-            this.lineShape3.Y1 = 47;
-            this.lineShape3.Y2 = 47;
             // 
             // dataGridView1
             // 
@@ -331,11 +319,12 @@ namespace StatusGeck.Cliente
             // 
             // btnConsultar
             // 
+            this.btnConsultar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.btnConsultar.IconChar = FontAwesome.Sharp.IconChar.UserPlus;
             this.btnConsultar.IconColor = System.Drawing.Color.Black;
             this.btnConsultar.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btnConsultar.IconSize = 32;
-            this.btnConsultar.Location = new System.Drawing.Point(439, 136);
+            this.btnConsultar.Location = new System.Drawing.Point(466, 142);
             this.btnConsultar.Name = "btnConsultar";
             this.btnConsultar.Size = new System.Drawing.Size(128, 31);
             this.btnConsultar.TabIndex = 135;
@@ -377,7 +366,7 @@ namespace StatusGeck.Cliente
             this.btnlimpiar.IconColor = System.Drawing.Color.Black;
             this.btnlimpiar.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btnlimpiar.IconSize = 32;
-            this.btnlimpiar.Location = new System.Drawing.Point(638, 101);
+            this.btnlimpiar.Location = new System.Drawing.Point(620, 101);
             this.btnlimpiar.Name = "btnlimpiar";
             this.btnlimpiar.Size = new System.Drawing.Size(128, 31);
             this.btnlimpiar.TabIndex = 138;
@@ -452,6 +441,5 @@ namespace StatusGeck.Cliente
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TextBox textBoxApellido;
         private FontAwesome.Sharp.IconButton btnlimpiar;
-        private Microsoft.VisualBasic.PowerPacks.LineShape lineShape3;
     }
 }

@@ -56,6 +56,9 @@ namespace StatusGeck
             // 
             // panelMenu
             // 
+            this.panelMenu.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left)));
+            this.panelMenu.AutoSize = true;
             this.panelMenu.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
             this.panelMenu.Controls.Add(this.btnGastos);
             this.panelMenu.Controls.Add(this.btnContabilidad);
@@ -63,7 +66,6 @@ namespace StatusGeck
             this.panelMenu.Controls.Add(this.btnEmpleado);
             this.panelMenu.Controls.Add(this.btnCliente);
             this.panelMenu.Controls.Add(this.panelLogo);
-            this.panelMenu.Dock = System.Windows.Forms.DockStyle.Left;
             this.panelMenu.ForeColor = System.Drawing.Color.DimGray;
             this.panelMenu.Location = new System.Drawing.Point(0, 0);
             this.panelMenu.Name = "panelMenu";
@@ -75,7 +77,7 @@ namespace StatusGeck
             this.btnGastos.Dock = System.Windows.Forms.DockStyle.Top;
             this.btnGastos.FlatAppearance.BorderSize = 0;
             this.btnGastos.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnGastos.Font = new System.Drawing.Font("Felix Titling", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnGastos.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnGastos.ForeColor = System.Drawing.Color.Gainsboro;
             this.btnGastos.IconChar = FontAwesome.Sharp.IconChar.ShoppingCart;
             this.btnGastos.IconColor = System.Drawing.Color.Gainsboro;
@@ -98,7 +100,7 @@ namespace StatusGeck
             this.btnContabilidad.Dock = System.Windows.Forms.DockStyle.Top;
             this.btnContabilidad.FlatAppearance.BorderSize = 0;
             this.btnContabilidad.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnContabilidad.Font = new System.Drawing.Font("Felix Titling", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnContabilidad.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnContabilidad.ForeColor = System.Drawing.Color.Gainsboro;
             this.btnContabilidad.IconChar = FontAwesome.Sharp.IconChar.ChartColumn;
             this.btnContabilidad.IconColor = System.Drawing.Color.Gainsboro;
@@ -121,7 +123,7 @@ namespace StatusGeck
             this.btnFactura.Dock = System.Windows.Forms.DockStyle.Top;
             this.btnFactura.FlatAppearance.BorderSize = 0;
             this.btnFactura.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnFactura.Font = new System.Drawing.Font("Felix Titling", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnFactura.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnFactura.ForeColor = System.Drawing.Color.Gainsboro;
             this.btnFactura.IconChar = FontAwesome.Sharp.IconChar.FileInvoiceDollar;
             this.btnFactura.IconColor = System.Drawing.Color.Gainsboro;
@@ -144,7 +146,7 @@ namespace StatusGeck
             this.btnEmpleado.Dock = System.Windows.Forms.DockStyle.Top;
             this.btnEmpleado.FlatAppearance.BorderSize = 0;
             this.btnEmpleado.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnEmpleado.Font = new System.Drawing.Font("Felix Titling", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnEmpleado.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnEmpleado.ForeColor = System.Drawing.Color.Gainsboro;
             this.btnEmpleado.IconChar = FontAwesome.Sharp.IconChar.UserTie;
             this.btnEmpleado.IconColor = System.Drawing.Color.Gainsboro;
@@ -167,7 +169,7 @@ namespace StatusGeck
             this.btnCliente.Dock = System.Windows.Forms.DockStyle.Top;
             this.btnCliente.FlatAppearance.BorderSize = 0;
             this.btnCliente.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnCliente.Font = new System.Drawing.Font("Felix Titling", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCliente.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnCliente.ForeColor = System.Drawing.Color.Gainsboro;
             this.btnCliente.IconChar = FontAwesome.Sharp.IconChar.UserPlus;
             this.btnCliente.IconColor = System.Drawing.Color.Gainsboro;
@@ -208,15 +210,17 @@ namespace StatusGeck
             // 
             // panelTitulo
             // 
+            this.panelTitulo.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.panelTitulo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
             this.panelTitulo.Controls.Add(this.btnMinimizar);
+            this.panelTitulo.Controls.Add(this.Sombra);
             this.panelTitulo.Controls.Add(this.btnCerrar);
             this.panelTitulo.Controls.Add(this.titulo);
             this.panelTitulo.Controls.Add(this.iconoFormulario);
-            this.panelTitulo.Dock = System.Windows.Forms.DockStyle.Top;
             this.panelTitulo.Location = new System.Drawing.Point(179, 0);
             this.panelTitulo.Name = "panelTitulo";
-            this.panelTitulo.Size = new System.Drawing.Size(769, 37);
+            this.panelTitulo.Size = new System.Drawing.Size(769, 46);
             this.panelTitulo.TabIndex = 1;
             this.panelTitulo.MouseDown += new System.Windows.Forms.MouseEventHandler(this.panelTitulo_MouseDown);
             // 
@@ -229,7 +233,7 @@ namespace StatusGeck
             this.btnMinimizar.IconColor = System.Drawing.Color.LightSlateGray;
             this.btnMinimizar.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btnMinimizar.IconSize = 31;
-            this.btnMinimizar.Location = new System.Drawing.Point(701, -3);
+            this.btnMinimizar.Location = new System.Drawing.Point(522, -3);
             this.btnMinimizar.Name = "btnMinimizar";
             this.btnMinimizar.Size = new System.Drawing.Size(36, 31);
             this.btnMinimizar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
@@ -246,7 +250,7 @@ namespace StatusGeck
             this.btnCerrar.IconColor = System.Drawing.Color.LightSlateGray;
             this.btnCerrar.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btnCerrar.IconSize = 28;
-            this.btnCerrar.Location = new System.Drawing.Point(743, 4);
+            this.btnCerrar.Location = new System.Drawing.Point(564, 4);
             this.btnCerrar.Name = "btnCerrar";
             this.btnCerrar.Size = new System.Drawing.Size(28, 30);
             this.btnCerrar.TabIndex = 2;
@@ -256,11 +260,11 @@ namespace StatusGeck
             // titulo
             // 
             this.titulo.AutoSize = true;
-            this.titulo.Font = new System.Drawing.Font("Felix Titling", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.titulo.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.titulo.ForeColor = System.Drawing.Color.Gainsboro;
             this.titulo.Location = new System.Drawing.Point(43, 15);
             this.titulo.Name = "titulo";
-            this.titulo.Size = new System.Drawing.Size(40, 13);
+            this.titulo.Size = new System.Drawing.Size(35, 13);
             this.titulo.TabIndex = 1;
             this.titulo.Text = "Home";
             // 
@@ -280,22 +284,23 @@ namespace StatusGeck
             // Sombra
             // 
             this.Sombra.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(24)))), ((int)(((byte)(58)))));
-            this.Sombra.Dock = System.Windows.Forms.DockStyle.Top;
-            this.Sombra.Location = new System.Drawing.Point(179, 37);
+            this.Sombra.Location = new System.Drawing.Point(0, 34);
             this.Sombra.Name = "Sombra";
             this.Sombra.Size = new System.Drawing.Size(769, 9);
             this.Sombra.TabIndex = 2;
             // 
             // pFormularios
             // 
+            this.pFormularios.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.pFormularios.BackColor = System.Drawing.Color.Silver;
             this.pFormularios.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pFormularios.BackgroundImage")));
             this.pFormularios.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.pFormularios.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pFormularios.Location = new System.Drawing.Point(179, 46);
+            this.pFormularios.Location = new System.Drawing.Point(179, 43);
             this.pFormularios.Name = "pFormularios";
-            this.pFormularios.Size = new System.Drawing.Size(769, 400);
-            this.pFormularios.TabIndex = 3;
+            this.pFormularios.Size = new System.Drawing.Size(769, 403);
+            this.pFormularios.TabIndex = 4;
             // 
             // Principal
             // 
@@ -304,7 +309,6 @@ namespace StatusGeck
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.ClientSize = new System.Drawing.Size(948, 446);
             this.Controls.Add(this.pFormularios);
-            this.Controls.Add(this.Sombra);
             this.Controls.Add(this.panelTitulo);
             this.Controls.Add(this.panelMenu);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
@@ -319,6 +323,7 @@ namespace StatusGeck
             ((System.ComponentModel.ISupportInitialize)(this.btnCerrar)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.iconoFormulario)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -337,7 +342,7 @@ namespace StatusGeck
         private FontAwesome.Sharp.IconPictureBox iconoFormulario;
         private FontAwesome.Sharp.IconPictureBox btnCerrar;
         private System.Windows.Forms.Panel Sombra;
-        private System.Windows.Forms.Panel pFormularios;
         private FontAwesome.Sharp.IconPictureBox btnMinimizar;
+        private System.Windows.Forms.Panel pFormularios;
     }
 }
