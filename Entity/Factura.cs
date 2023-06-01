@@ -10,11 +10,11 @@ namespace Entity
     {
         public string Codigo { get; set; }
         public DateTime Fecha { get; set; }
-        public Empleado empleado { get; set; }
+        public Cliente cliente { get; set; }
         public string Tipo { get; set; }
-        List<DetalleFactura> detalleFacturas { get; set; }
         public decimal ValorTotal { get; set; }
         public int CantidadTotal { get; set; }
+        public List<DetalleFactura> detalleFacturas { get; set; }
         public Factura()
         {
             detalleFacturas = new List<DetalleFactura>();
@@ -22,7 +22,7 @@ namespace Entity
         public void AgregarDetalle(string descripcion, int cantidad, decimal precioventa)
         {
             DetalleFactura detalleFactura = new DetalleFactura();
-            detalleFactura.factura.Codigo = Codigo;
+            detalleFactura.codigofactura = Codigo;
             detalleFactura.Descripcion = descripcion;
             detalleFactura.Cantidad = cantidad;
             detalleFactura.PrecioVenta = precioventa; ;

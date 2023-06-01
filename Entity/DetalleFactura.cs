@@ -8,14 +8,14 @@ namespace Entity
 {
     public class DetalleFactura
     {
-        public Factura factura { get; set; }
+        public string codigofactura { get; set; }
         public string Descripcion { get; set; }
         public int Cantidad { get; set; }
         public decimal PrecioVenta { get; set; }
         public decimal Subtotal { get; set;}
         public DetalleFactura()
         {
-            factura = new Factura();
+            
         }
         public void CalcularSubTotalCompra()
         {
