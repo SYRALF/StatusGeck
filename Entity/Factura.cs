@@ -11,7 +11,6 @@ namespace Entity
         public string Codigo { get; set; }
         public DateTime Fecha { get; set; }
         public Cliente cliente { get; set; }
-        public string Tipo { get; set; }
         public decimal ValorTotal { get; set; }
         public int CantidadTotal { get; set; }
         public List<DetalleFactura> detalleFacturas { get; set; }

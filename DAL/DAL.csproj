@@ -46,6 +46,7 @@
     <Compile Include="ConnectionManager.cs" />
     <Compile Include="DetalleFacturaRepository.cs" />
     <Compile Include="EmpleadoRepository.cs" />
+    <Compile Include="FacturaRepository.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
