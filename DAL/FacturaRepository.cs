@@ -31,5 +31,39 @@ namespace DAL
                 var filas = command.ExecuteNonQuery();
             }
         }
+        public List<Factura> ConsultarTodos()
+        {
+            empleados.Clear();
+            using (var command = _connection.CreateCommand())
+            {
+                command.CommandText = "Select * from Empleado";
+                var dataReader = command.ExecuteReader();
+                if (dataReader.HasRows)
+                {
+                    while (dataReader.Read())
+                    {
+                        Empleado empleado = DataReaderMapToEmpleado(dataReader);
+                        empleados.Add(empleado);
+                    }
+                }
+            }
+            return empleados;
+        }
+        private Empleado DataReaderMapToEmpleado(SqlDataReader dataReader)
+        {
+            if (!dataReader.HasRows) return null;
+
+            Empleado empleado = new Empleado();
+            empleado.Identificacion = (string)dataReader["Identificacion"];
+            empleado.Nombre = (string)dataReader["Nombre"];
+            empleado.Apellido = (string)dataReader["Apellido"];
+            empleado.Telefono = (string)dataReader["Telefono"];
+            empleado.Direccion = (string)dataReader["Direccion"];
+            empleado.Correo = (string)dataReader["Correo"];
+            empleado.Usuario = (string)dataReader["Usuario"];
+            empleado.Contraseña = (string)dataReader["Contraseña"];
+
+            return empleado;
+        }
     }
 }
