@@ -264,5 +264,10 @@ namespace StatusGeck.Cliente
             Consultar();
             limpiar();
         }
+
+        private void lineShape5_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
