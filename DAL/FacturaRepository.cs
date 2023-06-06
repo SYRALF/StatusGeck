@@ -31,24 +31,24 @@ namespace DAL
                 var filas = command.ExecuteNonQuery();
             }
         }
-        //public List<Factura> ConsultarTodos()
-        //{
-        //    empleados.Clear();
-        //    using (var command = _connection.CreateCommand())
-        //    {
-        //        command.CommandText = "Select * from Empleado";
-        //        var dataReader = command.ExecuteReader();
-        //        if (dataReader.HasRows)
-        //        {
-        //            while (dataReader.Read())
-        //            {
-        //                Empleado empleado = DataReaderMapToEmpleado(dataReader);
-        //                empleados.Add(empleado);
-        //            }
-        //        }
-        //    }
-        //    return empleados;
-        //}
+        public List<Factura> ConsultarTodos()
+        {
+            empleados.Clear();
+            using (var command = _connection.CreateCommand())
+            {
+                command.CommandText = "Select * from Empleado";
+                var dataReader = command.ExecuteReader();
+                if (dataReader.HasRows)
+                {
+                    while (dataReader.Read())
+                    {
+                        Empleado empleado = DataReaderMapToEmpleado(dataReader);
+                        empleados.Add(empleado);
+                    }
+                }
+            }
+            return empleados;
+        }
         private Empleado DataReaderMapToEmpleado(SqlDataReader dataReader)
         {
             if (!dataReader.HasRows) return null;
