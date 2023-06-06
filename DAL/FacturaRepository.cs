@@ -12,10 +12,13 @@ namespace DAL
     {
         private readonly SqlConnection _connection;
         private readonly List<Factura> facturas;
+        private ClienteRepository clienteRepository;
+        private DetalleFacturaRepository detalleFacturaRepository;
         public FacturaRepository(ConnectionManager connection)
         {
             _connection = connection._conexion;
             facturas = new List<Factura>();
+            
         }
         public void Guardar(Factura factura)
         {
@@ -30,40 +33,79 @@ namespace DAL
                 command.Parameters.AddWithValue("@ValorTotal", factura.ValorTotal);
                 var filas = command.ExecuteNonQuery();
             }
+            foreach(var item in factura.detalleFacturas)
+            {
+
+                detalleFacturaRepository.Guardar(item);
+            }
         }
         public List<Factura> ConsultarTodos()
         {
-            empleados.Clear();
+            facturas.Clear();
             using (var command = _connection.CreateCommand())
             {
-                command.CommandText = "Select * from Empleado";
+                command.CommandText = "Select * from Factura";
                 var dataReader = command.ExecuteReader();
                 if (dataReader.HasRows)
                 {
                     while (dataReader.Read())
                     {
-                        Empleado empleado = DataReaderMapToEmpleado(dataReader);
-                        empleados.Add(empleado);
+                        Factura factura = DataReaderMapToFactura(dataReader);
+                        facturas.Add(factura);
                     }
                 }
             }
-            return empleados;
+            return facturas;
         }
-        private Empleado DataReaderMapToEmpleado(SqlDataReader dataReader)
+        private Factura DataReaderMapToFactura(SqlDataReader dataReader)
         {
             if (!dataReader.HasRows) return null;
 
-            Empleado empleado = new Empleado();
-            empleado.Identificacion = (string)dataReader["Identificacion"];
-            empleado.Nombre = (string)dataReader["Nombre"];
-            empleado.Apellido = (string)dataReader["Apellido"];
-            empleado.Telefono = (string)dataReader["Telefono"];
-            empleado.Direccion = (string)dataReader["Direccion"];
-            empleado.Correo = (string)dataReader["Correo"];
-            empleado.Usuario = (string)dataReader["Usuario"];
-            empleado.Contraseña = (string)dataReader["Contraseña"];
+            Factura factura = new Factura();
+            factura.Codigo = (string)dataReader["Codigo"];
+            factura.Fecha = (DateTime)dataReader["Fecha"];
+            string identificacion = (string)dataReader["Identificacion"];
 
-            return empleado;
+            factura.cliente = clienteRepository.BuscarPorIdentificacion(identificacion);
+
+
+            factura.CantidadTotal = (int)dataReader["CantidadTotal"];
+            factura.ValorTotal = (decimal)dataReader["ValorTotal"];
+
+            factura.detalleFacturas = detalleFacturaRepository.ConsultardetalleFactura(factura.Codigo);
+            
+
+            return factura;
+        }
+        public Factura consultarFactura(string codigo)
+        {
+            Factura factura=null;
+            using (var command = _connection.CreateCommand())
+            {
+                command.CommandText = "Select * from Factura where Codigo=@Codigo";
+                command.Parameters.AddWithValue("@Codigo", codigo);
+                var dataReader = command.ExecuteReader();
+                if (dataReader.HasRows)
+                {
+                    while (dataReader.Read())
+                    {
+                        factura = DataReaderMapToFactura(dataReader);
+                        facturas.Add(factura);
+                    }
+                }
+            }
+            return factura;
+        }
+        public void Eliminar(Factura factura)
+        {
+            using (var command = _connection.CreateCommand())
+            {
+                command.CommandText = "Delete from Factura where Codigo=@Codigo";
+                command.Parameters.AddWithValue("@Codigo", factura.Codigo);
+                command.ExecuteNonQuery();
+            }
+            detalleFacturaRepository.Eliminar(factura.Codigo);
+            
         }
     }
 }
