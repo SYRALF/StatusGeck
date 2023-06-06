@@ -16,12 +16,14 @@ namespace StatusGeck.Factura
     public partial class FormFactura : Form
     {
         ClienteService clienteService;
+        FacturaService facturaService;
         
         public FormFactura()
         {
             InitializeComponent();
             var connectionString = ConfigurationManager.ConnectionStrings["DefaultConnection"].ConnectionString;
             clienteService = new ClienteService(connectionString);
+            facturaService = new FacturaService(connectionString);
         }
 
         
@@ -42,7 +44,21 @@ namespace StatusGeck.Factura
 
         private void iconPictureBox1_Click(object sender, EventArgs e)
         {
+            BuscarCLiente();
+        }
+        public void BuscarCLiente()
+        {
+            var respuesta = clienteService.BuscarxIdentificacion(textBoxCedula.Text);
+            if(respuesta.cliente != null)
+            {
 
+                textBoxNombre.Text = respuesta.cliente.Nombre;
+            }
+            else
+            {
+
+                MessageBox.Show(respuesta.Mensaje, "Mensaje de Busqueda", MessageBoxButtons.OKCancel, MessageBoxIcon.Exclamation);
+            }
         }
     }
 

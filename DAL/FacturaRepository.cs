@@ -18,7 +18,8 @@ namespace DAL
         {
             _connection = connection._conexion;
             facturas = new List<Factura>();
-            
+            clienteRepository = new ClienteRepository(connection);
+            detalleFacturaRepository = new DetalleFacturaRepository(connection);
         }
         public void Guardar(Factura factura)
         {

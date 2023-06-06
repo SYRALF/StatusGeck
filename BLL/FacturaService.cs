@@ -79,7 +79,7 @@ namespace BLL
                 conexion.Open();
                 respuesta.Factura = repositorio.consultarFactura(codigo);
                 conexion.Close();
-                respuesta.Mensaje = (respuesta.cliente != null) ? "Se encontró el cliente buscado" : "El cliente buscado no existe";
+                respuesta.Mensaje = (respuesta.Factura != null) ? "Se encontró el cliente buscado" : "El cliente buscado no existe";
                 respuesta.Error = false;
                 return respuesta;
             }
