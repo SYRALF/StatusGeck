@@ -25,13 +25,25 @@ namespace StatusGeck.Factura
             clienteService = new ClienteService(connectionString);
             facturaService = new FacturaService(connectionString);
         }
-
+        public void Limpiar()
+        {
+            textBoxCedula.Text = "Escribir...";
+            textBoxNombre.Text = "";
+            textBoxCodigo.Text = "Escribir....";
+            textBoxcantidadtotal.Text = "0";
+            textBoxpreciototal.Text = "0";
+            limpiardetalles();
+            btnEliminar.Enabled = false;
+        }
         
         private void btnAgregar_Click(object sender, EventArgs e)
         {
             
         }
+        public void AgregarDetalles()
+        {
 
+        }
         private void btnEditar_Click(object sender, EventArgs e)
         {
             
@@ -155,6 +167,17 @@ namespace StatusGeck.Factura
         private void textBoxpreciototal_Enter(object sender, EventArgs e)
         {
 
+        }
+
+        private void btnlimpiardetalles_Click(object sender, EventArgs e)
+        {
+            limpiardetalles();
+        }
+        public void limpiardetalles()
+        {
+            textBoxDescripcion.Text = "Escribir...";
+            textBoxCantidad.Text = "Escribir...";
+            textBoxPrecio.Text = "Escribir...";
         }
     }
 

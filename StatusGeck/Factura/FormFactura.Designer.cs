@@ -63,6 +63,7 @@ namespace StatusGeck.Factura
             this.btnlimpiardetalles = new FontAwesome.Sharp.IconButton();
             this.lineShape4 = new Microsoft.VisualBasic.PowerPacks.LineShape();
             this.lineShape8 = new Microsoft.VisualBasic.PowerPacks.LineShape();
+            this.btnnuevaFactura = new FontAwesome.Sharp.IconButton();
             ((System.ComponentModel.ISupportInitialize)(this.iconPictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
@@ -350,6 +351,7 @@ namespace StatusGeck.Factura
             // 
             // btnEliminar
             // 
+            this.btnEliminar.Enabled = false;
             this.btnEliminar.IconChar = FontAwesome.Sharp.IconChar.FileCircleXmark;
             this.btnEliminar.IconColor = System.Drawing.Color.Black;
             this.btnEliminar.IconFont = FontAwesome.Sharp.IconFont.Auto;
@@ -417,6 +419,7 @@ namespace StatusGeck.Factura
             this.textBoxcantidadtotal.Name = "textBoxcantidadtotal";
             this.textBoxcantidadtotal.Size = new System.Drawing.Size(124, 25);
             this.textBoxcantidadtotal.TabIndex = 151;
+            this.textBoxcantidadtotal.Text = "0";
             // 
             // label9
             // 
@@ -442,8 +445,9 @@ namespace StatusGeck.Factura
             this.textBoxpreciototal.Location = new System.Drawing.Point(679, 450);
             this.textBoxpreciototal.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.textBoxpreciototal.Name = "textBoxpreciototal";
-            this.textBoxpreciototal.Size = new System.Drawing.Size(189, 25);
+            this.textBoxpreciototal.Size = new System.Drawing.Size(154, 25);
             this.textBoxpreciototal.TabIndex = 153;
+            this.textBoxpreciototal.Text = "0";
             // 
             // btnguardar
             // 
@@ -478,6 +482,7 @@ namespace StatusGeck.Factura
             this.btnlimpiardetalles.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnlimpiardetalles.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnlimpiardetalles.UseVisualStyleBackColor = false;
+            this.btnlimpiardetalles.Click += new System.EventHandler(this.btnlimpiardetalles_Click);
             // 
             // lineShape4
             // 
@@ -491,15 +496,32 @@ namespace StatusGeck.Factura
             // 
             this.lineShape8.Name = "lineShape8";
             this.lineShape8.X1 = 678;
-            this.lineShape8.X2 = 889;
+            this.lineShape8.X2 = 846;
             this.lineShape8.Y1 = 477;
             this.lineShape8.Y2 = 477;
+            // 
+            // btnnuevaFactura
+            // 
+            this.btnnuevaFactura.IconChar = FontAwesome.Sharp.IconChar.FileEdit;
+            this.btnnuevaFactura.IconColor = System.Drawing.Color.Black;
+            this.btnnuevaFactura.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.btnnuevaFactura.IconSize = 32;
+            this.btnnuevaFactura.Location = new System.Drawing.Point(876, 439);
+            this.btnnuevaFactura.Margin = new System.Windows.Forms.Padding(4);
+            this.btnnuevaFactura.Name = "btnnuevaFactura";
+            this.btnnuevaFactura.Size = new System.Drawing.Size(124, 41);
+            this.btnnuevaFactura.TabIndex = 156;
+            this.btnnuevaFactura.Text = "Nueva Factura";
+            this.btnnuevaFactura.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnnuevaFactura.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnnuevaFactura.UseVisualStyleBackColor = true;
             // 
             // FormFactura
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1025, 492);
+            this.Controls.Add(this.btnnuevaFactura);
             this.Controls.Add(this.btnlimpiardetalles);
             this.Controls.Add(this.btnguardar);
             this.Controls.Add(this.textBoxpreciototal);
@@ -574,5 +596,6 @@ namespace StatusGeck.Factura
         private FontAwesome.Sharp.IconButton btnlimpiardetalles;
         private Microsoft.VisualBasic.PowerPacks.LineShape lineShape8;
         private Microsoft.VisualBasic.PowerPacks.LineShape lineShape4;
+        private FontAwesome.Sharp.IconButton btnnuevaFactura;
     }
 }

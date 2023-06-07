@@ -1,0 +1,6 @@
+﻿C:\Users\junio\source\repos\StatusGeck\BLL\AdministradorService.cs
+C:\Users\junio\source\repos\StatusGeck\BLL\ClienteService.cs
+C:\Users\junio\source\repos\StatusGeck\BLL\DetalleFacturaService.cs
+C:\Users\junio\source\repos\StatusGeck\BLL\EmpleadoService.cs
+C:\Users\junio\source\repos\StatusGeck\BLL\FacturaService.cs
+C:\Users\junio\source\repos\StatusGeck\BLL\Properties\AssemblyInfo.cs

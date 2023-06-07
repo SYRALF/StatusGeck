@@ -1,0 +1,10 @@
+﻿C:\Users\junio\source\repos\StatusGeck\Entity\Administrador.cs
+C:\Users\junio\source\repos\StatusGeck\Entity\Contabilidad.cs
+C:\Users\junio\source\repos\StatusGeck\Entity\DetalleFactura.cs
+C:\Users\junio\source\repos\StatusGeck\Entity\Cliente.cs
+C:\Users\junio\source\repos\StatusGeck\Entity\Empleado.cs
+C:\Users\junio\source\repos\StatusGeck\Entity\Factura.cs
+C:\Users\junio\source\repos\StatusGeck\Entity\Gastos.cs
+C:\Users\junio\source\repos\StatusGeck\Entity\Persona.cs
+C:\Users\junio\source\repos\StatusGeck\Entity\Properties\AssemblyInfo.cs
+C:\Users\junio\source\repos\StatusGeck\Entity\Reporte.cs

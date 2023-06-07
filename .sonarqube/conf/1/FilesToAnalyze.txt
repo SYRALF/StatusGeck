@@ -1,0 +1,7 @@
+﻿C:\Users\junio\source\repos\StatusGeck\DAL\AdministradorRepository.cs
+C:\Users\junio\source\repos\StatusGeck\DAL\ClienteRepository.cs
+C:\Users\junio\source\repos\StatusGeck\DAL\ConnectionManager.cs
+C:\Users\junio\source\repos\StatusGeck\DAL\DetalleFacturaRepository.cs
+C:\Users\junio\source\repos\StatusGeck\DAL\EmpleadoRepository.cs
+C:\Users\junio\source\repos\StatusGeck\DAL\FacturaRepository.cs
+C:\Users\junio\source\repos\StatusGeck\DAL\Properties\AssemblyInfo.cs
