@@ -60,6 +60,11 @@ namespace StatusGeck.Factura
                 MessageBox.Show(respuesta.Mensaje, "Mensaje de Busqueda", MessageBoxButtons.OKCancel, MessageBoxIcon.Exclamation);
             }
         }
+
+        private void FormFactura_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 
 }
