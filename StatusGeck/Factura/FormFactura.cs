@@ -65,6 +65,97 @@ namespace StatusGeck.Factura
         {
 
         }
+
+        private void textBoxCedula_Leave(object sender, EventArgs e)
+        {
+            if (this.textBoxCedula.Text.Equals(""))
+            {
+                textBoxCedula.Text = "Escribir...";
+            }
+        }
+
+        private void textBoxCedula_Enter(object sender, EventArgs e)
+        {
+            if (this.textBoxCedula.Text.Equals("Escribir..."))
+            {
+                textBoxCedula.Text = "";
+            }
+        }
+
+        private void textBoxDescripcion_Leave(object sender, EventArgs e)
+        {
+            if (this.textBoxDescripcion.Text.Equals(""))
+            {
+                textBoxCedula.Text = "Escribir...";
+            }
+        }
+
+        private void textBoxDescripcion_Enter(object sender, EventArgs e)
+        {
+            if (this.textBoxDescripcion.Text.Equals("Escribir..."))
+            {
+                textBoxDescripcion.Text = "";
+            }
+        }
+
+        private void textBoxCantidad_Leave(object sender, EventArgs e)
+        {
+            if (this.textBoxCantidad.Text.Equals(""))
+            {
+                textBoxCantidad.Text = "Escribir...";
+            }
+        }
+
+        private void textBoxCantidad_Enter(object sender, EventArgs e)
+        {
+            if (this.textBoxCantidad.Text.Equals("Escribir..."))
+            {
+                textBoxCantidad.Text = "";
+            }
+        }
+
+        private void textBoxPrecio_Leave(object sender, EventArgs e)
+        {
+            if (this.textBoxPrecio.Text.Equals(""))
+            {
+                textBoxPrecio.Text = "Escribir...";
+            }
+        }
+
+        private void textBoxPrecio_Enter(object sender, EventArgs e)
+        {
+            if (this.textBoxPrecio.Text.Equals("Escribir..."))
+            {
+                textBoxPrecio.Text = "";
+            }
+        }
+
+        private void textBoxCodigo_Enter(object sender, EventArgs e)
+        {
+            if (this.textBoxCodigo.Text.Equals("Escribir..."))
+            {
+                textBoxCodigo.Text = "";
+            }
+        }
+
+        private void textBoxCodigo_Leave(object sender, EventArgs e)
+        {
+            if (this.textBoxCodigo.Text.Equals(""))
+            {
+                textBoxCodigo.Text = "Escribir...";
+            }
+        }
+
+
+        private void textBoxpreciototal_Leave(object sender, EventArgs e)
+        {
+
+        }
+
+        private void textBoxpreciototal_Enter(object sender, EventArgs e)
+        {
+
+        }
     }
 
 }

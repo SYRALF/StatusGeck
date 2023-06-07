@@ -37,7 +37,7 @@ namespace StatusGeck.Factura
             this.label5 = new System.Windows.Forms.Label();
             this.textBoxCantidad = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.textBoxCodigo = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.lineShape7 = new Microsoft.VisualBasic.PowerPacks.LineShape();
             this.lineShape1 = new Microsoft.VisualBasic.PowerPacks.LineShape();
@@ -73,12 +73,14 @@ namespace StatusGeck.Factura
             this.textBoxCedula.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.textBoxCedula.Font = new System.Drawing.Font("Century Gothic", 12F);
             this.textBoxCedula.ForeColor = System.Drawing.Color.Black;
-            this.textBoxCedula.Location = new System.Drawing.Point(140, 15);
+            this.textBoxCedula.Location = new System.Drawing.Point(140, 16);
             this.textBoxCedula.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.textBoxCedula.Name = "textBoxCedula";
-            this.textBoxCedula.Size = new System.Drawing.Size(239, 25);
+            this.textBoxCedula.Size = new System.Drawing.Size(191, 25);
             this.textBoxCedula.TabIndex = 135;
             this.textBoxCedula.Text = "Escribir...";
+            this.textBoxCedula.Enter += new System.EventHandler(this.textBoxCedula_Enter);
+            this.textBoxCedula.Leave += new System.EventHandler(this.textBoxCedula_Leave);
             // 
             // label7
             // 
@@ -129,6 +131,8 @@ namespace StatusGeck.Factura
             this.textBoxDescripcion.Size = new System.Drawing.Size(239, 25);
             this.textBoxDescripcion.TabIndex = 131;
             this.textBoxDescripcion.Text = "Escribir...";
+            this.textBoxDescripcion.Enter += new System.EventHandler(this.textBoxDescripcion_Enter);
+            this.textBoxDescripcion.Leave += new System.EventHandler(this.textBoxDescripcion_Leave);
             // 
             // label5
             // 
@@ -154,6 +158,8 @@ namespace StatusGeck.Factura
             this.textBoxCantidad.Size = new System.Drawing.Size(239, 25);
             this.textBoxCantidad.TabIndex = 129;
             this.textBoxCantidad.Text = "Escribir...";
+            this.textBoxCantidad.Enter += new System.EventHandler(this.textBoxCantidad_Enter);
+            this.textBoxCantidad.Leave += new System.EventHandler(this.textBoxCantidad_Leave);
             // 
             // label1
             // 
@@ -167,18 +173,20 @@ namespace StatusGeck.Factura
             this.label1.TabIndex = 128;
             this.label1.Text = "Nombre";
             // 
-            // textBox1
+            // textBoxCodigo
             // 
-            this.textBox1.BackColor = System.Drawing.SystemColors.Control;
-            this.textBox1.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.textBox1.Font = new System.Drawing.Font("Century Gothic", 12F);
-            this.textBox1.ForeColor = System.Drawing.Color.Black;
-            this.textBox1.Location = new System.Drawing.Point(172, 124);
-            this.textBox1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(224, 25);
-            this.textBox1.TabIndex = 137;
-            this.textBox1.Text = "Escribir...";
+            this.textBoxCodigo.BackColor = System.Drawing.SystemColors.Control;
+            this.textBoxCodigo.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.textBoxCodigo.Font = new System.Drawing.Font("Century Gothic", 12F);
+            this.textBoxCodigo.ForeColor = System.Drawing.Color.Black;
+            this.textBoxCodigo.Location = new System.Drawing.Point(172, 124);
+            this.textBoxCodigo.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.textBoxCodigo.Name = "textBoxCodigo";
+            this.textBoxCodigo.Size = new System.Drawing.Size(224, 25);
+            this.textBoxCodigo.TabIndex = 137;
+            this.textBoxCodigo.Text = "Escribir...";
+            this.textBoxCodigo.Enter += new System.EventHandler(this.textBoxCodigo_Enter);
+            this.textBoxCodigo.Leave += new System.EventHandler(this.textBoxCodigo_Leave);
             // 
             // label2
             // 
@@ -195,10 +203,10 @@ namespace StatusGeck.Factura
             // lineShape7
             // 
             this.lineShape7.Name = "lineShape7";
-            this.lineShape7.X1 = 132;
-            this.lineShape7.X2 = 311;
-            this.lineShape7.Y1 = 98;
-            this.lineShape7.Y2 = 98;
+            this.lineShape7.X1 = 140;
+            this.lineShape7.X2 = 319;
+            this.lineShape7.Y1 = 101;
+            this.lineShape7.Y2 = 101;
             // 
             // lineShape1
             // 
@@ -219,8 +227,8 @@ namespace StatusGeck.Factura
             // lineShape2
             // 
             this.lineShape2.Name = "lineShape2";
-            this.lineShape2.X1 = 123;
-            this.lineShape2.X2 = 302;
+            this.lineShape2.X1 = 141;
+            this.lineShape2.X2 = 320;
             this.lineShape2.Y1 = 43;
             this.lineShape2.Y2 = 43;
             // 
@@ -298,11 +306,13 @@ namespace StatusGeck.Factura
             this.textBoxPrecio.Size = new System.Drawing.Size(239, 25);
             this.textBoxPrecio.TabIndex = 141;
             this.textBoxPrecio.Text = "Escribir...";
+            this.textBoxPrecio.Enter += new System.EventHandler(this.textBoxPrecio_Enter);
+            this.textBoxPrecio.Leave += new System.EventHandler(this.textBoxPrecio_Leave);
             // 
             // dateTimePicker1
             // 
             this.dateTimePicker1.Enabled = false;
-            this.dateTimePicker1.Location = new System.Drawing.Point(136, 178);
+            this.dateTimePicker1.Location = new System.Drawing.Point(141, 184);
             this.dateTimePicker1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.dateTimePicker1.Name = "dateTimePicker1";
             this.dateTimePicker1.Size = new System.Drawing.Size(259, 22);
@@ -505,7 +515,7 @@ namespace StatusGeck.Factura
             this.Controls.Add(this.label3);
             this.Controls.Add(this.textBoxPrecio);
             this.Controls.Add(this.iconPictureBox1);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.textBoxCodigo);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.textBoxCedula);
             this.Controls.Add(this.label7);
@@ -538,7 +548,7 @@ namespace StatusGeck.Factura
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.TextBox textBoxCantidad;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox textBoxCodigo;
         private System.Windows.Forms.Label label2;
         private Microsoft.VisualBasic.PowerPacks.LineShape lineShape7;
         private Microsoft.VisualBasic.PowerPacks.LineShape lineShape1;
