@@ -323,7 +323,7 @@ namespace StatusGeck.Factura
             this.btnAgregar.IconColor = System.Drawing.Color.Black;
             this.btnAgregar.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btnAgregar.IconSize = 32;
-            this.btnAgregar.Location = new System.Drawing.Point(885, 18);
+            this.btnAgregar.Location = new System.Drawing.Point(732, 74);
             this.btnAgregar.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnAgregar.Name = "btnAgregar";
             this.btnAgregar.Size = new System.Drawing.Size(124, 41);
@@ -340,7 +340,7 @@ namespace StatusGeck.Factura
             this.btnEliminar.IconColor = System.Drawing.Color.Black;
             this.btnEliminar.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btnEliminar.IconSize = 32;
-            this.btnEliminar.Location = new System.Drawing.Point(885, 121);
+            this.btnEliminar.Location = new System.Drawing.Point(885, 263);
             this.btnEliminar.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnEliminar.Name = "btnEliminar";
             this.btnEliminar.Size = new System.Drawing.Size(124, 41);
@@ -357,7 +357,7 @@ namespace StatusGeck.Factura
             this.btnEditar.IconColor = System.Drawing.Color.Black;
             this.btnEditar.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btnEditar.IconSize = 32;
-            this.btnEditar.Location = new System.Drawing.Point(885, 69);
+            this.btnEditar.Location = new System.Drawing.Point(732, 127);
             this.btnEditar.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnEditar.Name = "btnEditar";
             this.btnEditar.Size = new System.Drawing.Size(124, 41);
@@ -438,10 +438,10 @@ namespace StatusGeck.Factura
             this.btnguardar.IconColor = System.Drawing.Color.Black;
             this.btnguardar.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btnguardar.IconSize = 32;
-            this.btnguardar.Location = new System.Drawing.Point(888, 312);
+            this.btnguardar.Location = new System.Drawing.Point(888, 321);
             this.btnguardar.Margin = new System.Windows.Forms.Padding(4);
             this.btnguardar.Name = "btnguardar";
-            this.btnguardar.Size = new System.Drawing.Size(124, 41);
+            this.btnguardar.Size = new System.Drawing.Size(124, 81);
             this.btnguardar.TabIndex = 154;
             this.btnguardar.Text = "Guardar";
             this.btnguardar.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
