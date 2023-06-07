@@ -17,6 +17,8 @@ namespace StatusGeck.Factura
     {
         ClienteService clienteService;
         FacturaService facturaService;
+        List<DetalleFactura> detalles;
+        DetalleFactura detalleFactura;
         
         public FormFactura()
         {
@@ -24,6 +26,7 @@ namespace StatusGeck.Factura
             var connectionString = ConfigurationManager.ConnectionStrings["DefaultConnection"].ConnectionString;
             clienteService = new ClienteService(connectionString);
             facturaService = new FacturaService(connectionString);
+            detalles = new List<DetalleFactura>();
         }
         public void Limpiar()
         {
@@ -35,14 +38,17 @@ namespace StatusGeck.Factura
             limpiardetalles();
             btnEliminar.Enabled = false;
         }
-        
+        public void PintarTabla()
+        {
+
+        }
         private void btnAgregar_Click(object sender, EventArgs e)
         {
             
         }
         public void AgregarDetalles()
         {
-
+            
         }
         private void btnEditar_Click(object sender, EventArgs e)
         {
@@ -178,6 +184,11 @@ namespace StatusGeck.Factura
             textBoxDescripcion.Text = "Escribir...";
             textBoxCantidad.Text = "Escribir...";
             textBoxPrecio.Text = "Escribir...";
+        }
+
+        private void btnnuevaFactura_Click(object sender, EventArgs e)
+        {
+            Limpiar();
         }
     }
 

@@ -515,6 +515,7 @@ namespace StatusGeck.Factura
             this.btnnuevaFactura.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnnuevaFactura.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnnuevaFactura.UseVisualStyleBackColor = true;
+            this.btnnuevaFactura.Click += new System.EventHandler(this.btnnuevaFactura_Click);
             // 
             // FormFactura
             // 
