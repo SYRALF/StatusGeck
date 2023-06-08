@@ -64,6 +64,7 @@ namespace StatusGeck.Factura
             this.lineShape4 = new Microsoft.VisualBasic.PowerPacks.LineShape();
             this.lineShape8 = new Microsoft.VisualBasic.PowerPacks.LineShape();
             this.btnnuevaFactura = new FontAwesome.Sharp.IconButton();
+            this.btnFactura = new FontAwesome.Sharp.IconButton();
             ((System.ComponentModel.ISupportInitialize)(this.iconPictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
@@ -517,11 +518,28 @@ namespace StatusGeck.Factura
             this.btnnuevaFactura.UseVisualStyleBackColor = true;
             this.btnnuevaFactura.Click += new System.EventHandler(this.btnnuevaFactura_Click);
             // 
+            // btnFactura
+            // 
+            this.btnFactura.IconChar = FontAwesome.Sharp.IconChar.FileEdit;
+            this.btnFactura.IconColor = System.Drawing.Color.Black;
+            this.btnFactura.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.btnFactura.IconSize = 32;
+            this.btnFactura.Location = new System.Drawing.Point(340, 124);
+            this.btnFactura.Margin = new System.Windows.Forms.Padding(4);
+            this.btnFactura.Name = "btnFactura";
+            this.btnFactura.Size = new System.Drawing.Size(84, 41);
+            this.btnFactura.TabIndex = 157;
+            this.btnFactura.Text = "Listo";
+            this.btnFactura.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnFactura.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnFactura.UseVisualStyleBackColor = true;
+            // 
             // FormFactura
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1025, 492);
+            this.Controls.Add(this.btnFactura);
             this.Controls.Add(this.btnnuevaFactura);
             this.Controls.Add(this.btnlimpiardetalles);
             this.Controls.Add(this.btnguardar);
@@ -598,5 +616,6 @@ namespace StatusGeck.Factura
         private Microsoft.VisualBasic.PowerPacks.LineShape lineShape8;
         private Microsoft.VisualBasic.PowerPacks.LineShape lineShape4;
         private FontAwesome.Sharp.IconButton btnnuevaFactura;
+        private FontAwesome.Sharp.IconButton btnFactura;
     }
 }

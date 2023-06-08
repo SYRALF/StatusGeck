@@ -19,6 +19,7 @@ namespace StatusGeck.Factura
         FacturaService facturaService;
         List<DetalleFactura> detalles;
         DetalleFactura detalleFactura;
+        Entity.Factura factura;
         
         public FormFactura()
         {
@@ -27,6 +28,7 @@ namespace StatusGeck.Factura
             clienteService = new ClienteService(connectionString);
             facturaService = new FacturaService(connectionString);
             detalles = new List<DetalleFactura>();
+            factura = new Entity.Factura();
         }
         public void Limpiar()
         {
@@ -48,6 +50,8 @@ namespace StatusGeck.Factura
         }
         public void AgregarDetalles()
         {
+            
+            detalleFactura = new DetalleFactura();
             
         }
         private void btnEditar_Click(object sender, EventArgs e)
