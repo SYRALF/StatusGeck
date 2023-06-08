@@ -314,7 +314,7 @@ namespace StatusGeck.Factura
             // dateTimePicker1
             // 
             this.dateTimePicker1.Enabled = false;
-            this.dateTimePicker1.Location = new System.Drawing.Point(141, 184);
+            this.dateTimePicker1.Location = new System.Drawing.Point(142, 185);
             this.dateTimePicker1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.dateTimePicker1.Name = "dateTimePicker1";
             this.dateTimePicker1.Size = new System.Drawing.Size(259, 22);
@@ -374,7 +374,7 @@ namespace StatusGeck.Factura
             this.btnEditar.IconColor = System.Drawing.Color.Black;
             this.btnEditar.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btnEditar.IconSize = 32;
-            this.btnEditar.Location = new System.Drawing.Point(849, 127);
+            this.btnEditar.Location = new System.Drawing.Point(848, 140);
             this.btnEditar.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnEditar.Name = "btnEditar";
             this.btnEditar.Size = new System.Drawing.Size(124, 41);
