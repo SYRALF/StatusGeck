@@ -49,6 +49,9 @@ namespace StatusGeck.Factura
             limpiardetalles();
             btnEliminar.Enabled = false;
             btnguardar.Enabled = false;
+
+
+            DesactivarOpciones();
         }
         public void PintarTabla()
         {
@@ -229,7 +232,7 @@ namespace StatusGeck.Factura
         public void DesactivarOpciones()
         {
             textBoxCedula.Enabled = true;
-
+            textBoxCodigo.Enabled = true;
         }
     }
 
