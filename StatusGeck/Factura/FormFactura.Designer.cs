@@ -125,6 +125,7 @@ namespace StatusGeck.Factura
             // 
             this.textBoxDescripcion.BackColor = System.Drawing.SystemColors.Control;
             this.textBoxDescripcion.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.textBoxDescripcion.Enabled = false;
             this.textBoxDescripcion.Font = new System.Drawing.Font("Century Gothic", 12F);
             this.textBoxDescripcion.ForeColor = System.Drawing.Color.Black;
             this.textBoxDescripcion.Location = new System.Drawing.Point(604, 15);
@@ -152,6 +153,7 @@ namespace StatusGeck.Factura
             // 
             this.textBoxCantidad.BackColor = System.Drawing.SystemColors.Control;
             this.textBoxCantidad.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.textBoxCantidad.Enabled = false;
             this.textBoxCantidad.Font = new System.Drawing.Font("Century Gothic", 12F);
             this.textBoxCantidad.ForeColor = System.Drawing.Color.Black;
             this.textBoxCantidad.Location = new System.Drawing.Point(604, 69);
@@ -300,6 +302,7 @@ namespace StatusGeck.Factura
             // 
             this.textBoxPrecio.BackColor = System.Drawing.SystemColors.Control;
             this.textBoxPrecio.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.textBoxPrecio.Enabled = false;
             this.textBoxPrecio.Font = new System.Drawing.Font("Century Gothic", 12F);
             this.textBoxPrecio.ForeColor = System.Drawing.Color.Black;
             this.textBoxPrecio.Location = new System.Drawing.Point(601, 124);
@@ -335,6 +338,7 @@ namespace StatusGeck.Factura
             // btnAgregar
             // 
             this.btnAgregar.BackColor = System.Drawing.Color.Transparent;
+            this.btnAgregar.Enabled = false;
             this.btnAgregar.IconChar = FontAwesome.Sharp.IconChar.FileCirclePlus;
             this.btnAgregar.IconColor = System.Drawing.Color.Black;
             this.btnAgregar.IconFont = FontAwesome.Sharp.IconFont.Auto;
@@ -370,6 +374,7 @@ namespace StatusGeck.Factura
             // 
             // btnEditar
             // 
+            this.btnEditar.Enabled = false;
             this.btnEditar.IconChar = FontAwesome.Sharp.IconChar.FileEdit;
             this.btnEditar.IconColor = System.Drawing.Color.Black;
             this.btnEditar.IconFont = FontAwesome.Sharp.IconFont.Auto;
@@ -453,6 +458,7 @@ namespace StatusGeck.Factura
             // btnguardar
             // 
             this.btnguardar.BackColor = System.Drawing.Color.Transparent;
+            this.btnguardar.Enabled = false;
             this.btnguardar.IconChar = FontAwesome.Sharp.IconChar.FileCirclePlus;
             this.btnguardar.IconColor = System.Drawing.Color.Black;
             this.btnguardar.IconFont = FontAwesome.Sharp.IconFont.Auto;
@@ -470,6 +476,7 @@ namespace StatusGeck.Factura
             // btnlimpiardetalles
             // 
             this.btnlimpiardetalles.BackColor = System.Drawing.Color.Transparent;
+            this.btnlimpiardetalles.Enabled = false;
             this.btnlimpiardetalles.IconChar = FontAwesome.Sharp.IconChar.FileCirclePlus;
             this.btnlimpiardetalles.IconColor = System.Drawing.Color.Black;
             this.btnlimpiardetalles.IconFont = FontAwesome.Sharp.IconFont.Auto;
@@ -503,6 +510,7 @@ namespace StatusGeck.Factura
             // 
             // btnnuevaFactura
             // 
+            this.btnnuevaFactura.Enabled = false;
             this.btnnuevaFactura.IconChar = FontAwesome.Sharp.IconChar.FileEdit;
             this.btnnuevaFactura.IconColor = System.Drawing.Color.Black;
             this.btnnuevaFactura.IconFont = FontAwesome.Sharp.IconFont.Auto;
@@ -533,6 +541,7 @@ namespace StatusGeck.Factura
             this.btnFactura.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnFactura.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnFactura.UseVisualStyleBackColor = true;
+            this.btnFactura.Click += new System.EventHandler(this.btnFactura_Click);
             // 
             // FormFactura
             // 

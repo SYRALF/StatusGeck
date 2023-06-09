@@ -19,8 +19,8 @@ namespace StatusGeck.Factura
         FacturaService facturaService;
         List<DetalleFactura> detalles;
         DetalleFactura detalleFactura;
-        Entity.Factura factura;
-        
+        Entity.Factura factura=null;
+        Entity.Cliente cliente=null;
         public FormFactura()
         {
             InitializeComponent();
@@ -37,8 +37,18 @@ namespace StatusGeck.Factura
             textBoxCodigo.Text = "Escribir....";
             textBoxcantidadtotal.Text = "0";
             textBoxpreciototal.Text = "0";
+
+            textBoxDescripcion.Enabled = false;
+            textBoxCantidad.Enabled = false;
+            textBoxPrecio.Enabled = false;
+            btnAgregar.Enabled = false;
+            btnEditar.Enabled = false;
+            btnlimpiardetalles.Enabled = false;
+
+
             limpiardetalles();
             btnEliminar.Enabled = false;
+            btnguardar.Enabled = false;
         }
         public void PintarTabla()
         {
@@ -75,10 +85,10 @@ namespace StatusGeck.Factura
             {
 
                 textBoxNombre.Text = respuesta.cliente.Nombre;
+                this.cliente = respuesta.cliente;
             }
             else
             {
-
                 MessageBox.Show(respuesta.Mensaje, "Mensaje de Busqueda", MessageBoxButtons.OKCancel, MessageBoxIcon.Exclamation);
             }
         }
@@ -193,6 +203,27 @@ namespace StatusGeck.Factura
         private void btnnuevaFactura_Click(object sender, EventArgs e)
         {
             Limpiar();
+        }
+
+        private void btnFactura_Click(object sender, EventArgs e)
+        {
+            InicializarValores();   
+        }
+        public void InicializarValores()
+        {
+            factura = new Entity.Factura();
+            factura.Codigo = textBoxCodigo.Text;
+            factura.Fecha = dateTimePicker1.Value;
+            factura.cliente = this.cliente;
+        }
+        public void ActivarBotones()
+        {
+            textBoxDescripcion.Enabled = true;
+            textBoxCantidad.Enabled = true;
+            textBoxPrecio.Enabled = true;
+            btnAgregar.Enabled = true;
+            btnEditar.Enabled = true;
+            btnlimpiardetalles.Enabled = true;
         }
     }
 
