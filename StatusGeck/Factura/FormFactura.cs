@@ -207,7 +207,8 @@ namespace StatusGeck.Factura
 
         private void btnFactura_Click(object sender, EventArgs e)
         {
-            InicializarValores();   
+            InicializarValores();
+            ActivarOpciones();
         }
         public void InicializarValores()
         {
@@ -216,7 +217,7 @@ namespace StatusGeck.Factura
             factura.Fecha = dateTimePicker1.Value;
             factura.cliente = this.cliente;
         }
-        public void ActivarBotones()
+        public void ActivarOpciones()
         {
             textBoxDescripcion.Enabled = true;
             textBoxCantidad.Enabled = true;
@@ -224,6 +225,11 @@ namespace StatusGeck.Factura
             btnAgregar.Enabled = true;
             btnEditar.Enabled = true;
             btnlimpiardetalles.Enabled = true;
+        }
+        public void DesactivarOpciones()
+        {
+            textBoxCedula.Enabled = true;
+
         }
     }
 
