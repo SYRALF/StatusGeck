@@ -370,7 +370,8 @@ namespace StatusGeck.Cliente
 
         private void textBoxCedula_KeyUp(object sender, KeyEventArgs e)
         {
-                ValidarTamañominimo(textBoxCedula, 6);
+            ValidarTamañominimo(textBoxCedula, 6);
+
         }
 
         private void textBoxNombre_KeyUp(object sender, KeyEventArgs e)
@@ -396,6 +397,60 @@ namespace StatusGeck.Cliente
         private void textBoxApellido_KeyUp(object sender, KeyEventArgs e)
         {
             ValidarTamañominimo(textBoxApellido, 4);
+        }
+
+        private void textBoxCedula_KeyPress(object sender, KeyPressEventArgs e)
+        {
+
+            if((e.KeyChar >=32 && e.KeyChar <=47) || (e.KeyChar >=58 && e.KeyChar<= 255))
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void textBoxTelefono_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if ((e.KeyChar >= 32 && e.KeyChar <= 47) || (e.KeyChar >= 58 && e.KeyChar <= 255))
+            {
+
+                e.Handled = true;
+            }
+        }
+
+        private void textBoxNombre_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if ((e.KeyChar >= 33 && e.KeyChar <= 64) || (e.KeyChar >= 91 && e.KeyChar <= 96) || (e.KeyChar >= 123 && e.KeyChar <= 255))
+            {
+
+                e.Handled = true;
+            }
+        }
+
+        private void textBoxApellido_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if ((e.KeyChar >= 33 && e.KeyChar <= 64) || (e.KeyChar >= 91 && e.KeyChar <= 96) || (e.KeyChar >= 123 && e.KeyChar <= 255))
+            {
+
+                e.Handled = true;
+            }
+        }
+
+        private void textBoxCorreo_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if ((e.KeyChar >= 32 && e.KeyChar <= 45) || (e.KeyChar >= 47 && e.KeyChar <= 63)  || (e.KeyChar >= 91 && e.KeyChar <= 96) || (e.KeyChar >= 123 && e.KeyChar <= 255))
+            {
+
+                e.Handled = true;
+            }
+        }
+
+        private void textBoxDireccion_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if ((e.KeyChar >= 33 && e.KeyChar <= 34) || (e.KeyChar >= 36 && e.KeyChar <= 44) || (e.KeyChar >= 46 && e.KeyChar <= 63) || (e.KeyChar >= 91 && e.KeyChar <= 96) || (e.KeyChar >= 123 && e.KeyChar <= 255))
+            {
+
+                e.Handled = true;
+            }
         }
     }
 }

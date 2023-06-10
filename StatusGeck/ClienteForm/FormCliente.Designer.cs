@@ -146,6 +146,7 @@ namespace StatusGeck.Cliente
             this.textBoxCedula.TabIndex = 127;
             this.textBoxCedula.Text = "Escribir...";
             this.textBoxCedula.Enter += new System.EventHandler(this.textBoxCedula_Enter);
+            this.textBoxCedula.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBoxCedula_KeyPress);
             this.textBoxCedula.KeyUp += new System.Windows.Forms.KeyEventHandler(this.textBoxCedula_KeyUp);
             this.textBoxCedula.Leave += new System.EventHandler(this.textBoxCedula_Leave);
             // 
@@ -174,6 +175,7 @@ namespace StatusGeck.Cliente
             this.textBoxNombre.TabIndex = 125;
             this.textBoxNombre.Text = "Escribir...";
             this.textBoxNombre.Enter += new System.EventHandler(this.textBoxNombre_Enter);
+            this.textBoxNombre.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBoxNombre_KeyPress);
             this.textBoxNombre.KeyUp += new System.Windows.Forms.KeyEventHandler(this.textBoxNombre_KeyUp);
             this.textBoxNombre.Leave += new System.EventHandler(this.textBoxNombre_Leave);
             // 
@@ -203,6 +205,7 @@ namespace StatusGeck.Cliente
             this.textBoxTelefono.TabIndex = 123;
             this.textBoxTelefono.Text = "Escribir...";
             this.textBoxTelefono.Enter += new System.EventHandler(this.textBoxTelefono_Enter);
+            this.textBoxTelefono.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBoxTelefono_KeyPress);
             this.textBoxTelefono.KeyUp += new System.Windows.Forms.KeyEventHandler(this.textBoxTelefono_KeyUp);
             this.textBoxTelefono.Leave += new System.EventHandler(this.textBoxTelefono_Leave);
             // 
@@ -232,6 +235,7 @@ namespace StatusGeck.Cliente
             this.textBoxCorreo.TabIndex = 121;
             this.textBoxCorreo.Text = "Escribir...";
             this.textBoxCorreo.Enter += new System.EventHandler(this.textBoxCorreo_Enter);
+            this.textBoxCorreo.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBoxCorreo_KeyPress);
             this.textBoxCorreo.KeyUp += new System.Windows.Forms.KeyEventHandler(this.textBoxCorreo_KeyUp);
             this.textBoxCorreo.Leave += new System.EventHandler(this.textBoxCorreo_Leave);
             // 
@@ -260,6 +264,7 @@ namespace StatusGeck.Cliente
             this.textBoxDireccion.TabIndex = 119;
             this.textBoxDireccion.Text = "Escribir...";
             this.textBoxDireccion.Enter += new System.EventHandler(this.textBoxDireccion_Enter);
+            this.textBoxDireccion.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBoxDireccion_KeyPress);
             this.textBoxDireccion.KeyUp += new System.Windows.Forms.KeyEventHandler(this.textBoxDireccion_KeyUp);
             this.textBoxDireccion.Leave += new System.EventHandler(this.textBoxDireccion_Leave);
             // 
@@ -336,6 +341,7 @@ namespace StatusGeck.Cliente
             this.textBoxApellido.TabIndex = 136;
             this.textBoxApellido.Text = "Escribir...";
             this.textBoxApellido.Enter += new System.EventHandler(this.textBoxApellido_Enter);
+            this.textBoxApellido.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBoxApellido_KeyPress);
             this.textBoxApellido.KeyUp += new System.Windows.Forms.KeyEventHandler(this.textBoxApellido_KeyUp);
             this.textBoxApellido.Leave += new System.EventHandler(this.textBoxApellido_Leave);
             // 
