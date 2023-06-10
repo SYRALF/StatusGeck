@@ -174,6 +174,7 @@ namespace StatusGeck.Cliente
             this.textBoxNombre.TabIndex = 125;
             this.textBoxNombre.Text = "Escribir...";
             this.textBoxNombre.Enter += new System.EventHandler(this.textBoxNombre_Enter);
+            this.textBoxNombre.KeyUp += new System.Windows.Forms.KeyEventHandler(this.textBoxNombre_KeyUp);
             this.textBoxNombre.Leave += new System.EventHandler(this.textBoxNombre_Leave);
             // 
             // label6
@@ -202,6 +203,7 @@ namespace StatusGeck.Cliente
             this.textBoxTelefono.TabIndex = 123;
             this.textBoxTelefono.Text = "Escribir...";
             this.textBoxTelefono.Enter += new System.EventHandler(this.textBoxTelefono_Enter);
+            this.textBoxTelefono.KeyUp += new System.Windows.Forms.KeyEventHandler(this.textBoxTelefono_KeyUp);
             this.textBoxTelefono.Leave += new System.EventHandler(this.textBoxTelefono_Leave);
             // 
             // label5
@@ -230,6 +232,7 @@ namespace StatusGeck.Cliente
             this.textBoxCorreo.TabIndex = 121;
             this.textBoxCorreo.Text = "Escribir...";
             this.textBoxCorreo.Enter += new System.EventHandler(this.textBoxCorreo_Enter);
+            this.textBoxCorreo.KeyUp += new System.Windows.Forms.KeyEventHandler(this.textBoxCorreo_KeyUp);
             this.textBoxCorreo.Leave += new System.EventHandler(this.textBoxCorreo_Leave);
             // 
             // label4
@@ -257,6 +260,7 @@ namespace StatusGeck.Cliente
             this.textBoxDireccion.TabIndex = 119;
             this.textBoxDireccion.Text = "Escribir...";
             this.textBoxDireccion.Enter += new System.EventHandler(this.textBoxDireccion_Enter);
+            this.textBoxDireccion.KeyUp += new System.Windows.Forms.KeyEventHandler(this.textBoxDireccion_KeyUp);
             this.textBoxDireccion.Leave += new System.EventHandler(this.textBoxDireccion_Leave);
             // 
             // label1
@@ -332,6 +336,7 @@ namespace StatusGeck.Cliente
             this.textBoxApellido.TabIndex = 136;
             this.textBoxApellido.Text = "Escribir...";
             this.textBoxApellido.Enter += new System.EventHandler(this.textBoxApellido_Enter);
+            this.textBoxApellido.KeyUp += new System.Windows.Forms.KeyEventHandler(this.textBoxApellido_KeyUp);
             this.textBoxApellido.Leave += new System.EventHandler(this.textBoxApellido_Leave);
             // 
             // btnlimpiar
@@ -341,10 +346,10 @@ namespace StatusGeck.Cliente
             this.btnlimpiar.IconColor = System.Drawing.Color.Black;
             this.btnlimpiar.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btnlimpiar.IconSize = 32;
-            this.btnlimpiar.Location = new System.Drawing.Point(827, 124);
+            this.btnlimpiar.Location = new System.Drawing.Point(878, 75);
             this.btnlimpiar.Margin = new System.Windows.Forms.Padding(4);
             this.btnlimpiar.Name = "btnlimpiar";
-            this.btnlimpiar.Size = new System.Drawing.Size(171, 38);
+            this.btnlimpiar.Size = new System.Drawing.Size(105, 38);
             this.btnlimpiar.TabIndex = 138;
             this.btnlimpiar.Text = "Limpiar";
             this.btnlimpiar.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;

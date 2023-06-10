@@ -79,7 +79,7 @@ namespace StatusGeck.Cliente
             }
             else
             {
-                MessageBox.Show("Hay campos que faltan", "Mensaje de Registro", MessageBoxButtons.OKCancel, MessageBoxIcon.Information);
+                MessageBox.Show("Hay campos que no cumplen requisitos", "Mensaje de Registro", MessageBoxButtons.OKCancel, MessageBoxIcon.Information);
             }
            
         }
@@ -170,7 +170,7 @@ namespace StatusGeck.Cliente
             else
             {
                 errorProvider.SetError(textBoxCedula, null);
-                ValidarTamañominimo(textBoxCedula, 5);
+                ValidarTamañominimo(textBoxCedula, 6);
             }
 
         }
@@ -193,6 +193,8 @@ namespace StatusGeck.Cliente
             else
             {
                 errorProvider.SetError(textBoxNombre, null);
+
+                ValidarTamañominimo(textBoxNombre, 1);
             }
         }
 
@@ -215,6 +217,8 @@ namespace StatusGeck.Cliente
             else
             {
                 errorProvider.SetError(textBoxCorreo, null);
+
+                ValidarTamañominimo(textBoxCorreo, 17);
             }
         }
 
@@ -237,6 +241,7 @@ namespace StatusGeck.Cliente
             else
             {
                 errorProvider.SetError(textBoxTelefono, null);
+                ValidarTamañominimo(textBoxTelefono, 10);
             }
         }
 
@@ -259,6 +264,7 @@ namespace StatusGeck.Cliente
             else
             {
                 errorProvider.SetError(textBoxDireccion, null);
+                ValidarTamañominimo(textBoxDireccion, 10);
             }
         }
 
@@ -276,6 +282,12 @@ namespace StatusGeck.Cliente
             {
                 textBoxApellido.Text = "Escribir...";
             }
+            else
+            {
+                errorProvider.SetError(textBoxApellido, null);
+                ValidarTamañominimo(textBoxApellido, 4);
+
+            }
         }
 
         private void textBoxApellido_Enter(object sender, EventArgs e)
@@ -286,10 +298,7 @@ namespace StatusGeck.Cliente
 
                 textBoxApellido.Text = "";
             }
-            else
-            {
-                errorProvider.SetError(textBoxApellido, null);
-            }
+           
         }
         #endregion
 
@@ -361,7 +370,32 @@ namespace StatusGeck.Cliente
 
         private void textBoxCedula_KeyUp(object sender, KeyEventArgs e)
         {
-                ValidarTamañominimo(textBoxCedula, 5);
+                ValidarTamañominimo(textBoxCedula, 6);
+        }
+
+        private void textBoxNombre_KeyUp(object sender, KeyEventArgs e)
+        {
+            ValidarTamañominimo(textBoxNombre, 1);
+        }
+
+        private void textBoxCorreo_KeyUp(object sender, KeyEventArgs e)
+        {
+            ValidarTamañominimo(textBoxCorreo, 17);
+        }
+
+        private void textBoxTelefono_KeyUp(object sender, KeyEventArgs e)
+        {
+            ValidarTamañominimo(textBoxTelefono, 10);
+        }
+
+        private void textBoxDireccion_KeyUp(object sender, KeyEventArgs e)
+        {
+            ValidarTamañominimo(textBoxDireccion, 10);
+        }
+
+        private void textBoxApellido_KeyUp(object sender, KeyEventArgs e)
+        {
+            ValidarTamañominimo(textBoxApellido, 4);
         }
     }
 }
