@@ -10,38 +10,89 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using Entity;
 using System.Configuration;
+using System.Data.SqlClient;
+using System.Runtime.InteropServices;
 
 namespace StatusGeck.Cliente
 {
     public partial class FormCliente : Form
     {
         ClienteService clienteService;
+        ErrorProvider errorProvider = new ErrorProvider();
         public FormCliente()
         {
             InitializeComponent();
             var connectionString = ConfigurationManager.ConnectionStrings["DefaultConnection"].ConnectionString;
             clienteService = new ClienteService(connectionString);
+            ValidarTamañoMximo();
         }
-
+        public void ValidarTamañoMximo()
+        {
+            textBoxCedula.MaxLength = 10;
+            textBoxNombre.MaxLength = 15;
+            textBoxTelefono.MaxLength = 10;
+            textBoxApellido.MaxLength = 15;
+            textBoxDireccion.MaxLength = 30;
+            textBoxCorreo.MaxLength = 30;
+        }
+        public void ValidarTamañominimo(TextBox textBox, int tamañominimo)
+        {
+            if(textBox.Text.Length >= tamañominimo)
+            {
+                errorProvider.SetError(textBox, null);
+            }
+            else
+            {
+                errorProvider.SetError(textBox, $"Minimo {tamañominimo} caracter(es)");
+            }
+        }
+        [DllImport("user32.DLL", EntryPoint = "ReleaseCapture")]
+        private extern static void ReleaseCapture();
+        [DllImport("user32.DLL", EntryPoint = "SendMessage")]
+        private extern static void SendMessage(System.IntPtr hwnd, int wmsg, int wparam, int lparam);
+        private void msgError(string msg)
+        {
+            lblError.Text = "     " + msg;
+            lblError.Visible = true;
+        }
         private void btnAgregar_Click(object sender, EventArgs e)
         {
             Agregar();
         }
         public void Agregar()
         {
-            Entity.Cliente cliente = new Entity.Cliente();
+            if (Validar())
+            {
+                Entity.Cliente cliente = new Entity.Cliente();
 
-            cliente.Identificacion = textBoxCedula.Text;
-            cliente.Nombre = textBoxNombre.Text;
-            cliente.Telefono = textBoxTelefono.Text;
-            cliente.Apellido = textBoxApellido.Text;
-            cliente.Direccion = textBoxDireccion.Text;
-            cliente.Correo = textBoxCorreo.Text;
+                cliente.Identificacion = textBoxCedula.Text;
+                cliente.Nombre = textBoxNombre.Text;
+                cliente.Telefono = textBoxTelefono.Text;
+                cliente.Apellido = textBoxApellido.Text;
+                cliente.Direccion = textBoxDireccion.Text;
+                cliente.Correo = textBoxCorreo.Text;
 
-            var Mensaje = clienteService.Guardar(cliente);
-            MessageBox.Show(Mensaje, "Mensaje de Registro", MessageBoxButtons.OKCancel, MessageBoxIcon.Information);
-            Consultar();
-            limpiar();
+                var Mensaje = clienteService.Guardar(cliente);
+                MessageBox.Show(Mensaje, "Mensaje de Registro", MessageBoxButtons.OKCancel, MessageBoxIcon.Information);
+                Consultar();
+                limpiar();
+            }
+            else
+            {
+                MessageBox.Show("Hay campos que faltan", "Mensaje de Registro", MessageBoxButtons.OKCancel, MessageBoxIcon.Information);
+            }
+           
+        }
+        public bool Validar()
+        {
+            if (errorProvider.GetError(textBoxCedula) != "" || errorProvider.GetError(textBoxNombre) != "" || errorProvider.GetError(textBoxTelefono) != "" || errorProvider.GetError(textBoxApellido) != "" || errorProvider.GetError(textBoxCorreo) != "" || errorProvider.GetError(textBoxDireccion) != "")
+            {
+                    return false;
+            }
+            else
+            {
+                return true;
+            }
         }
 
         public void limpiar()
@@ -105,14 +156,23 @@ namespace StatusGeck.Cliente
             {
                 textBuscar.Text = "";
             }
+            
         }
 
         private void textBoxCedula_Leave(object sender, EventArgs e)
         {
             if (this.textBoxCedula.Text.Equals(""))
             {
+                errorProvider.SetError(textBoxCedula, "Falta ingresar Cedula");
+
                 textBoxCedula.Text = "Escribir...";
             }
+            else
+            {
+                errorProvider.SetError(textBoxCedula, null);
+                ValidarTamañominimo(textBoxCedula, 5);
+            }
+
         }
 
         private void textBoxCedula_Enter(object sender, EventArgs e)
@@ -127,7 +187,12 @@ namespace StatusGeck.Cliente
         {
             if (this.textBoxNombre.Text.Equals(""))
             {
+                errorProvider.SetError(textBoxNombre, "Falta ingresar Nombre");
                 textBoxNombre.Text = "Escribir...";
+            }
+            else
+            {
+                errorProvider.SetError(textBoxNombre, null);
             }
         }
 
@@ -143,7 +208,13 @@ namespace StatusGeck.Cliente
         {
             if (this.textBoxCorreo.Text.Equals(""))
             {
+                errorProvider.SetError(textBoxCorreo, "Falta ingresar Correo");
+
                 textBoxCorreo.Text = "Escribir...";
+            }
+            else
+            {
+                errorProvider.SetError(textBoxCorreo, null);
             }
         }
 
@@ -159,7 +230,13 @@ namespace StatusGeck.Cliente
         {
             if (this.textBoxTelefono.Text.Equals(""))
             {
+                errorProvider.SetError(textBoxTelefono, "Falta ingresar Telefono");
+
                 textBoxTelefono.Text = "Escribir...";
+            }
+            else
+            {
+                errorProvider.SetError(textBoxTelefono, null);
             }
         }
 
@@ -175,7 +252,13 @@ namespace StatusGeck.Cliente
         {
             if (this.textBoxDireccion.Text.Equals(""))
             {
+                errorProvider.SetError(textBoxDireccion, "Falta ingresar Direccion");
+
                 textBoxDireccion.Text = "Escribir...";
+            }
+            else
+            {
+                errorProvider.SetError(textBoxDireccion, null);
             }
         }
 
@@ -199,7 +282,13 @@ namespace StatusGeck.Cliente
         {
             if (this.textBoxApellido.Text.Equals("Escribir..."))
             {
+                errorProvider.SetError(textBoxApellido, "Falta ingresar apellido");
+
                 textBoxApellido.Text = "";
+            }
+            else
+            {
+                errorProvider.SetError(textBoxApellido, null);
             }
         }
         #endregion
@@ -268,6 +357,11 @@ namespace StatusGeck.Cliente
         private void lineShape5_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void textBoxCedula_KeyUp(object sender, KeyEventArgs e)
+        {
+                ValidarTamañominimo(textBoxCedula, 5);
         }
     }
 }

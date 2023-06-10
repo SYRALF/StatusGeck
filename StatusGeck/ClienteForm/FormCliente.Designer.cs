@@ -29,6 +29,7 @@ namespace StatusGeck.Cliente
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormCliente));
             this.btnAgregar = new FontAwesome.Sharp.IconButton();
             this.btnEliminar = new FontAwesome.Sharp.IconButton();
             this.btnEditar = new FontAwesome.Sharp.IconButton();
@@ -55,6 +56,7 @@ namespace StatusGeck.Cliente
             this.lineShape3 = new Microsoft.VisualBasic.PowerPacks.LineShape();
             this.lineShape2 = new Microsoft.VisualBasic.PowerPacks.LineShape();
             this.lineShape1 = new Microsoft.VisualBasic.PowerPacks.LineShape();
+            this.lblError = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -144,6 +146,7 @@ namespace StatusGeck.Cliente
             this.textBoxCedula.TabIndex = 127;
             this.textBoxCedula.Text = "Escribir...";
             this.textBoxCedula.Enter += new System.EventHandler(this.textBoxCedula_Enter);
+            this.textBoxCedula.KeyUp += new System.Windows.Forms.KeyEventHandler(this.textBoxCedula_KeyUp);
             this.textBoxCedula.Leave += new System.EventHandler(this.textBoxCedula_Leave);
             // 
             // label7
@@ -419,6 +422,22 @@ namespace StatusGeck.Cliente
             this.lineShape1.Y2 = 116;
             this.lineShape1.Click += new System.EventHandler(this.lineShape5_Click);
             // 
+            // lblError
+            // 
+            this.lblError.AutoSize = true;
+            this.lblError.Font = new System.Drawing.Font("MS Reference Sans Serif", 10.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblError.ForeColor = System.Drawing.Color.DarkGray;
+            this.lblError.Image = ((System.Drawing.Image)(resources.GetObject("lblError.Image")));
+            this.lblError.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.lblError.Location = new System.Drawing.Point(315, 460);
+            this.lblError.Name = "lblError";
+            this.lblError.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.lblError.Size = new System.Drawing.Size(304, 23);
+            this.lblError.TabIndex = 146;
+            this.lblError.Text = "      Error Mensaje                      ";
+            this.lblError.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.lblError.Visible = false;
+            // 
             // FormCliente
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -427,6 +446,7 @@ namespace StatusGeck.Cliente
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(1025, 492);
+            this.Controls.Add(this.lblError);
             this.Controls.Add(this.btnlimpiar);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.textBoxApellido);
@@ -487,5 +507,6 @@ namespace StatusGeck.Cliente
         private Microsoft.VisualBasic.PowerPacks.LineShape lineShape3;
         private Microsoft.VisualBasic.PowerPacks.LineShape lineShape2;
         private Microsoft.VisualBasic.PowerPacks.LineShape lineShape1;
+        private System.Windows.Forms.Label lblError;
     }
 }
