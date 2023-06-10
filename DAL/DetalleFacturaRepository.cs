@@ -37,7 +37,7 @@ namespace DAL
             using (var command = _connection.CreateCommand())
             {
                 command.CommandText = "Select * from DetalleFactura where CodigoFactura=@CodigoFactura";
-                command.Parameters.AddWithValue("@Identificacion", codigofactura);
+                command.Parameters.AddWithValue("@CodigoFactura", codigofactura);
                 var dataReader = command.ExecuteReader();
                 if (dataReader.HasRows)
                 {
@@ -72,5 +72,6 @@ namespace DAL
                 command.ExecuteNonQuery();
             }
         }
+        
     }
 }

@@ -50,11 +50,11 @@ namespace StatusGeck.Cliente
             this.btnlimpiar = new FontAwesome.Sharp.IconButton();
             this.lineShape5 = new Microsoft.VisualBasic.PowerPacks.LineShape();
             this.shapeContainer1 = new Microsoft.VisualBasic.PowerPacks.ShapeContainer();
-            this.lineShape1 = new Microsoft.VisualBasic.PowerPacks.LineShape();
-            this.lineShape2 = new Microsoft.VisualBasic.PowerPacks.LineShape();
-            this.lineShape3 = new Microsoft.VisualBasic.PowerPacks.LineShape();
-            this.lineShape4 = new Microsoft.VisualBasic.PowerPacks.LineShape();
             this.lineShape6 = new Microsoft.VisualBasic.PowerPacks.LineShape();
+            this.lineShape4 = new Microsoft.VisualBasic.PowerPacks.LineShape();
+            this.lineShape3 = new Microsoft.VisualBasic.PowerPacks.LineShape();
+            this.lineShape2 = new Microsoft.VisualBasic.PowerPacks.LineShape();
+            this.lineShape1 = new Microsoft.VisualBasic.PowerPacks.LineShape();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -66,7 +66,7 @@ namespace StatusGeck.Cliente
             this.btnAgregar.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btnAgregar.IconSize = 32;
             this.btnAgregar.Location = new System.Drawing.Point(827, 209);
-            this.btnAgregar.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnAgregar.Margin = new System.Windows.Forms.Padding(4);
             this.btnAgregar.Name = "btnAgregar";
             this.btnAgregar.Size = new System.Drawing.Size(171, 68);
             this.btnAgregar.TabIndex = 132;
@@ -85,7 +85,7 @@ namespace StatusGeck.Cliente
             this.btnEliminar.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btnEliminar.IconSize = 32;
             this.btnEliminar.Location = new System.Drawing.Point(827, 359);
-            this.btnEliminar.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnEliminar.Margin = new System.Windows.Forms.Padding(4);
             this.btnEliminar.Name = "btnEliminar";
             this.btnEliminar.Size = new System.Drawing.Size(171, 68);
             this.btnEliminar.TabIndex = 131;
@@ -108,7 +108,7 @@ namespace StatusGeck.Cliente
             this.btnEditar.IconSize = 32;
             this.btnEditar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnEditar.Location = new System.Drawing.Point(827, 284);
-            this.btnEditar.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnEditar.Margin = new System.Windows.Forms.Padding(4);
             this.btnEditar.Name = "btnEditar";
             this.btnEditar.Size = new System.Drawing.Size(171, 68);
             this.btnEditar.TabIndex = 130;
@@ -122,7 +122,7 @@ namespace StatusGeck.Cliente
             // 
             this.textBuscar.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBuscar.Location = new System.Drawing.Point(57, 186);
-            this.textBuscar.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.textBuscar.Margin = new System.Windows.Forms.Padding(4);
             this.textBuscar.Name = "textBuscar";
             this.textBuscar.Size = new System.Drawing.Size(324, 26);
             this.textBuscar.TabIndex = 128;
@@ -138,7 +138,7 @@ namespace StatusGeck.Cliente
             this.textBoxCedula.Font = new System.Drawing.Font("Century Gothic", 12F);
             this.textBoxCedula.ForeColor = System.Drawing.Color.Black;
             this.textBoxCedula.Location = new System.Drawing.Point(179, 33);
-            this.textBoxCedula.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.textBoxCedula.Margin = new System.Windows.Forms.Padding(4);
             this.textBoxCedula.Name = "textBoxCedula";
             this.textBoxCedula.Size = new System.Drawing.Size(239, 25);
             this.textBoxCedula.TabIndex = 127;
@@ -164,8 +164,8 @@ namespace StatusGeck.Cliente
             this.textBoxNombre.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.textBoxNombre.Font = new System.Drawing.Font("Century Gothic", 12F);
             this.textBoxNombre.ForeColor = System.Drawing.Color.Black;
-            this.textBoxNombre.Location = new System.Drawing.Point(179, 87);
-            this.textBoxNombre.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.textBoxNombre.Location = new System.Drawing.Point(179, 83);
+            this.textBoxNombre.Margin = new System.Windows.Forms.Padding(4);
             this.textBoxNombre.Name = "textBoxNombre";
             this.textBoxNombre.Size = new System.Drawing.Size(239, 25);
             this.textBoxNombre.TabIndex = 125;
@@ -178,7 +178,7 @@ namespace StatusGeck.Cliente
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label6.ForeColor = System.Drawing.Color.Black;
-            this.label6.Location = new System.Drawing.Point(477, 87);
+            this.label6.Location = new System.Drawing.Point(477, 83);
             this.label6.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(129, 30);
@@ -192,8 +192,8 @@ namespace StatusGeck.Cliente
             this.textBoxTelefono.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.textBoxTelefono.Font = new System.Drawing.Font("Century Gothic", 12F);
             this.textBoxTelefono.ForeColor = System.Drawing.Color.Black;
-            this.textBoxTelefono.Location = new System.Drawing.Point(613, 15);
-            this.textBoxTelefono.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.textBoxTelefono.Location = new System.Drawing.Point(621, 33);
+            this.textBoxTelefono.Margin = new System.Windows.Forms.Padding(4);
             this.textBoxTelefono.Name = "textBoxTelefono";
             this.textBoxTelefono.Size = new System.Drawing.Size(239, 25);
             this.textBoxTelefono.TabIndex = 123;
@@ -220,8 +220,8 @@ namespace StatusGeck.Cliente
             this.textBoxCorreo.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.textBoxCorreo.Font = new System.Drawing.Font("Century Gothic", 12F);
             this.textBoxCorreo.ForeColor = System.Drawing.Color.Black;
-            this.textBoxCorreo.Location = new System.Drawing.Point(181, 134);
-            this.textBoxCorreo.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.textBoxCorreo.Location = new System.Drawing.Point(181, 133);
+            this.textBoxCorreo.Margin = new System.Windows.Forms.Padding(4);
             this.textBoxCorreo.Name = "textBoxCorreo";
             this.textBoxCorreo.Size = new System.Drawing.Size(239, 25);
             this.textBoxCorreo.TabIndex = 121;
@@ -247,8 +247,8 @@ namespace StatusGeck.Cliente
             this.textBoxDireccion.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.textBoxDireccion.Font = new System.Drawing.Font("Century Gothic", 12F);
             this.textBoxDireccion.ForeColor = System.Drawing.Color.Black;
-            this.textBoxDireccion.Location = new System.Drawing.Point(621, 85);
-            this.textBoxDireccion.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.textBoxDireccion.Location = new System.Drawing.Point(621, 81);
+            this.textBoxDireccion.Margin = new System.Windows.Forms.Padding(4);
             this.textBoxDireccion.Name = "textBoxDireccion";
             this.textBoxDireccion.Size = new System.Drawing.Size(239, 25);
             this.textBoxDireccion.TabIndex = 119;
@@ -261,7 +261,7 @@ namespace StatusGeck.Cliente
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.Black;
-            this.label1.Location = new System.Drawing.Point(52, 87);
+            this.label1.Location = new System.Drawing.Point(52, 86);
             this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(110, 30);
@@ -294,7 +294,7 @@ namespace StatusGeck.Cliente
             this.btnConsultar.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btnConsultar.IconSize = 32;
             this.btnConsultar.Location = new System.Drawing.Point(621, 175);
-            this.btnConsultar.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnConsultar.Margin = new System.Windows.Forms.Padding(4);
             this.btnConsultar.Name = "btnConsultar";
             this.btnConsultar.Size = new System.Drawing.Size(171, 38);
             this.btnConsultar.TabIndex = 135;
@@ -309,7 +309,7 @@ namespace StatusGeck.Cliente
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Century Gothic", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.Color.Black;
-            this.label2.Location = new System.Drawing.Point(477, 133);
+            this.label2.Location = new System.Drawing.Point(477, 132);
             this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(112, 30);
@@ -322,8 +322,8 @@ namespace StatusGeck.Cliente
             this.textBoxApellido.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.textBoxApellido.Font = new System.Drawing.Font("Century Gothic", 12F);
             this.textBoxApellido.ForeColor = System.Drawing.Color.Black;
-            this.textBoxApellido.Location = new System.Drawing.Point(621, 130);
-            this.textBoxApellido.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.textBoxApellido.Location = new System.Drawing.Point(621, 129);
+            this.textBoxApellido.Margin = new System.Windows.Forms.Padding(4);
             this.textBoxApellido.Name = "textBoxApellido";
             this.textBoxApellido.Size = new System.Drawing.Size(239, 25);
             this.textBoxApellido.TabIndex = 136;
@@ -339,7 +339,7 @@ namespace StatusGeck.Cliente
             this.btnlimpiar.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btnlimpiar.IconSize = 32;
             this.btnlimpiar.Location = new System.Drawing.Point(827, 124);
-            this.btnlimpiar.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnlimpiar.Margin = new System.Windows.Forms.Padding(4);
             this.btnlimpiar.Name = "btnlimpiar";
             this.btnlimpiar.Size = new System.Drawing.Size(171, 38);
             this.btnlimpiar.TabIndex = 138;
@@ -374,32 +374,14 @@ namespace StatusGeck.Cliente
             this.shapeContainer1.TabIndex = 139;
             this.shapeContainer1.TabStop = false;
             // 
-            // lineShape1
+            // lineShape6
             // 
-            this.lineShape1.Name = "lineShape1";
-            this.lineShape1.X1 = 175;
-            this.lineShape1.X2 = 354;
-            this.lineShape1.Y1 = 116;
-            this.lineShape1.Y2 = 116;
-            this.lineShape1.Click += new System.EventHandler(this.lineShape5_Click);
-            // 
-            // lineShape2
-            // 
-            this.lineShape2.Name = "lineShape2";
-            this.lineShape2.X1 = 178;
-            this.lineShape2.X2 = 357;
-            this.lineShape2.Y1 = 164;
-            this.lineShape2.Y2 = 164;
-            this.lineShape2.Click += new System.EventHandler(this.lineShape5_Click);
-            // 
-            // lineShape3
-            // 
-            this.lineShape3.Name = "lineShape3";
-            this.lineShape3.X1 = 620;
-            this.lineShape3.X2 = 799;
-            this.lineShape3.Y1 = 60;
-            this.lineShape3.Y2 = 60;
-            this.lineShape3.Click += new System.EventHandler(this.lineShape5_Click);
+            this.lineShape6.Name = "lineShape6";
+            this.lineShape6.X1 = 618;
+            this.lineShape6.X2 = 797;
+            this.lineShape6.Y1 = 163;
+            this.lineShape6.Y2 = 163;
+            this.lineShape6.Click += new System.EventHandler(this.lineShape5_Click);
             // 
             // lineShape4
             // 
@@ -410,14 +392,32 @@ namespace StatusGeck.Cliente
             this.lineShape4.Y2 = 117;
             this.lineShape4.Click += new System.EventHandler(this.lineShape5_Click);
             // 
-            // lineShape6
+            // lineShape3
             // 
-            this.lineShape6.Name = "lineShape6";
-            this.lineShape6.X1 = 618;
-            this.lineShape6.X2 = 797;
-            this.lineShape6.Y1 = 163;
-            this.lineShape6.Y2 = 163;
-            this.lineShape6.Click += new System.EventHandler(this.lineShape5_Click);
+            this.lineShape3.Name = "lineShape3";
+            this.lineShape3.X1 = 620;
+            this.lineShape3.X2 = 799;
+            this.lineShape3.Y1 = 60;
+            this.lineShape3.Y2 = 60;
+            this.lineShape3.Click += new System.EventHandler(this.lineShape5_Click);
+            // 
+            // lineShape2
+            // 
+            this.lineShape2.Name = "lineShape2";
+            this.lineShape2.X1 = 178;
+            this.lineShape2.X2 = 357;
+            this.lineShape2.Y1 = 164;
+            this.lineShape2.Y2 = 164;
+            this.lineShape2.Click += new System.EventHandler(this.lineShape5_Click);
+            // 
+            // lineShape1
+            // 
+            this.lineShape1.Name = "lineShape1";
+            this.lineShape1.X1 = 175;
+            this.lineShape1.X2 = 354;
+            this.lineShape1.Y1 = 116;
+            this.lineShape1.Y2 = 116;
+            this.lineShape1.Click += new System.EventHandler(this.lineShape5_Click);
             // 
             // FormCliente
             // 
@@ -449,7 +449,7 @@ namespace StatusGeck.Cliente
             this.Controls.Add(this.shapeContainer1);
             this.DoubleBuffered = true;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "FormCliente";
             this.Text = "FormCliente";
             this.Load += new System.EventHandler(this.FormCliente_Load);

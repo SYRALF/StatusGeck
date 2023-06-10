@@ -284,6 +284,17 @@ namespace StatusGeck.Factura
             btnAgregar.Enabled = false;
             gestionbotonesDetalles(true);
         }
+
+        private void btnguardar_Click(object sender, EventArgs e)
+        {
+            Guardar();
+        }
+        public void Guardar()
+        {
+            var respuesta = facturaService.Guardar(this.factura);
+            MessageBox.Show(respuesta, "Mensaje de Guardado", MessageBoxButtons.OKCancel, MessageBoxIcon.Information);
+
+        }
     }
 
 }

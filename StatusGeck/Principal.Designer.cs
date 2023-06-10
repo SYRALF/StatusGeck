@@ -66,7 +66,7 @@ namespace StatusGeck
             this.panelMenu.Controls.Add(this.panelLogo);
             this.panelMenu.ForeColor = System.Drawing.Color.DimGray;
             this.panelMenu.Location = new System.Drawing.Point(0, 0);
-            this.panelMenu.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.panelMenu.Margin = new System.Windows.Forms.Padding(4);
             this.panelMenu.Name = "panelMenu";
             this.panelMenu.Size = new System.Drawing.Size(239, 549);
             this.panelMenu.TabIndex = 0;
@@ -84,7 +84,7 @@ namespace StatusGeck
             this.btnGastos.IconSize = 35;
             this.btnGastos.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnGastos.Location = new System.Drawing.Point(0, 390);
-            this.btnGastos.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnGastos.Margin = new System.Windows.Forms.Padding(4);
             this.btnGastos.Name = "btnGastos";
             this.btnGastos.Padding = new System.Windows.Forms.Padding(13, 0, 27, 0);
             this.btnGastos.Size = new System.Drawing.Size(239, 62);
@@ -108,12 +108,12 @@ namespace StatusGeck
             this.btnContabilidad.IconSize = 35;
             this.btnContabilidad.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnContabilidad.Location = new System.Drawing.Point(0, 328);
-            this.btnContabilidad.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnContabilidad.Margin = new System.Windows.Forms.Padding(4);
             this.btnContabilidad.Name = "btnContabilidad";
             this.btnContabilidad.Padding = new System.Windows.Forms.Padding(13, 0, 27, 0);
             this.btnContabilidad.Size = new System.Drawing.Size(239, 62);
             this.btnContabilidad.TabIndex = 5;
-            this.btnContabilidad.Text = "CONTABILIDAD";
+            this.btnContabilidad.Text = "VENTAS";
             this.btnContabilidad.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnContabilidad.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnContabilidad.UseVisualStyleBackColor = true;
@@ -132,7 +132,7 @@ namespace StatusGeck
             this.btnFactura.IconSize = 35;
             this.btnFactura.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnFactura.Location = new System.Drawing.Point(0, 266);
-            this.btnFactura.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnFactura.Margin = new System.Windows.Forms.Padding(4);
             this.btnFactura.Name = "btnFactura";
             this.btnFactura.Padding = new System.Windows.Forms.Padding(13, 0, 27, 0);
             this.btnFactura.Size = new System.Drawing.Size(239, 62);
@@ -156,7 +156,7 @@ namespace StatusGeck
             this.btnEmpleado.IconSize = 35;
             this.btnEmpleado.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnEmpleado.Location = new System.Drawing.Point(0, 204);
-            this.btnEmpleado.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnEmpleado.Margin = new System.Windows.Forms.Padding(4);
             this.btnEmpleado.Name = "btnEmpleado";
             this.btnEmpleado.Padding = new System.Windows.Forms.Padding(13, 0, 27, 0);
             this.btnEmpleado.Size = new System.Drawing.Size(239, 62);
@@ -180,7 +180,7 @@ namespace StatusGeck
             this.btnCliente.IconSize = 35;
             this.btnCliente.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnCliente.Location = new System.Drawing.Point(0, 142);
-            this.btnCliente.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnCliente.Margin = new System.Windows.Forms.Padding(4);
             this.btnCliente.Name = "btnCliente";
             this.btnCliente.Padding = new System.Windows.Forms.Padding(13, 0, 27, 0);
             this.btnCliente.Size = new System.Drawing.Size(239, 62);
@@ -196,7 +196,7 @@ namespace StatusGeck
             this.panelLogo.Controls.Add(this.btnInicio);
             this.panelLogo.Dock = System.Windows.Forms.DockStyle.Top;
             this.panelLogo.Location = new System.Drawing.Point(0, 0);
-            this.panelLogo.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.panelLogo.Margin = new System.Windows.Forms.Padding(4);
             this.panelLogo.Name = "panelLogo";
             this.panelLogo.Size = new System.Drawing.Size(239, 142);
             this.panelLogo.TabIndex = 0;
@@ -206,7 +206,7 @@ namespace StatusGeck
             // 
             this.btnInicio.Image = ((System.Drawing.Image)(resources.GetObject("btnInicio.Image")));
             this.btnInicio.Location = new System.Drawing.Point(9, 9);
-            this.btnInicio.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnInicio.Margin = new System.Windows.Forms.Padding(4);
             this.btnInicio.Name = "btnInicio";
             this.btnInicio.Size = new System.Drawing.Size(216, 118);
             this.btnInicio.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -223,7 +223,7 @@ namespace StatusGeck
             this.panelTitulo.Controls.Add(this.titulo);
             this.panelTitulo.Controls.Add(this.iconoFormulario);
             this.panelTitulo.Location = new System.Drawing.Point(239, 0);
-            this.panelTitulo.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.panelTitulo.Margin = new System.Windows.Forms.Padding(4);
             this.panelTitulo.Name = "panelTitulo";
             this.panelTitulo.Size = new System.Drawing.Size(1025, 57);
             this.panelTitulo.TabIndex = 1;
@@ -239,7 +239,7 @@ namespace StatusGeck
             this.btnMinimizar.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btnMinimizar.IconSize = 38;
             this.btnMinimizar.Location = new System.Drawing.Point(919, 0);
-            this.btnMinimizar.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnMinimizar.Margin = new System.Windows.Forms.Padding(4);
             this.btnMinimizar.Name = "btnMinimizar";
             this.btnMinimizar.Size = new System.Drawing.Size(48, 38);
             this.btnMinimizar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
@@ -251,7 +251,7 @@ namespace StatusGeck
             // 
             this.Sombra.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(24)))), ((int)(((byte)(58)))));
             this.Sombra.Location = new System.Drawing.Point(0, 42);
-            this.Sombra.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Sombra.Margin = new System.Windows.Forms.Padding(4);
             this.Sombra.Name = "Sombra";
             this.Sombra.Size = new System.Drawing.Size(1025, 11);
             this.Sombra.TabIndex = 2;
@@ -266,7 +266,7 @@ namespace StatusGeck
             this.btnCerrar.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btnCerrar.IconSize = 37;
             this.btnCerrar.Location = new System.Drawing.Point(975, 4);
-            this.btnCerrar.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnCerrar.Margin = new System.Windows.Forms.Padding(4);
             this.btnCerrar.Name = "btnCerrar";
             this.btnCerrar.Size = new System.Drawing.Size(37, 37);
             this.btnCerrar.TabIndex = 2;
@@ -294,7 +294,7 @@ namespace StatusGeck
             this.iconoFormulario.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.iconoFormulario.IconSize = 39;
             this.iconoFormulario.Location = new System.Drawing.Point(19, 7);
-            this.iconoFormulario.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.iconoFormulario.Margin = new System.Windows.Forms.Padding(4);
             this.iconoFormulario.Name = "iconoFormulario";
             this.iconoFormulario.Size = new System.Drawing.Size(43, 39);
             this.iconoFormulario.TabIndex = 0;
@@ -306,7 +306,7 @@ namespace StatusGeck
             this.pFormularios.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("pFormularios.BackgroundImage")));
             this.pFormularios.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.pFormularios.Location = new System.Drawing.Point(239, 53);
-            this.pFormularios.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.pFormularios.Margin = new System.Windows.Forms.Padding(4);
             this.pFormularios.Name = "pFormularios";
             this.pFormularios.Size = new System.Drawing.Size(1025, 496);
             this.pFormularios.TabIndex = 4;
@@ -321,7 +321,7 @@ namespace StatusGeck
             this.Controls.Add(this.panelTitulo);
             this.Controls.Add(this.panelMenu);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "Principal";
             this.Text = "Principal";
             this.panelMenu.ResumeLayout(false);

@@ -490,6 +490,7 @@ namespace StatusGeck.Factura
             this.btnguardar.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnguardar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnguardar.UseVisualStyleBackColor = false;
+            this.btnguardar.Click += new System.EventHandler(this.btnguardar_Click);
             // 
             // btnlimpiardetalles
             // 

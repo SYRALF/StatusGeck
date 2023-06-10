@@ -11,7 +11,7 @@ namespace DAL
     public class FacturaRepository
     {
         private readonly SqlConnection _connection;
-        private readonly List<Factura> facturas;
+        private List<Factura> facturas ;
         private ClienteRepository clienteRepository;
         private DetalleFacturaRepository detalleFacturaRepository;
         public FacturaRepository(ConnectionManager connection)
@@ -26,7 +26,7 @@ namespace DAL
             using (var command = _connection.CreateCommand())
             {
                 command.CommandText = @"Insert Into Factura(Codigo,Fecha,Identificacion,CantidadTotal,ValorTotal) 
-                                        values (@CodigoFactura,@Fecha,@Identificacion,@CantidadTotal,@ValorTotal)";
+                                        values (@Codigo,@Fecha,@Identificacion,@CantidadTotal,@ValorTotal)";
                 command.Parameters.AddWithValue("@Codigo", factura.Codigo);
                 command.Parameters.AddWithValue("@Fecha", factura.Fecha);
                 command.Parameters.AddWithValue("@Identificacion", factura.cliente.Identificacion);
@@ -107,6 +107,19 @@ namespace DAL
             }
             detalleFacturaRepository.Eliminar(factura.Codigo);
             
+        }
+        public List<Factura> ConsultarxFecha(DateTime fechaInicial, DateTime fechaFinal)
+        {
+            facturas = ConsultarTodos();
+            if (fechaInicial.Date == fechaFinal.Date)
+            {
+                facturas = facturas.Where(L => L.Fecha.Date == fechaInicial.Date).ToList();
+            }
+            else
+            {
+                facturas = facturas.Where(L => L.Fecha.Date >= fechaInicial.Date && L.Fecha.Date <= fechaFinal.Date).ToList();
+            }
+            return facturas;
         }
     }
 }

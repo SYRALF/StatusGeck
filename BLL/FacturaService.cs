@@ -40,7 +40,7 @@ namespace BLL
                 else
                 {
                     conexion.Close();
-                    return $"Esta Identificacion Ya existe {mensajeEmail}";
+                    return $"Este Codigo de factura Ya existe {mensajeEmail}";
                 }
 
             }
@@ -111,6 +111,47 @@ namespace BLL
             }
             finally { conexion.Close(); }
         }
+        public List<FacturaAuxiliar> ConsultaFacturas(List<Factura> facturas)
+        {
+            List<FacturaAuxiliar> facturaAuxiliars = new List<FacturaAuxiliar>();
+            foreach(var item in facturas)
+            {
+                FacturaAuxiliar facturaAuxiliar = new FacturaAuxiliar(item.Codigo, item.Fecha, item.cliente.Identificacion, item.CantidadTotal, item.ValorTotal);
+                facturaAuxiliars.Add(facturaAuxiliar);
+            }
+            return facturaAuxiliars;
+        }
+        public ConsultaRespuestaFactura ConsultarxFecha(DateTime fechainicia, DateTime fechafinal)
+        {
+            ConsultaRespuestaFactura consulta = new ConsultaRespuestaFactura();
+            try
+            {
+                if( fechainicia.Date > fechafinal.Date)
+                {
+                    consulta.facturas = null;
+                    consulta.Mensaje = "La fecha inicial no debe ser mayor a la fecha final";
+                }
+                else
+                {
+                    conexion.Open();
+                    consulta.facturas = repositorio.ConsultarxFecha(fechainicia,fechafinal);
+
+                    consulta.Mensaje = (consulta.facturas.Count != 0) ? "Se consulto Correctamen" : "No hay Facturas Que mostrar";
+                    
+                }
+                return consulta;
+            }
+            catch (Exception e)
+            {
+                consulta.Mensaje = $"Error de la Aplicacion: {e.Message}";
+                return consulta;
+            }
+            finally
+            {
+                conexion.Close();
+
+            }
+        }
 
         public class ConsultaRespuestaFactura
         {
@@ -123,6 +164,23 @@ namespace BLL
             public string Mensaje { get; set; }
             public bool Error { get; set; }
 
+        }
+        public class FacturaAuxiliar
+        {
+            public string Codigo { get; set; }
+            public DateTime Fecha { get; set; }
+            public string Identificacion { get; set; }
+            public int CantidadTotal { get; set; }
+            public decimal ValorTotal { get; set; }
+
+            public FacturaAuxiliar(string codigo, DateTime fecha, string identificacion, int cantidad, decimal valortotal)
+            {
+                Codigo = codigo;
+                Fecha = fecha;
+                Identificacion = identificacion;
+                CantidadTotal = cantidad; 
+                ValorTotal = valortotal;
+            }
         }
     }
 }

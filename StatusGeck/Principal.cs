@@ -129,6 +129,7 @@ namespace StatusGeck
         private void btnContabilidad_Click(object sender, EventArgs e)
         {
             ActivarBoton(sender, Colour.color4);
+            AbrirFormularioHijo(new FormVentas());
         }
 
         private void btnGastos_Click(object sender, EventArgs e)
