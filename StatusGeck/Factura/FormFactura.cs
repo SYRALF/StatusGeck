@@ -17,8 +17,6 @@ namespace StatusGeck.Factura
     {
         ClienteService clienteService;
         FacturaService facturaService;
-        List<DetalleFactura> detalles;
-        DetalleFactura detalleFactura;
         Entity.Factura factura=null;
         Entity.Cliente cliente=null;
         public FormFactura()
@@ -27,7 +25,6 @@ namespace StatusGeck.Factura
             var connectionString = ConfigurationManager.ConnectionStrings["DefaultConnection"].ConnectionString;
             clienteService = new ClienteService(connectionString);
             facturaService = new FacturaService(connectionString);
-            detalles = new List<DetalleFactura>();
             factura = new Entity.Factura();
         }
         public void Limpiar()
@@ -37,6 +34,7 @@ namespace StatusGeck.Factura
             textBoxCodigo.Text = "Escribir....";
             textBoxcantidadtotal.Text = "0";
             textBoxpreciototal.Text = "0";
+            btnguardar.Enabled = false;
 
             limpiardetalles();
             gestionbotonesDetalles(false);
@@ -60,8 +58,6 @@ namespace StatusGeck.Factura
         {
             btnguardar.Enabled = true;
            
-
-            detalleFactura = new DetalleFactura();
             this.factura.AgregarDetalle(textBoxDescripcion.Text,Convert.ToInt32(textBoxCantidad.Text),Convert.ToDecimal(textBoxPrecio.Text));
            
             factura.CalcularCantidadTotal();
@@ -73,14 +69,23 @@ namespace StatusGeck.Factura
         
         private void btnEditar_Click(object sender, EventArgs e)
         {
-            
+            EditarDetalle();
         }
-
+        public void EditarDetalle()
+        {
+            List<DetalleFactura> detalleFactura = this.factura.detalleFacturas;
+            factura.EditarDetalle(textBoxDescripcion.Text, Convert.ToInt32(textBoxCantidad.Text), Convert.ToDecimal(textBoxPrecio.Text), Convert.ToInt32(dataGridView1.CurrentRow.Index));
+            PintarTabla();
+        }
         private void btnEliminar_Click(object sender, EventArgs e)
         {
-            
+            EliminarDetalle();
         }
-
+        public void EliminarDetalle()
+        { 
+            factura.EliminarDEtalle(Convert.ToInt32(dataGridView1.CurrentRow.Index));
+            PintarTabla();
+        }
         private void iconPictureBox1_Click(object sender, EventArgs e)
         {
             BuscarCLiente();
@@ -125,7 +130,7 @@ namespace StatusGeck.Factura
         {
             if (this.textBoxDescripcion.Text.Equals(""))
             {
-                textBoxCedula.Text = "Escribir...";
+                textBoxDescripcion.Text = "Escribir...";
             }
         }
 
@@ -199,13 +204,13 @@ namespace StatusGeck.Factura
         private void btnlimpiardetalles_Click(object sender, EventArgs e)
         {
             limpiardetalles();
-            GestionarOpcionesIniciales(true);
             gestionbotonesDetalles(false);
+            GestionarOpcionesSecundarias(true);
         }
         public void gestionbotonesDetalles(bool opcion)
         {
             btnEditar.Enabled = opcion;
-            btnEditar.Enabled = opcion;
+            btnEliminar.Enabled = opcion;
         }
         public void limpiardetalles()
         {
@@ -236,8 +241,8 @@ namespace StatusGeck.Factura
                 else
                 {
                     InicializarValores();
-                    GestionarOpcionesIniciales(true);
                     GestionarOpcionesIniciales(false);
+                    GestionarOpcionesSecundarias(true);
                 }
                 
             }
@@ -260,12 +265,24 @@ namespace StatusGeck.Factura
             textBoxPrecio.Enabled = opcion;
             btnAgregar.Enabled = opcion;
             btnlimpiardetalles.Enabled = opcion;
-            btnguardar.Enabled = opcion;
         }
         public void GestionarOpcionesIniciales(bool opcion)
         {
             textBoxCedula.Enabled = opcion;
             textBoxCodigo.Enabled = opcion;
+        }
+
+        private void dataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            SeleccionCelda();
+        }
+        public void SeleccionCelda()
+        {
+            textBoxDescripcion.Text = dataGridView1.CurrentRow.Cells[1].Value.ToString();
+            textBoxCantidad.Text = dataGridView1.CurrentRow.Cells[2].Value.ToString();
+            textBoxPrecio.Text = dataGridView1.CurrentRow.Cells[3].Value.ToString();
+            btnAgregar.Enabled = false;
+            gestionbotonesDetalles(true);
         }
     }
 

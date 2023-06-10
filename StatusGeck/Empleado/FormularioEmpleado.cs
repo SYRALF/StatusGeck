@@ -281,6 +281,10 @@ namespace StatusGeck.Empleado
 
         private void dataGridView2_CellClick(object sender, DataGridViewCellEventArgs e)
         {
+            SeleccionCelda();
+        }
+        public void SeleccionCelda()
+        {
             string indetinficacion = dataGridView2.CurrentRow.Cells[0].Value.ToString();
 
             Entity.Empleado empleado = new Entity.Empleado();
@@ -292,7 +296,7 @@ namespace StatusGeck.Empleado
             textBoxCedula.Text = empleado.Identificacion;
             textBoxApellido.Text = empleado.Apellido;
             textBoxNombre.Text = empleado.Nombre;
-            textBoxDireccion.Text = empleado    .Direccion;
+            textBoxDireccion.Text = empleado.Direccion;
             textBoxCorreo.Text = empleado.Correo;
             textBoxTelefono.Text = empleado.Telefono;
             textBoxUsuario.Text = empleado.Usuario;
