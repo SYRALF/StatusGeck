@@ -38,6 +38,10 @@ namespace Entity
         {
             CantidadTotal = detalleFacturas.Count();
         }
+        public int calcularcantidaditems()
+        {
+            return detalleFacturas.Sum(df => df.Cantidad);
+        }
         public List<DetalleFactura> ObtenerDetalles()
         {
             return detalleFacturas;

@@ -45,6 +45,8 @@ namespace StatusGeck.Factura
             this.lineShape2 = new Microsoft.VisualBasic.PowerPacks.LineShape();
             this.lineShape5 = new Microsoft.VisualBasic.PowerPacks.LineShape();
             this.shapeContainer1 = new Microsoft.VisualBasic.PowerPacks.ShapeContainer();
+            this.lineShape8 = new Microsoft.VisualBasic.PowerPacks.LineShape();
+            this.lineShape4 = new Microsoft.VisualBasic.PowerPacks.LineShape();
             this.lineShape3 = new Microsoft.VisualBasic.PowerPacks.LineShape();
             this.iconPictureBox1 = new FontAwesome.Sharp.IconPictureBox();
             this.label3 = new System.Windows.Forms.Label();
@@ -61,8 +63,6 @@ namespace StatusGeck.Factura
             this.textBoxpreciototal = new System.Windows.Forms.TextBox();
             this.btnguardar = new FontAwesome.Sharp.IconButton();
             this.btnlimpiardetalles = new FontAwesome.Sharp.IconButton();
-            this.lineShape4 = new Microsoft.VisualBasic.PowerPacks.LineShape();
-            this.lineShape8 = new Microsoft.VisualBasic.PowerPacks.LineShape();
             this.btnnuevaFactura = new FontAwesome.Sharp.IconButton();
             this.btnFactura = new FontAwesome.Sharp.IconButton();
             ((System.ComponentModel.ISupportInitialize)(this.iconPictureBox1)).BeginInit();
@@ -76,7 +76,7 @@ namespace StatusGeck.Factura
             this.textBoxCedula.Font = new System.Drawing.Font("Century Gothic", 12F);
             this.textBoxCedula.ForeColor = System.Drawing.Color.Black;
             this.textBoxCedula.Location = new System.Drawing.Point(140, 16);
-            this.textBoxCedula.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.textBoxCedula.Margin = new System.Windows.Forms.Padding(4);
             this.textBoxCedula.Name = "textBoxCedula";
             this.textBoxCedula.Size = new System.Drawing.Size(191, 25);
             this.textBoxCedula.TabIndex = 135;
@@ -104,7 +104,7 @@ namespace StatusGeck.Factura
             this.textBoxNombre.Font = new System.Drawing.Font("Century Gothic", 12F);
             this.textBoxNombre.ForeColor = System.Drawing.Color.Black;
             this.textBoxNombre.Location = new System.Drawing.Point(140, 69);
-            this.textBoxNombre.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.textBoxNombre.Margin = new System.Windows.Forms.Padding(4);
             this.textBoxNombre.Name = "textBoxNombre";
             this.textBoxNombre.Size = new System.Drawing.Size(239, 25);
             this.textBoxNombre.TabIndex = 133;
@@ -129,7 +129,7 @@ namespace StatusGeck.Factura
             this.textBoxDescripcion.Font = new System.Drawing.Font("Century Gothic", 12F);
             this.textBoxDescripcion.ForeColor = System.Drawing.Color.Black;
             this.textBoxDescripcion.Location = new System.Drawing.Point(604, 15);
-            this.textBoxDescripcion.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.textBoxDescripcion.Margin = new System.Windows.Forms.Padding(4);
             this.textBoxDescripcion.Name = "textBoxDescripcion";
             this.textBoxDescripcion.Size = new System.Drawing.Size(239, 25);
             this.textBoxDescripcion.TabIndex = 131;
@@ -157,7 +157,7 @@ namespace StatusGeck.Factura
             this.textBoxCantidad.Font = new System.Drawing.Font("Century Gothic", 12F);
             this.textBoxCantidad.ForeColor = System.Drawing.Color.Black;
             this.textBoxCantidad.Location = new System.Drawing.Point(604, 69);
-            this.textBoxCantidad.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.textBoxCantidad.Margin = new System.Windows.Forms.Padding(4);
             this.textBoxCantidad.Name = "textBoxCantidad";
             this.textBoxCantidad.Size = new System.Drawing.Size(239, 25);
             this.textBoxCantidad.TabIndex = 129;
@@ -184,7 +184,7 @@ namespace StatusGeck.Factura
             this.textBoxCodigo.Font = new System.Drawing.Font("Century Gothic", 12F);
             this.textBoxCodigo.ForeColor = System.Drawing.Color.Black;
             this.textBoxCodigo.Location = new System.Drawing.Point(172, 124);
-            this.textBoxCodigo.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.textBoxCodigo.Margin = new System.Windows.Forms.Padding(4);
             this.textBoxCodigo.Name = "textBoxCodigo";
             this.textBoxCodigo.Size = new System.Drawing.Size(224, 25);
             this.textBoxCodigo.TabIndex = 137;
@@ -262,6 +262,22 @@ namespace StatusGeck.Factura
             this.shapeContainer1.TabIndex = 138;
             this.shapeContainer1.TabStop = false;
             // 
+            // lineShape8
+            // 
+            this.lineShape8.Name = "lineShape8";
+            this.lineShape8.X1 = 678;
+            this.lineShape8.X2 = 846;
+            this.lineShape8.Y1 = 477;
+            this.lineShape8.Y2 = 477;
+            // 
+            // lineShape4
+            // 
+            this.lineShape4.Name = "lineShape4";
+            this.lineShape4.X1 = 235;
+            this.lineShape4.X2 = 446;
+            this.lineShape4.Y1 = 479;
+            this.lineShape4.Y2 = 479;
+            // 
             // lineShape3
             // 
             this.lineShape3.Name = "lineShape3";
@@ -279,7 +295,7 @@ namespace StatusGeck.Factura
             this.iconPictureBox1.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.iconPictureBox1.IconSize = 39;
             this.iconPictureBox1.Location = new System.Drawing.Point(381, 12);
-            this.iconPictureBox1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.iconPictureBox1.Margin = new System.Windows.Forms.Padding(4);
             this.iconPictureBox1.Name = "iconPictureBox1";
             this.iconPictureBox1.Size = new System.Drawing.Size(43, 39);
             this.iconPictureBox1.TabIndex = 139;
@@ -306,7 +322,7 @@ namespace StatusGeck.Factura
             this.textBoxPrecio.Font = new System.Drawing.Font("Century Gothic", 12F);
             this.textBoxPrecio.ForeColor = System.Drawing.Color.Black;
             this.textBoxPrecio.Location = new System.Drawing.Point(601, 124);
-            this.textBoxPrecio.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.textBoxPrecio.Margin = new System.Windows.Forms.Padding(4);
             this.textBoxPrecio.Name = "textBoxPrecio";
             this.textBoxPrecio.Size = new System.Drawing.Size(239, 25);
             this.textBoxPrecio.TabIndex = 141;
@@ -318,7 +334,7 @@ namespace StatusGeck.Factura
             // 
             this.dateTimePicker1.Enabled = false;
             this.dateTimePicker1.Location = new System.Drawing.Point(142, 185);
-            this.dateTimePicker1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.dateTimePicker1.Margin = new System.Windows.Forms.Padding(4);
             this.dateTimePicker1.Name = "dateTimePicker1";
             this.dateTimePicker1.Size = new System.Drawing.Size(259, 22);
             this.dateTimePicker1.TabIndex = 143;
@@ -344,7 +360,7 @@ namespace StatusGeck.Factura
             this.btnAgregar.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btnAgregar.IconSize = 32;
             this.btnAgregar.Location = new System.Drawing.Point(848, 69);
-            this.btnAgregar.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnAgregar.Margin = new System.Windows.Forms.Padding(4);
             this.btnAgregar.Name = "btnAgregar";
             this.btnAgregar.Size = new System.Drawing.Size(124, 41);
             this.btnAgregar.TabIndex = 147;
@@ -361,8 +377,8 @@ namespace StatusGeck.Factura
             this.btnEliminar.IconColor = System.Drawing.Color.Black;
             this.btnEliminar.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btnEliminar.IconSize = 32;
-            this.btnEliminar.Location = new System.Drawing.Point(885, 263);
-            this.btnEliminar.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnEliminar.Location = new System.Drawing.Point(848, 185);
+            this.btnEliminar.Margin = new System.Windows.Forms.Padding(4);
             this.btnEliminar.Name = "btnEliminar";
             this.btnEliminar.Size = new System.Drawing.Size(124, 41);
             this.btnEliminar.TabIndex = 146;
@@ -379,8 +395,8 @@ namespace StatusGeck.Factura
             this.btnEditar.IconColor = System.Drawing.Color.Black;
             this.btnEditar.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btnEditar.IconSize = 32;
-            this.btnEditar.Location = new System.Drawing.Point(848, 140);
-            this.btnEditar.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnEditar.Location = new System.Drawing.Point(848, 127);
+            this.btnEditar.Margin = new System.Windows.Forms.Padding(4);
             this.btnEditar.Name = "btnEditar";
             this.btnEditar.Size = new System.Drawing.Size(124, 41);
             this.btnEditar.TabIndex = 148;
@@ -392,9 +408,10 @@ namespace StatusGeck.Factura
             // 
             // dataGridView1
             // 
+            this.dataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Location = new System.Drawing.Point(28, 238);
-            this.dataGridView1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.dataGridView1.Margin = new System.Windows.Forms.Padding(4);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowHeadersWidth = 51;
             this.dataGridView1.Size = new System.Drawing.Size(849, 191);
@@ -421,7 +438,7 @@ namespace StatusGeck.Factura
             this.textBoxcantidadtotal.Font = new System.Drawing.Font("Century Gothic", 12F);
             this.textBoxcantidadtotal.ForeColor = System.Drawing.Color.Black;
             this.textBoxcantidadtotal.Location = new System.Drawing.Point(235, 450);
-            this.textBoxcantidadtotal.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.textBoxcantidadtotal.Margin = new System.Windows.Forms.Padding(4);
             this.textBoxcantidadtotal.Name = "textBoxcantidadtotal";
             this.textBoxcantidadtotal.Size = new System.Drawing.Size(124, 25);
             this.textBoxcantidadtotal.TabIndex = 151;
@@ -449,7 +466,7 @@ namespace StatusGeck.Factura
             this.textBoxpreciototal.Font = new System.Drawing.Font("Century Gothic", 12F);
             this.textBoxpreciototal.ForeColor = System.Drawing.Color.Black;
             this.textBoxpreciototal.Location = new System.Drawing.Point(679, 450);
-            this.textBoxpreciototal.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.textBoxpreciototal.Margin = new System.Windows.Forms.Padding(4);
             this.textBoxpreciototal.Name = "textBoxpreciototal";
             this.textBoxpreciototal.Size = new System.Drawing.Size(154, 25);
             this.textBoxpreciototal.TabIndex = 153;
@@ -463,7 +480,7 @@ namespace StatusGeck.Factura
             this.btnguardar.IconColor = System.Drawing.Color.Black;
             this.btnguardar.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btnguardar.IconSize = 32;
-            this.btnguardar.Location = new System.Drawing.Point(888, 321);
+            this.btnguardar.Location = new System.Drawing.Point(888, 291);
             this.btnguardar.Margin = new System.Windows.Forms.Padding(4);
             this.btnguardar.Name = "btnguardar";
             this.btnguardar.Size = new System.Drawing.Size(124, 81);
@@ -492,25 +509,8 @@ namespace StatusGeck.Factura
             this.btnlimpiardetalles.UseVisualStyleBackColor = false;
             this.btnlimpiardetalles.Click += new System.EventHandler(this.btnlimpiardetalles_Click);
             // 
-            // lineShape4
-            // 
-            this.lineShape4.Name = "lineShape4";
-            this.lineShape4.X1 = 235;
-            this.lineShape4.X2 = 446;
-            this.lineShape4.Y1 = 479;
-            this.lineShape4.Y2 = 479;
-            // 
-            // lineShape8
-            // 
-            this.lineShape8.Name = "lineShape8";
-            this.lineShape8.X1 = 678;
-            this.lineShape8.X2 = 846;
-            this.lineShape8.Y1 = 477;
-            this.lineShape8.Y2 = 477;
-            // 
             // btnnuevaFactura
             // 
-            this.btnnuevaFactura.Enabled = false;
             this.btnnuevaFactura.IconChar = FontAwesome.Sharp.IconChar.FileEdit;
             this.btnnuevaFactura.IconColor = System.Drawing.Color.Black;
             this.btnnuevaFactura.IconFont = FontAwesome.Sharp.IconFont.Auto;
@@ -577,7 +577,7 @@ namespace StatusGeck.Factura
             this.Controls.Add(this.label1);
             this.Controls.Add(this.shapeContainer1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "FormFactura";
             this.Text = "FormFactura";
             this.Load += new System.EventHandler(this.FormFactura_Load);

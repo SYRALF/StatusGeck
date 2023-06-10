@@ -38,35 +38,39 @@ namespace StatusGeck.Factura
             textBoxcantidadtotal.Text = "0";
             textBoxpreciototal.Text = "0";
 
-            textBoxDescripcion.Enabled = false;
-            textBoxCantidad.Enabled = false;
-            textBoxPrecio.Enabled = false;
-            btnAgregar.Enabled = false;
-            btnEditar.Enabled = false;
-            btnlimpiardetalles.Enabled = false;
-
-
             limpiardetalles();
-            btnEliminar.Enabled = false;
-            btnguardar.Enabled = false;
+            gestionbotonesDetalles(false);
+            GestionarOpcionesIniciales(true);
 
-
-            DesactivarOpciones();
+            GestionarOpcionesIniciales(false);
         }
+       
         public void PintarTabla()
         {
-
+            dataGridView1.DataSource = null;
+            dataGridView1.DataSource = this.factura.detalleFacturas;
+            textBoxcantidadtotal.Text = this.factura.calcularcantidaditems().ToString();
+            textBoxpreciototal.Text = this.factura.ValorTotal.ToString();
         }
         private void btnAgregar_Click(object sender, EventArgs e)
         {
-            
+            AgregarDetalles();
         }
         public void AgregarDetalles()
         {
-            
+            btnguardar.Enabled = true;
+           
+
             detalleFactura = new DetalleFactura();
-            
+            this.factura.AgregarDetalle(textBoxDescripcion.Text,Convert.ToInt32(textBoxCantidad.Text),Convert.ToDecimal(textBoxPrecio.Text));
+           
+            factura.CalcularCantidadTotal();
+            factura.CalcularValorTotal();
+
+            PintarTabla();
+            limpiardetalles();
         }
+        
         private void btnEditar_Click(object sender, EventArgs e)
         {
             
@@ -195,6 +199,13 @@ namespace StatusGeck.Factura
         private void btnlimpiardetalles_Click(object sender, EventArgs e)
         {
             limpiardetalles();
+            GestionarOpcionesIniciales(true);
+            gestionbotonesDetalles(false);
+        }
+        public void gestionbotonesDetalles(bool opcion)
+        {
+            btnEditar.Enabled = opcion;
+            btnEditar.Enabled = opcion;
         }
         public void limpiardetalles()
         {
@@ -210,8 +221,30 @@ namespace StatusGeck.Factura
 
         private void btnFactura_Click(object sender, EventArgs e)
         {
-            InicializarValores();
-            ActivarOpciones();
+            ContinuarFactura();
+            
+        }
+        public void ContinuarFactura()
+        {
+            if (textBoxNombre.Text != "" && textBoxCodigo.Text != "Escribir...")
+            {
+                var respuesta = facturaService.BuscarxCodigo(textBoxCodigo.Text);
+                if (respuesta.Factura != null)
+                {
+                    MessageBox.Show(respuesta.Mensaje, "Mensaje de Busqueda", MessageBoxButtons.OKCancel, MessageBoxIcon.Exclamation);
+                }
+                else
+                {
+                    InicializarValores();
+                    GestionarOpcionesIniciales(true);
+                    GestionarOpcionesIniciales(false);
+                }
+                
+            }
+            else
+            {
+                MessageBox.Show("Error en los datos iniciales", "Mensaje de Busqueda", MessageBoxButtons.OKCancel, MessageBoxIcon.Exclamation);
+            }
         }
         public void InicializarValores()
         {
@@ -220,19 +253,19 @@ namespace StatusGeck.Factura
             factura.Fecha = dateTimePicker1.Value;
             factura.cliente = this.cliente;
         }
-        public void ActivarOpciones()
+        public void GestionarOpcionesSecundarias(bool opcion)
         {
-            textBoxDescripcion.Enabled = true;
-            textBoxCantidad.Enabled = true;
-            textBoxPrecio.Enabled = true;
-            btnAgregar.Enabled = true;
-            btnEditar.Enabled = true;
-            btnlimpiardetalles.Enabled = true;
+            textBoxDescripcion.Enabled = opcion;
+            textBoxCantidad.Enabled = opcion;
+            textBoxPrecio.Enabled = opcion;
+            btnAgregar.Enabled = opcion;
+            btnlimpiardetalles.Enabled = opcion;
+            btnguardar.Enabled = opcion;
         }
-        public void DesactivarOpciones()
+        public void GestionarOpcionesIniciales(bool opcion)
         {
-            textBoxCedula.Enabled = true;
-            textBoxCodigo.Enabled = true;
+            textBoxCedula.Enabled = opcion;
+            textBoxCodigo.Enabled = opcion;
         }
     }
 
