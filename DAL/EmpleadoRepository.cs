@@ -120,6 +120,12 @@ namespace DAL
                 return DataReaderMapToEmpleado(dataReader);
             }
         }
+        public List<Empleado> consultarCedula(string letra)
+        {
+            List<Empleado> listaempleados = empleados;
+            listaempleados = listaempleados.Where(L => L.Identificacion.Contains(letra)).ToList();
+            return listaempleados;
+        }
     }
 
 }

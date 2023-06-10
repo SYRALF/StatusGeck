@@ -150,7 +150,15 @@ namespace BLL
             }
             finally { conexion.Close(); }
         }
-       
+        public List<Empleado> consultarCedula(string letra)
+        {
+            return repositorio.consultarCedula(letra);
+        }
+        public List<Persona> consultaFiltro(List<Empleado> lista)
+        {
+            ConsultaRespuestaEmpleado consultaRespuesta = new ConsultaRespuestaEmpleado(lista);
+            return consultaRespuesta.listempleados;
+        }
 
     }
     public class BusquedaEmpleadoRespuesta

@@ -31,6 +31,13 @@ namespace StatusGeck
             if(administrador != null)
             {
                 btnEmpleado.Visible = true;
+                btnVentas.Visible = true;
+            }
+            else
+            {
+                btnEmpleado.Visible = false;
+                btnVentas.Visible = false;
+                btnFactura.Location = new Point(0, 204);
             }
             leftBordenBtn = new Panel();
             leftBordenBtn.Size = new Size(7,60);

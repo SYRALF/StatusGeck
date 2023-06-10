@@ -31,8 +31,7 @@ namespace StatusGeck
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Principal));
             this.panelMenu = new System.Windows.Forms.Panel();
-            this.btnGastos = new FontAwesome.Sharp.IconButton();
-            this.btnContabilidad = new FontAwesome.Sharp.IconButton();
+            this.btnVentas = new FontAwesome.Sharp.IconButton();
             this.btnFactura = new FontAwesome.Sharp.IconButton();
             this.btnEmpleado = new FontAwesome.Sharp.IconButton();
             this.btnCliente = new FontAwesome.Sharp.IconButton();
@@ -58,8 +57,7 @@ namespace StatusGeck
             // 
             this.panelMenu.AutoSize = true;
             this.panelMenu.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
-            this.panelMenu.Controls.Add(this.btnGastos);
-            this.panelMenu.Controls.Add(this.btnContabilidad);
+            this.panelMenu.Controls.Add(this.btnVentas);
             this.panelMenu.Controls.Add(this.btnFactura);
             this.panelMenu.Controls.Add(this.btnEmpleado);
             this.panelMenu.Controls.Add(this.btnCliente);
@@ -71,53 +69,29 @@ namespace StatusGeck
             this.panelMenu.Size = new System.Drawing.Size(239, 549);
             this.panelMenu.TabIndex = 0;
             // 
-            // btnGastos
+            // btnVentas
             // 
-            this.btnGastos.Dock = System.Windows.Forms.DockStyle.Top;
-            this.btnGastos.FlatAppearance.BorderSize = 0;
-            this.btnGastos.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnGastos.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnGastos.ForeColor = System.Drawing.Color.Gainsboro;
-            this.btnGastos.IconChar = FontAwesome.Sharp.IconChar.ShoppingCart;
-            this.btnGastos.IconColor = System.Drawing.Color.Gainsboro;
-            this.btnGastos.IconFont = FontAwesome.Sharp.IconFont.Solid;
-            this.btnGastos.IconSize = 35;
-            this.btnGastos.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnGastos.Location = new System.Drawing.Point(0, 390);
-            this.btnGastos.Margin = new System.Windows.Forms.Padding(4);
-            this.btnGastos.Name = "btnGastos";
-            this.btnGastos.Padding = new System.Windows.Forms.Padding(13, 0, 27, 0);
-            this.btnGastos.Size = new System.Drawing.Size(239, 62);
-            this.btnGastos.TabIndex = 6;
-            this.btnGastos.Text = "GASTOS";
-            this.btnGastos.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnGastos.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnGastos.UseVisualStyleBackColor = true;
-            this.btnGastos.Click += new System.EventHandler(this.btnGastos_Click);
-            // 
-            // btnContabilidad
-            // 
-            this.btnContabilidad.Dock = System.Windows.Forms.DockStyle.Top;
-            this.btnContabilidad.FlatAppearance.BorderSize = 0;
-            this.btnContabilidad.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnContabilidad.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnContabilidad.ForeColor = System.Drawing.Color.Gainsboro;
-            this.btnContabilidad.IconChar = FontAwesome.Sharp.IconChar.ChartColumn;
-            this.btnContabilidad.IconColor = System.Drawing.Color.Gainsboro;
-            this.btnContabilidad.IconFont = FontAwesome.Sharp.IconFont.Solid;
-            this.btnContabilidad.IconSize = 35;
-            this.btnContabilidad.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnContabilidad.Location = new System.Drawing.Point(0, 328);
-            this.btnContabilidad.Margin = new System.Windows.Forms.Padding(4);
-            this.btnContabilidad.Name = "btnContabilidad";
-            this.btnContabilidad.Padding = new System.Windows.Forms.Padding(13, 0, 27, 0);
-            this.btnContabilidad.Size = new System.Drawing.Size(239, 62);
-            this.btnContabilidad.TabIndex = 5;
-            this.btnContabilidad.Text = "VENTAS";
-            this.btnContabilidad.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnContabilidad.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnContabilidad.UseVisualStyleBackColor = true;
-            this.btnContabilidad.Click += new System.EventHandler(this.btnContabilidad_Click);
+            this.btnVentas.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnVentas.FlatAppearance.BorderSize = 0;
+            this.btnVentas.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnVentas.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnVentas.ForeColor = System.Drawing.Color.Gainsboro;
+            this.btnVentas.IconChar = FontAwesome.Sharp.IconChar.ChartColumn;
+            this.btnVentas.IconColor = System.Drawing.Color.Gainsboro;
+            this.btnVentas.IconFont = FontAwesome.Sharp.IconFont.Solid;
+            this.btnVentas.IconSize = 35;
+            this.btnVentas.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnVentas.Location = new System.Drawing.Point(0, 328);
+            this.btnVentas.Margin = new System.Windows.Forms.Padding(4);
+            this.btnVentas.Name = "btnVentas";
+            this.btnVentas.Padding = new System.Windows.Forms.Padding(13, 0, 27, 0);
+            this.btnVentas.Size = new System.Drawing.Size(239, 62);
+            this.btnVentas.TabIndex = 5;
+            this.btnVentas.Text = "VENTAS";
+            this.btnVentas.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnVentas.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnVentas.UseVisualStyleBackColor = true;
+            this.btnVentas.Click += new System.EventHandler(this.btnContabilidad_Click);
             // 
             // btnFactura
             // 
@@ -342,8 +316,7 @@ namespace StatusGeck
         private System.Windows.Forms.Panel panelMenu;
         private System.Windows.Forms.Panel panelLogo;
         private FontAwesome.Sharp.IconButton btnCliente;
-        private FontAwesome.Sharp.IconButton btnGastos;
-        private FontAwesome.Sharp.IconButton btnContabilidad;
+        private FontAwesome.Sharp.IconButton btnVentas;
         private FontAwesome.Sharp.IconButton btnFactura;
         private FontAwesome.Sharp.IconButton btnEmpleado;
         private System.Windows.Forms.PictureBox btnInicio;

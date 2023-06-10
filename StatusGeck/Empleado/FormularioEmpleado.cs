@@ -11,18 +11,30 @@ using System.Windows.Forms;
 using Entity;
 using System.Configuration;
 using Microsoft.VisualBasic.ApplicationServices;
+using System.Runtime.InteropServices;
+using System.Data.SqlClient;
 
 namespace StatusGeck.Empleado
 {
     public partial class FormularioEmpleado : Form
     {
         EmpleadoService empleadoService;
+        ErrorProvider errorProvider = new ErrorProvider();  
         public FormularioEmpleado()
         {
             InitializeComponent();
             var connectionString = ConfigurationManager.ConnectionStrings["DefaultConnection"].ConnectionString;
             empleadoService = new EmpleadoService(connectionString);
             Consultar();
+        }
+        [DllImport("user32.DLL", EntryPoint = "ReleaseCapture")]
+        private extern static void ReleaseCapture();
+        [DllImport("user32.DLL", EntryPoint = "SendMessage")]
+        private extern static void SendMessage(System.IntPtr hwnd, int wmsg, int wparam, int lparam);
+        private void msgError(string msg)
+        {
+            lblError.Text = "     " + msg;
+            lblError.Visible = true;
         }
 
         private void btnAgregar_Click(object sender, EventArgs e)
@@ -31,21 +43,54 @@ namespace StatusGeck.Empleado
         }
         public void Agregar()
         {
-            Entity.Empleado empleado = new Entity.Empleado();
+            if (Validar())
+            {
+                if(textBoxConfirmar.Text == textBoxContraseña.Text)
+                {
+                    Entity.Empleado empleado = new Entity.Empleado();
 
-            empleado.Identificacion = textBoxCedula.Text;
-            empleado.Nombre = textBoxNombre.Text;
-            empleado.Telefono = textBoxTelefono.Text;
-            empleado.Apellido = textBoxApellido.Text;
-            empleado.Direccion = textBoxDireccion.Text;
-            empleado.Correo = textBoxCorreo.Text;
-            empleado.Usuario = textBoxUsuario.Text;
-            empleado.Contraseña = textBoxContraseña.Text;
+                    empleado.Identificacion = textBoxCedula.Text;
+                    empleado.Nombre = textBoxNombre.Text;
+                    empleado.Telefono = textBoxTelefono.Text;
+                    empleado.Apellido = textBoxApellido.Text;
+                    empleado.Direccion = textBoxDireccion.Text;
+                    empleado.Correo = textBoxCorreo.Text;
+                    empleado.Usuario = textBoxUsuario.Text;
+                    empleado.Contraseña = textBoxContraseña.Text;
 
-            var Mensaje = empleadoService.Guardar(empleado);
-            MessageBox.Show(Mensaje, "Mensaje de Registro", MessageBoxButtons.OKCancel, MessageBoxIcon.Information);
-            Consultar();
-            limpiar();
+                    var Mensaje = empleadoService.Guardar(empleado);
+                    MessageBox.Show(Mensaje, "Mensaje de Registro", MessageBoxButtons.OKCancel, MessageBoxIcon.Information);
+                    Consultar();
+                    limpiar();
+                }
+                else
+                {
+                    MessageBox.Show(errorProvider.GetError(textBoxConfirmar), "Mensaje de Registro", MessageBoxButtons.OKCancel, MessageBoxIcon.Information);
+
+                }
+                
+            }
+            else
+            {
+                MessageBox.Show("Hay campos que faltan", "Mensaje de Registro", MessageBoxButtons.OKCancel, MessageBoxIcon.Information);
+            }
+            
+        }
+        public bool Validar()
+        {
+            if(textBoxCedula.Text!="" &&  textBoxNombre.Text!="" &&  textBoxTelefono.Text!="" && textBoxApellido.Text!="" && textBoxCorreo.Text != "" && textBoxDireccion.Text != "" && textBoxUsuario.Text != "" && textBoxContraseña.Text != "" && textBoxConfirmar.Text != "")
+            {
+                if (textBoxCedula.Text != "Escribir..." && textBoxNombre.Text != "Escribir..." && textBoxTelefono.Text != "Escribir..." && textBoxApellido.Text != "Escribir..." && textBoxCorreo.Text != "Escribir..." && textBoxDireccion.Text != "Escribir..." && textBoxUsuario.Text != "Escribir..." && textBoxContraseña.Text != "Escribir..." && textBoxConfirmar.Text != "Escribir...")
+                {
+                    return true;
+
+                }
+                return false;
+            }
+            else
+            {
+               return false;
+            }
         }
         public void limpiar()
         {
@@ -106,7 +151,13 @@ namespace StatusGeck.Empleado
         {
             if (this.textBoxCedula.Text.Equals(""))
             {
+                errorProvider.SetError(textBoxCedula, "Falta ingresar Cedula");
                 textBoxCedula.Text = "Escribir...";
+            }
+            else
+            {
+                errorProvider.SetError(textBoxCedula, null);
+
             }
         }
         private void textBoxCedula_Enter(object sender, EventArgs e)
@@ -120,7 +171,12 @@ namespace StatusGeck.Empleado
         {
             if (this.textBoxNombre.Text.Equals(""))
             {
+                errorProvider.SetError(textBoxNombre, "Falta ingresar Nombre");
                 textBoxNombre.Text = "Escribir...";
+            }
+            else
+            {
+                errorProvider.SetError(textBoxNombre, null);
             }
         }
 
@@ -134,9 +190,14 @@ namespace StatusGeck.Empleado
 
         private void textBoxCorreo_Leave(object sender, EventArgs e)
         {
-            if (this.textBoxNombre.Text.Equals("Escribir..."))
+            if (this.textBoxCorreo.Text.Equals(""))
             {
-                textBoxNombre.Text = "";
+                errorProvider.SetError(textBoxCorreo, "Falta ingresar Correo");
+                textBoxCorreo.Text = "Escribir...";
+            }
+            else
+            {
+                errorProvider.SetError(textBoxCorreo, null);
             }
         }
 
@@ -152,7 +213,12 @@ namespace StatusGeck.Empleado
         {
             if (this.textBoxTelefono.Text.Equals(""))
             {
+                errorProvider.SetError(textBoxTelefono, "Falta ingresar Telefono");
                 textBoxTelefono.Text = "Escribir...";
+            }
+            else
+            {
+                errorProvider.SetError(textBoxTelefono, null);
             }
         }
 
@@ -168,7 +234,12 @@ namespace StatusGeck.Empleado
         {
             if (this.textBoxDireccion.Text.Equals(""))
             {
+                errorProvider.SetError(textBoxDireccion, "Falta ingresar Direccion");
                 textBoxDireccion.Text = "Escribir...";
+            }
+            else
+            {
+                errorProvider.SetError(textBoxDireccion, null);
             }
         }
 
@@ -184,7 +255,12 @@ namespace StatusGeck.Empleado
         {
             if (this.textBoxApellido.Text.Equals(""))
             {
+                errorProvider.SetError(textBoxApellido, "Falta ingresar apellido");
                 textBoxApellido.Text = "Escribir...";
+            }
+            else
+            {
+                errorProvider.SetError(textBoxApellido, null);
             }
         }
 
@@ -200,7 +276,12 @@ namespace StatusGeck.Empleado
         {
             if (this.textBoxUsuario.Text.Equals(""))
             {
+                errorProvider.SetError(textBoxUsuario, "Falta ingresar Usuario");
                 textBoxUsuario.Text = "Escribir...";
+            }
+            else
+            {
+                errorProvider.SetError(textBoxUsuario, null);
             }
         }
 
@@ -216,9 +297,14 @@ namespace StatusGeck.Empleado
         {
             if (this.textBoxContraseña.Text.Equals(""))
             {
+                errorProvider.SetError(textBoxContraseña, "Falta ingresar Contraseña");
                 textBoxContraseña.Text = "Escribir...";
 
                 textBoxContraseña.UseSystemPasswordChar = false;
+            }
+            else
+            {
+                errorProvider.SetError(textBoxContraseña, null);
             }
         }
 
@@ -236,13 +322,15 @@ namespace StatusGeck.Empleado
         {
             if (this.textBoxConfirmar.Text.Equals(""))
             {
+                errorProvider.SetError(textBoxConfirmar, "Falta ingresar Confirmar");
                 textBoxConfirmar.Text = "Escribir...";
 
                 textBoxConfirmar.UseSystemPasswordChar = false;
             }
             else
             {
-
+                errorProvider.SetError(textBoxConfirmar, null);
+                ValidadContraseña();
             }
         }
 
@@ -321,6 +409,53 @@ namespace StatusGeck.Empleado
             MessageBox.Show(respuesta, "Mensaje de Eliminacion", MessageBoxButtons.OKCancel, MessageBoxIcon.Information);
             Consultar();
             limpiar();
+        }
+
+        private void textBoxBuscar_Enter(object sender, EventArgs e)
+        {
+            if (this.textBoxBuscar.Text.Equals("Escribir..."))
+            {
+                textBoxBuscar.Text = "";
+            }
+        }
+
+        private void textBoxBuscar_Leave(object sender, EventArgs e)
+        {
+            if (this.textBoxBuscar.Text.Equals(""))
+            {
+                textBoxBuscar.Text = "Escribir...";
+                Consultar();
+            }
+        }
+
+        private void textBoxBuscar_KeyUp(object sender, KeyEventArgs e)
+        {
+            if (textBoxBuscar.Text.Trim() != "")
+            {
+                dataGridView2.DataSource = empleadoService.consultaFiltro(empleadoService.consultarCedula(textBoxBuscar.Text));
+
+            }
+            else
+            {
+                Consultar();
+            }
+        }
+
+        private void textBoxConfirmar_KeyUp(object sender, KeyEventArgs e)
+        {
+            ValidadContraseña();
+        }
+        public void ValidadContraseña()
+        {
+            if (textBoxConfirmar.Text == textBoxContraseña.Text)
+            {
+
+                errorProvider.SetError(textBoxConfirmar, null);
+            }
+            else
+            {
+                errorProvider.SetError(textBoxConfirmar, "La contraseña no coinciden");
+            }
         }
     }
 }

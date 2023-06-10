@@ -70,13 +70,11 @@ namespace StatusGeck.Factura
         
         private void btnEditar_Click(object sender, EventArgs e)
         {
-           // EditarDetalle();
         }
         public void EditarDetalle()
         {
             List<DetalleFactura> detalleFactura = this.factura.detalleFacturas;
-            factura.EditarDetalle(textBoxDescripcion.Text, Convert.ToInt32(textBoxCantidad.Text), Convert.ToDecimal(textBoxPrecio.Text), Convert.ToInt32(dataGridView1.CurrentRow.Index));
-            PintarTabla();
+             PintarTabla();
         }
         private void btnEliminar_Click(object sender, EventArgs e)
         {

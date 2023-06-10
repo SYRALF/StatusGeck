@@ -46,25 +46,6 @@ namespace Entity
         {
             return detalleFacturas;
         }
-        public void EditarDetalle(string descripcion, int cantidad, decimal precioventa, int posicion)
-        {
-            List<DetalleFactura> detalleFacturaAux = detalleFacturas;
-            int cont = 0;
-            foreach (var item in detalleFacturaAux)
-            {
-                if (cont == posicion)
-                {
-                    AgregarDetalle(descripcion, cantidad, precioventa);
-                }
-                else
-                {
-                    AgregarDetalle(item.Descripcion,item.Cantidad,item.PrecioVenta);
-                }
-                EliminarDEtalle(cont);
-
-                cont++;
-            }
-        }
         public void EliminarDEtalle(int posicion)
         {
             detalleFacturas.RemoveAt(posicion);

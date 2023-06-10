@@ -29,6 +29,7 @@ namespace StatusGeck.Empleado
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormularioEmpleado));
             this.textBoxCedula = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
             this.textBoxNombre = new System.Windows.Forms.TextBox();
@@ -41,6 +42,14 @@ namespace StatusGeck.Empleado
             this.label1 = new System.Windows.Forms.Label();
             this.lineShape5 = new Microsoft.VisualBasic.PowerPacks.LineShape();
             this.shapeContainer1 = new Microsoft.VisualBasic.PowerPacks.ShapeContainer();
+            this.lineShape9 = new Microsoft.VisualBasic.PowerPacks.LineShape();
+            this.lineShape8 = new Microsoft.VisualBasic.PowerPacks.LineShape();
+            this.lineShape7 = new Microsoft.VisualBasic.PowerPacks.LineShape();
+            this.lineShape6 = new Microsoft.VisualBasic.PowerPacks.LineShape();
+            this.lineShape4 = new Microsoft.VisualBasic.PowerPacks.LineShape();
+            this.lineShape3 = new Microsoft.VisualBasic.PowerPacks.LineShape();
+            this.lineShape2 = new Microsoft.VisualBasic.PowerPacks.LineShape();
+            this.lineShape1 = new Microsoft.VisualBasic.PowerPacks.LineShape();
             this.textBoxBuscar = new System.Windows.Forms.TextBox();
             this.btnAgregar = new FontAwesome.Sharp.IconButton();
             this.btnEliminar = new FontAwesome.Sharp.IconButton();
@@ -54,14 +63,7 @@ namespace StatusGeck.Empleado
             this.textBoxContraseña = new System.Windows.Forms.TextBox();
             this.label9 = new System.Windows.Forms.Label();
             this.textBoxConfirmar = new System.Windows.Forms.TextBox();
-            this.lineShape1 = new Microsoft.VisualBasic.PowerPacks.LineShape();
-            this.lineShape2 = new Microsoft.VisualBasic.PowerPacks.LineShape();
-            this.lineShape3 = new Microsoft.VisualBasic.PowerPacks.LineShape();
-            this.lineShape4 = new Microsoft.VisualBasic.PowerPacks.LineShape();
-            this.lineShape6 = new Microsoft.VisualBasic.PowerPacks.LineShape();
-            this.lineShape7 = new Microsoft.VisualBasic.PowerPacks.LineShape();
-            this.lineShape8 = new Microsoft.VisualBasic.PowerPacks.LineShape();
-            this.lineShape9 = new Microsoft.VisualBasic.PowerPacks.LineShape();
+            this.lblError = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
             this.SuspendLayout();
             // 
@@ -228,6 +230,70 @@ namespace StatusGeck.Empleado
             this.shapeContainer1.TabIndex = 111;
             this.shapeContainer1.TabStop = false;
             // 
+            // lineShape9
+            // 
+            this.lineShape9.Name = "lineShape9";
+            this.lineShape9.X1 = 760;
+            this.lineShape9.X2 = 939;
+            this.lineShape9.Y1 = 215;
+            this.lineShape9.Y2 = 215;
+            // 
+            // lineShape8
+            // 
+            this.lineShape8.Name = "lineShape8";
+            this.lineShape8.X1 = 758;
+            this.lineShape8.X2 = 937;
+            this.lineShape8.Y1 = 161;
+            this.lineShape8.Y2 = 161;
+            // 
+            // lineShape7
+            // 
+            this.lineShape7.Name = "lineShape7";
+            this.lineShape7.X1 = 756;
+            this.lineShape7.X2 = 935;
+            this.lineShape7.Y1 = 105;
+            this.lineShape7.Y2 = 105;
+            // 
+            // lineShape6
+            // 
+            this.lineShape6.Name = "lineShape6";
+            this.lineShape6.X1 = 757;
+            this.lineShape6.X2 = 936;
+            this.lineShape6.Y1 = 51;
+            this.lineShape6.Y2 = 51;
+            // 
+            // lineShape4
+            // 
+            this.lineShape4.Name = "lineShape4";
+            this.lineShape4.X1 = 185;
+            this.lineShape4.X2 = 364;
+            this.lineShape4.Y1 = 216;
+            this.lineShape4.Y2 = 216;
+            // 
+            // lineShape3
+            // 
+            this.lineShape3.Name = "lineShape3";
+            this.lineShape3.X1 = 187;
+            this.lineShape3.X2 = 366;
+            this.lineShape3.Y1 = 134;
+            this.lineShape3.Y2 = 134;
+            // 
+            // lineShape2
+            // 
+            this.lineShape2.Name = "lineShape2";
+            this.lineShape2.X1 = 188;
+            this.lineShape2.X2 = 367;
+            this.lineShape2.Y1 = 93;
+            this.lineShape2.Y2 = 93;
+            // 
+            // lineShape1
+            // 
+            this.lineShape1.Name = "lineShape1";
+            this.lineShape1.X1 = 187;
+            this.lineShape1.X2 = 366;
+            this.lineShape1.Y1 = 51;
+            this.lineShape1.Y2 = 51;
+            // 
             // textBoxBuscar
             // 
             this.textBoxBuscar.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
@@ -239,6 +305,9 @@ namespace StatusGeck.Empleado
             this.textBoxBuscar.Size = new System.Drawing.Size(324, 26);
             this.textBoxBuscar.TabIndex = 113;
             this.textBoxBuscar.Text = "Escribir...";
+            this.textBoxBuscar.Enter += new System.EventHandler(this.textBoxBuscar_Enter);
+            this.textBoxBuscar.KeyUp += new System.Windows.Forms.KeyEventHandler(this.textBoxBuscar_KeyUp);
+            this.textBoxBuscar.Leave += new System.EventHandler(this.textBoxBuscar_Leave);
             // 
             // btnAgregar
             // 
@@ -417,71 +486,24 @@ namespace StatusGeck.Empleado
             this.textBoxConfirmar.TabIndex = 144;
             this.textBoxConfirmar.Text = "Escribir...";
             this.textBoxConfirmar.Enter += new System.EventHandler(this.textBoxConfirmar_Enter);
+            this.textBoxConfirmar.KeyUp += new System.Windows.Forms.KeyEventHandler(this.textBoxConfirmar_KeyUp);
             this.textBoxConfirmar.Leave += new System.EventHandler(this.textBoxConfirmar_Leave);
             // 
-            // lineShape1
+            // lblError
             // 
-            this.lineShape1.Name = "lineShape1";
-            this.lineShape1.X1 = 187;
-            this.lineShape1.X2 = 366;
-            this.lineShape1.Y1 = 51;
-            this.lineShape1.Y2 = 51;
-            // 
-            // lineShape2
-            // 
-            this.lineShape2.Name = "lineShape2";
-            this.lineShape2.X1 = 188;
-            this.lineShape2.X2 = 367;
-            this.lineShape2.Y1 = 93;
-            this.lineShape2.Y2 = 93;
-            // 
-            // lineShape3
-            // 
-            this.lineShape3.Name = "lineShape3";
-            this.lineShape3.X1 = 187;
-            this.lineShape3.X2 = 366;
-            this.lineShape3.Y1 = 134;
-            this.lineShape3.Y2 = 134;
-            // 
-            // lineShape4
-            // 
-            this.lineShape4.Name = "lineShape4";
-            this.lineShape4.X1 = 185;
-            this.lineShape4.X2 = 364;
-            this.lineShape4.Y1 = 216;
-            this.lineShape4.Y2 = 216;
-            // 
-            // lineShape6
-            // 
-            this.lineShape6.Name = "lineShape6";
-            this.lineShape6.X1 = 757;
-            this.lineShape6.X2 = 936;
-            this.lineShape6.Y1 = 51;
-            this.lineShape6.Y2 = 51;
-            // 
-            // lineShape7
-            // 
-            this.lineShape7.Name = "lineShape7";
-            this.lineShape7.X1 = 756;
-            this.lineShape7.X2 = 935;
-            this.lineShape7.Y1 = 105;
-            this.lineShape7.Y2 = 105;
-            // 
-            // lineShape8
-            // 
-            this.lineShape8.Name = "lineShape8";
-            this.lineShape8.X1 = 758;
-            this.lineShape8.X2 = 937;
-            this.lineShape8.Y1 = 161;
-            this.lineShape8.Y2 = 161;
-            // 
-            // lineShape9
-            // 
-            this.lineShape9.Name = "lineShape9";
-            this.lineShape9.X1 = 760;
-            this.lineShape9.X2 = 939;
-            this.lineShape9.Y1 = 215;
-            this.lineShape9.Y2 = 215;
+            this.lblError.AutoSize = true;
+            this.lblError.Font = new System.Drawing.Font("MS Reference Sans Serif", 10.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblError.ForeColor = System.Drawing.Color.DarkGray;
+            this.lblError.Image = ((System.Drawing.Image)(resources.GetObject("lblError.Image")));
+            this.lblError.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.lblError.Location = new System.Drawing.Point(273, 460);
+            this.lblError.Name = "lblError";
+            this.lblError.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.lblError.Size = new System.Drawing.Size(304, 23);
+            this.lblError.TabIndex = 145;
+            this.lblError.Text = "      Error Mensaje                      ";
+            this.lblError.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.lblError.Visible = false;
             // 
             // FormularioEmpleado
             // 
@@ -489,6 +511,7 @@ namespace StatusGeck.Empleado
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Control;
             this.ClientSize = new System.Drawing.Size(1025, 492);
+            this.Controls.Add(this.lblError);
             this.Controls.Add(this.textBoxConfirmar);
             this.Controls.Add(this.label9);
             this.Controls.Add(this.textBoxContraseña);
@@ -558,5 +581,6 @@ namespace StatusGeck.Empleado
         private Microsoft.VisualBasic.PowerPacks.LineShape lineShape7;
         private Microsoft.VisualBasic.PowerPacks.LineShape lineShape6;
         private Microsoft.VisualBasic.PowerPacks.LineShape lineShape4;
+        private System.Windows.Forms.Label lblError;
     }
 }
