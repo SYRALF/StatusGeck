@@ -446,7 +446,7 @@ namespace StatusGeck.Cliente
 
         private void textBoxDireccion_KeyPress(object sender, KeyPressEventArgs e)
         {
-            if ((e.KeyChar >= 33 && e.KeyChar <= 34) || (e.KeyChar >= 36 && e.KeyChar <= 44) || (e.KeyChar >= 46 && e.KeyChar <= 63) || (e.KeyChar >= 91 && e.KeyChar <= 96) || (e.KeyChar >= 123 && e.KeyChar <= 255))
+            if ((e.KeyChar >= 33 && e.KeyChar <= 34) || (e.KeyChar >= 36 && e.KeyChar <= 44) || (e.KeyChar >= 46 && e.KeyChar <= 64) || (e.KeyChar >= 91 && e.KeyChar <= 96) || (e.KeyChar >= 123 && e.KeyChar <= 255))
             {
 
                 e.Handled = true;
