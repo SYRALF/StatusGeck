@@ -69,7 +69,7 @@ namespace StatusGeck.Factura
         
         private void btnEditar_Click(object sender, EventArgs e)
         {
-            EditarDetalle();
+           // EditarDetalle();
         }
         public void EditarDetalle()
         {
