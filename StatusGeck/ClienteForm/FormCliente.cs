@@ -219,9 +219,20 @@ namespace StatusGeck.Cliente
                 errorProvider.SetError(textBoxCorreo, null);
 
                 ValidarTamañominimo(textBoxCorreo, 17);
+                ValidarFormato(textBoxCorreo);
             }
         }
+        public void ValidarFormato(TextBox textBox)
+        {
+            if(textBox.Text.Contains("@gmail.com") || textBox.Text.Contains("@hotmail.com") || textBox.Text.Contains("@unicesar.edu.co"))
+            {
 
+            }
+            else
+            {
+                errorProvider.SetError(textBoxCorreo, "formato de correo invalido");
+            }
+        }
         private void textBoxCorreo_Enter(object sender, EventArgs e)
         {
             if (this.textBoxCorreo.Text.Equals("Escribir..."))
@@ -446,7 +457,7 @@ namespace StatusGeck.Cliente
 
         private void textBoxDireccion_KeyPress(object sender, KeyPressEventArgs e)
         {
-            if ((e.KeyChar >= 33 && e.KeyChar <= 34) || (e.KeyChar >= 36 && e.KeyChar <= 44) || (e.KeyChar >= 46 && e.KeyChar <= 64) || (e.KeyChar >= 91 && e.KeyChar <= 96) || (e.KeyChar >= 123 && e.KeyChar <= 255))
+            if ((e.KeyChar >= 33 && e.KeyChar <= 34) || (e.KeyChar >= 36 && e.KeyChar <= 44)|| (e.KeyChar >= 46 && e.KeyChar <= 47) || (e.KeyChar >= 58 && e.KeyChar <= 64) || (e.KeyChar >= 91 && e.KeyChar <= 96) || (e.KeyChar >= 123 && e.KeyChar <= 255))
             {
 
                 e.Handled = true;
