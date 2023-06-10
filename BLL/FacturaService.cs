@@ -152,6 +152,10 @@ namespace BLL
 
             }
         }
+        public decimal CalcularTotalFacturas(List<Factura> listafacturas)
+        {
+            return listafacturas.Sum(f => f.ValorTotal);
+        }
 
         public class ConsultaRespuestaFactura
         {

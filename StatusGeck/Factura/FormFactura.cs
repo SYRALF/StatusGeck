@@ -36,11 +36,12 @@ namespace StatusGeck.Factura
             textBoxpreciototal.Text = "0";
             btnguardar.Enabled = false;
 
+            dataGridView1.DataSource = null;
+
             limpiardetalles();
             gestionbotonesDetalles(false);
             GestionarOpcionesIniciales(true);
-
-            GestionarOpcionesIniciales(false);
+            GestionarOpcionesSecundarias(false);
         }
        
         public void PintarTabla()
@@ -209,7 +210,7 @@ namespace StatusGeck.Factura
         }
         public void gestionbotonesDetalles(bool opcion)
         {
-            btnEditar.Enabled = opcion;
+            
             btnEliminar.Enabled = opcion;
         }
         public void limpiardetalles()
@@ -291,6 +292,8 @@ namespace StatusGeck.Factura
         }
         public void Guardar()
         {
+            factura.CalcularCantidadTotal();
+            factura.CalcularValorTotal();
             var respuesta = facturaService.Guardar(this.factura);
             MessageBox.Show(respuesta, "Mensaje de Guardado", MessageBoxButtons.OKCancel, MessageBoxIcon.Information);
 

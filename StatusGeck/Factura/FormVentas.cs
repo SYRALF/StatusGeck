@@ -1,4 +1,5 @@
 ﻿using BLL;
+using Entity;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -21,6 +22,7 @@ namespace StatusGeck.Factura
 
             var connectionString = ConfigurationManager.ConnectionStrings["DefaultConnection"].ConnectionString;
             facturaService = new FacturaService(connectionString);
+            CalcularVentas();
         }
 
         private void radioButton1_CheckedChanged(object sender, EventArgs e)
@@ -42,6 +44,7 @@ namespace StatusGeck.Factura
         {
             dataGridView1.DataSource = null;
             dataGridView2.DataSource = null;
+            textBoxpreciototal.Text = "0";
             if (radioButton1.Checked == true)
             {
                 var respuesta = facturaService.ConsultarTodos();
@@ -63,12 +66,16 @@ namespace StatusGeck.Factura
                 }
                 MessageBox.Show(respuesta.Mensaje, "Mensaje de Busqueda", MessageBoxButtons.OKCancel, MessageBoxIcon.Information);
             }
+
+
         }
         public void PintarTAblaFactura(List<Entity.Factura> facturas)
         {
 
             dataGridView1.DataSource = null;
             dataGridView1.DataSource = facturaService.ConsultaFacturas(facturas);
+
+            textBoxpreciototal.Text = facturaService.CalcularTotalFacturas(facturas).ToString();
             
         }
         public void PintarTAblaDetalles(List<Entity.DetalleFactura> detalleFacturas)
@@ -89,6 +96,52 @@ namespace StatusGeck.Factura
             var respuesta = facturaService.BuscarxCodigo(codigo);
 
             PintarTAblaDetalles(respuesta.Factura.detalleFacturas);
+        }
+
+        private void FormVentas_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void textBoxGasto_Enter(object sender, EventArgs e)
+        {
+            if (this.textBoxGasto.Text.Equals("Escribir..."))
+            {
+                textBoxGasto.Text = "";
+            }
+        }
+
+        private void textBoxGasto_Leave(object sender, EventArgs e)
+        {
+            if (this.textBoxGasto.Text.Equals(""))
+            {
+                textBoxGasto.Text = "Escribir...";
+            }
+        }
+
+        private void btnCalcular_Click(object sender, EventArgs e)
+        {
+            CalcularGanancias();
+        }
+        public void CalcularGanancias()
+        {
+            textboxganancias.Text = (Convert.ToDecimal(textBoxVentas.Text) - Convert.ToDecimal(textBoxGasto.Text)).ToString();
+        }
+
+        private void dateTimePicker3_Leave(object sender, EventArgs e)
+        {
+            CalcularVentas();
+        }
+
+        private void dateTimePicker3_ValueChanged(object sender, EventArgs e)
+        {
+            CalcularVentas();
+        }
+
+        public void CalcularVentas()
+        {
+            var respuesta = facturaService.ConsultarxFecha(dateTimePicker3.Value, dateTimePicker3.Value);
+            textBoxVentas.Text = facturaService.CalcularTotalFacturas(respuesta.facturas).ToString();
         }
     }
 }
